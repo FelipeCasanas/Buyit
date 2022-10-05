@@ -1,0 +1,223 @@
+/* ------------------------------------------------------------------------ */
+
+/* This is easy, this is the body label */
+body {
+    height: 2000px;
+    width: 100%;
+    margin: 0;
+}
+
+body::-webkit-scrollbar {
+    width: 10px;
+    background-color: #2d2d2d;
+}
+
+body::-webkit-scrollbar-thumb {
+    width: 10px;
+    border-radius: 0 20px 0 20px;
+    background-color: #0c78f2;
+}
+
+/* ------------------------------------------------------------------------ */
+
+/* This is the header background, where is the title or search-bar */
+.header_background {
+    position: relative;
+    height: 80px;
+    width: 100%;
+    background-color: #0c78f2;
+}
+
+/* Title of my pretty web */
+.buyit_title {
+    position: relative;
+    display: inline-block;
+    width: 40%;
+    color: #ffffff;
+    font-size: 65px;
+    font-family: Impact;
+    margin: 0;
+    left: 30px;
+}
+
+.return_button {
+    position: relative;
+    height: 60%;
+    width: 10%;
+    text-decoration: none;
+    border-radius: 25px;
+    background-color: #2d2d2d;
+    top: 20%;
+    right: 15px;
+    float: right;
+    transition: 0.5s;
+}
+
+.return_button:hover {
+    position: relative;
+    height: 60%;
+    width: 10%;
+    border-radius: 25px;
+    background-color: #b43434;
+    float: right;
+    right: 25px;
+    transition: 0.5s;
+}
+
+.return_button p {
+    position: relative;
+    color: #ffffff;
+    font-size: 1.2em;
+    font-family: 'Lucida Sans';
+    text-align: center;
+    bottom: 6px;
+}
+
+/* ------------------------------------------------------------------------ */
+
+.main {
+    height: 77%;
+    width: 90%;
+    color: #ffffff;
+    text-align: justify;
+    margin: 5% auto;
+    border-radius: 40px;
+    background-color: #2a2a2a;
+}
+
+.main h1 {
+    position: relative;
+    color: #0c78f2;
+    font-size: 7vmin;
+    font-family: Impact;
+    text-align: center;
+    top: 1%;
+}
+
+.main h2, .main strong {
+    text-align: center;
+}
+
+.block1, .block2, .block3, .block4 {
+    height: 300px;
+    width: 90%;
+    margin: 55px auto;
+    border-radius: 40px;
+    background-color: #1964b9;
+}
+
+section div h2 {
+    position: relative;
+    top: 5%;
+}
+
+.text_container {
+    position: relative;
+    height: 60%;
+    width: 90%;
+    margin: 0 auto;
+    padding: 2%;
+    top: 4%;
+    overflow-y: scroll;
+}
+
+.text_container::-webkit-scrollbar {
+    width: 10px;
+    border-radius: 20px;
+}
+
+.text_container::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    background-color: #ffffff;
+}
+
+.text_container p {
+    font-size: 2.4vmin;
+}
+
+/* ------------------------------------------------------------------------ */
+
+/* This is footer background and brand properties */
+footer {
+    position: relative;
+    display: block;
+    height: 12%;
+    width: 100%;
+    color: #ffffff;
+    font-size: 2.5em;
+    font-family: Impact;
+    margin: 0 auto;
+    background-color: #2a2a2a;
+}
+
+
+/* Footer text container */
+.footer_text_container {
+    position: relative;
+    height: 50%;
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Footer text properties */
+.footer_text_container p, .footer_text_container p a {
+    position: relative;
+    display: inline-block;
+    color: #ffffff;
+    font-size: 5vmin;
+    font-family: 'Gill Sans';
+    text-decoration: none;
+    transition: 0.7s;
+    overflow: hidden;
+}
+
+/* this generate a color change of footer text */
+.footer_text_container p:hover, .footer_text_container p a:hover {
+    position: relative;
+    display: inline-block;
+    color: #0c78f2;
+    font-size: 5vmin;
+    font-family: 'Gill Sans';
+    text-decoration: none;
+    bottom: 10%;
+    transition: 0.8s;
+    overflow: hidden;
+}
+
+/* Who we are? */
+.we {
+    position: relative;
+    display: inline-block;
+    margin-left: 25px;
+}
+
+/* Support to users */
+.support {
+    position: relative;
+    display: inline-block;
+    margin-left: 25px;
+}
+
+/* Privacy terms */
+.privacy {
+    position: relative;
+    display: inline-block;
+    margin-left: 25px;
+}
+
+/* Terms and conditions */
+.tyc {
+    position: relative;
+    display: inline-block;
+    margin-left: 25px;
+}
+
+/* Copyright label */
+.copyright {
+    position: relative;
+    color: #0c78f2;
+    font-size: 4vmin;
+    font-family: cursive;
+    text-align: center;
+}

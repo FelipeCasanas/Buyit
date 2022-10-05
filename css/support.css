@@ -1,0 +1,367 @@
+/* ------------------------------------------------------------------------ */
+
+/* This is easy, this is the body label */
+body {
+    height: 1500px;
+    width: 100%;
+    margin: 0;
+}
+
+body::-webkit-scrollbar {
+    width: 10px;
+    background-color: #2d2d2d;
+}
+
+body::-webkit-scrollbar-thumb {
+    width: 10px;
+    border-radius: 0 20px 0 20px;
+    background-color: #0c78f2;
+}
+
+/* ------------------------------------------------------------------------ */
+
+/* This is the header background, where is the title or search-bar */
+.header_background {
+    position: relative;
+    height: 80px;
+    width: 100%;
+    background-color: #0c78f2;
+}
+
+/* Title of my pretty web */
+.buyit_title {
+    position: relative;
+    display: inline-block;
+    width: 40%;
+    color: #ffffff;
+    font-size: 65px;
+    font-family: Impact;
+    margin: 0;
+    left: 30px;
+}
+
+.return_button {
+    position: relative;
+    height: 60%;
+    width: 10%;
+    text-decoration: none;
+    border-radius: 25px;
+    background-color: #2d2d2d;
+    top: 20%;
+    right: 15px;
+    float: right;
+    transition: 0.5s;
+}
+
+.return_button:hover {
+    position: relative;
+    height: 60%;
+    width: 10%;
+    border-radius: 25px;
+    background-color: #b43434;
+    float: right;
+    right: 25px;
+    transition: 0.5s;
+}
+
+.return_button p {
+    position: relative;
+    color: #ffffff;
+    font-size: 1.2em;
+    font-family: 'Lucida Sans';
+    text-align: center;
+    bottom: 6px;
+}
+
+/* ------------------------------------------------------------------------ */
+
+.selector_container {
+    position: relative;
+    height: 22%;
+    width: 80%;
+    margin: 50px auto;
+    border-radius: 25px;
+    background-color: #2a2a2a;
+}
+
+.h2_options {
+    position: relative;
+    color: #0c78f2;
+    font-size: 3.5vmin;
+    font-family: 'Franklin Gothic Medium';
+    text-align: center;
+    top: 20px;
+}
+
+.h2_options h2 {
+    margin: 0;
+}
+
+.options_container {
+    height: 240px;
+    margin: 30px 0;
+}
+
+.option1, .option2, .option3 {
+    position: relative;
+    height: 80%;
+    width: 28%;
+    margin-left: 4%;
+    border-radius: 15px;
+    border: none;
+    background-color: #0c78f2;
+    top: 12%;
+    float: left;
+    transition: 0.4s;
+}
+
+.option1:hover, .option2:hover, .option3:hover {
+    position: relative;
+    height: 80%;
+    width: 28%;
+    margin-left: 4%;
+    border-radius: 15px;
+    background-color: #144883;
+    top: 12%;
+    float: left;
+    transition: 0.2s;
+}
+
+.optionSelected {
+    position: relative;
+    height: 80%;
+    width: 28%;
+    margin-left: 4%;
+    border-radius: 15px;
+    border: 5px solid #000000;
+    background-color: #2a2a2a;
+    top: 12%;
+    float: left;
+}
+
+.option1 p, .option2 p, .option3 p {
+    color: #ffffff;
+    font-size: 5vmin;
+    margin: 0;
+}
+
+/* ------------------------------------------------------------------------ */
+
+.main_container {
+    position: relative;
+    height: 48%;
+    width: 80%;
+    margin: 20px auto;
+    border-radius: 25px;
+    background-color: #2a2a2a;
+}
+
+.general_form_container {
+    position: relative;
+    height: 80%;
+    width: 80%;
+    border-radius: 25px;
+    background-color: #0c78f2;
+    top: 10%;
+    left: 10%;
+}
+
+/* ------------------------------------------------------------------------ */
+
+.personal_info_left {
+    position: relative;
+    height: 75%;
+    width: 49%;
+    float: left;
+}
+
+.personal_info_left input {
+    position: relative;
+    height: 10%;
+    width: 60%;
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    margin-top: 65px;
+    border: none;
+    border-radius: 20px;
+    top: 6%;
+    left: 20%;
+}
+
+.terms_conditions_container {
+    position: relative;
+    height: 10%;
+    width: 100%;
+    /* background-color: #b43434; */
+    top: 40px;
+    overflow: hidden;
+}
+
+#data_treatment {
+    display: inline-block;
+    height: 25px;
+    width: 25px;
+    margin: 7px;
+}
+
+.terms_conditions_container p {
+    position: relative;
+    display: inline-block;
+    color: #ffffff;
+    font-size: 2.2vmin;
+    margin: 0;
+    left: 19%;
+    bottom: 5%;
+}
+
+.personal_info_right {
+    position: relative;
+    height: 75%;
+    width: 49%;
+    float: right;
+}
+
+.personal_info_right textarea {
+    position: relative;
+    height: 90%;
+    width: 90%;
+    border-radius: 10px;
+    top: 6%;
+    right: 5%;
+}
+
+.form_buttons_div {
+    position: relative;
+    height: 15%;
+    width: 87.5%;
+    margin: 0 auto;
+    top: 80%;
+}
+
+.form_buttons_div button {
+    position: relative;
+    height: 60%;
+    width: 45%;
+    color: #ffffff;
+    margin-left: 3%;
+    border: none;
+    border-radius: 20px;
+    background-color: #2d2d2d;
+    bottom: 415px;
+    transition: 0.3s;
+}
+
+.form_buttons_div button:hover {
+    position: relative;
+    height: 60%;
+    width: 45%;
+    color: #ffffff;
+    margin-left: 3%;
+    border: none;
+    border-radius: 20px;
+    background-color: #000000;
+    bottom: 415px;
+    transition: 0.3s;
+}
+
+.form_buttons_div button:active {
+    position: relative;
+    height: 60%;
+    width: 45%;
+    color: #ffffff;
+    margin-left: 3%;
+    border: none;
+    border-radius: 20px;
+    background-color: #144883;
+    bottom: 415px;
+    transition: 0.1s;
+}
+
+/* ------------------------------------------------------------------------ */
+
+/* This is footer background and brand properties */
+footer {
+    position: relative;
+    display: block;
+    height: 18%;
+    width: 100%;
+    color: #ffffff;
+    font-size: 2.5em;
+    font-family: Impact;
+    margin: 0 auto;
+    background-color: #2a2a2a;
+    top: 22px;
+}
+
+
+/* Footer text container */
+.footer_text_container {
+    position: relative;
+    height: 50%;
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Footer text properties */
+.footer_text_container p, .footer_text_container p a {
+    position: relative;
+    display: inline-block;
+    color: #ffffff;
+    font-size: 5vmin;
+    font-family: 'Gill Sans';
+    text-decoration: none;
+    transition: 0.7s;
+    overflow: hidden;
+}
+
+/* this generate a color change of footer text */
+.footer_text_container p:hover, .footer_text_container p a:hover {
+    position: relative;
+    display: inline-block;
+    color: #0c78f2;
+    font-size: 5vmin;
+    font-family: 'Gill Sans';
+    text-decoration: none;
+    bottom: 10%;
+    transition: 0.8s;
+    overflow: hidden;
+}
+
+/* Who we are? */
+.we {
+    position: relative;
+    display: inline-block;
+    margin-left: 25px;
+}
+
+/* Support to users */
+.support {
+    position: relative;
+    display: inline-block;
+    margin-left: 25px;
+}
+
+/* Privacy terms */
+.privacy {
+    position: relative;
+    display: inline-block;
+    margin-left: 25px;
+}
+
+/* Terms and conditions */
+.tyc {
+    position: relative;
+    display: inline-block;
+    margin-left: 25px;
+}
+
+/* Copyright label */
+.copyright {
+    position: relative;
+    color: #0c78f2;
+    font-size: 4vmin;
+    font-family: cursive;
+    text-align: center;
+}

@@ -1,0 +1,295 @@
+/* ------------------------------------------------------------------------ */
+
+/* This is easy, this is the body label */
+body {
+  height: 1300px;
+  width: 100%;
+  margin: 0;
+}
+
+body::-webkit-scrollbar {
+  width: 10px;
+  background-color: #2d2d2d;
+}
+
+body::-webkit-scrollbar-thumb {
+  width: 10px;
+  border-radius: 0 20px 0 20px;
+  background-color: #0c78f2;
+}
+
+/* ------------------------------------------------------------------------ */
+
+/* This is the header background, where is the title or search-bar */
+.header_background {
+  position: relative;
+  height: 80px;
+  width: 100%;
+  background-color: #0c78f2;
+}
+
+/* Title of my pretty web */
+.header_background h1 {
+  position: relative;
+  display: inline-block;
+  width: 40%;
+  color: #ffffff;
+  font-size: 65px;
+  font-family: Impact;
+  margin: 0;
+  left: 30px;
+}
+
+.return_button {
+  position: relative;
+  height: 60%;
+  width: 10%;
+  text-decoration: none;
+  border-radius: 25px;
+  background-color: #2d2d2d;
+  top: 20%;
+  right: 15px;
+  float: right;
+  transition: 0.5s;
+}
+
+.return_button:hover {
+  position: relative;
+  height: 60%;
+  width: 10%;
+  border-radius: 25px;
+  background-color: #b43434;
+  float: right;
+  right: 25px;
+  transition: 0.5s;
+}
+
+.return_button p {
+  position: relative;
+  color: #ffffff;
+  font-size: 1.2em;
+  font-family: 'Lucida Sans';
+  text-align: center;
+  bottom: 6px;
+}
+
+
+/* ------------------------------------------------------------------------ */
+
+.container {
+  position: relative;
+  height: 79%;
+  width: 95%;
+  margin: 0 auto;
+}
+
+.left_container {
+  position: relative;
+  height: 100%;
+  width: 70%;
+  float: left;
+}
+
+.right_container {
+  position: relative;
+  height: 100%;
+  width: 30%;
+  float: right;
+}
+
+/* ------------------------------------------------------------------------ */
+
+.container h2 {
+  color: #0c78f2;
+  font-size: 2em;
+  font-family: 'Franklin Gothic Medium';
+  text-align: center;
+}
+
+.container p {
+  color: rgb(255, 255, 255);
+  font-size: 2.9vmin;
+  font-family: Verdana, sans-serif;
+  text-align: justify;
+}
+
+/* ------------------------------------------------------------------------ */
+
+.window_one {
+  position: relative;
+  height: 20%;
+  width: 90%;
+  border-radius: 15px 5px 5px 15px;
+  padding: 0 4.5%;
+  background-color: #2d2d2d;
+  float: left;
+  overflow-y: scroll;
+  top: 2.5%;
+}
+
+.window_two {
+  position: relative;
+  height: 60%;
+  width: 90%;
+  border-radius: 15px 5px 5px 15px;
+  padding: 0 4.5%;
+  background-color: #2d2d2d;
+  float: right;
+  top: 2.5%;
+  overflow-y: scroll;
+}
+
+.window_three {
+  position: relative;
+  height: 50%;
+  width: 40%;
+  border-radius: 15px 5px 5px 15px;
+  padding: 0 4.5%;
+  background-color: #2d2d2d;
+  float: left;
+  overflow-y: scroll;
+  top: 4%;
+}
+
+.window_four {
+  position: relative;
+  height: 50%;
+  width: 40%;
+  border-radius: 15px 5px 5px 15px;
+  padding: 0 4.5%;
+  background-color: #2d2d2d;
+  float: left;
+  overflow-y: scroll;
+  top: 4%;
+  left: 1%;
+}
+
+.window_five {
+  position: relative;
+  height: 32%;
+  width: 90%;
+  border-radius: 15px 5px 5px 15px;
+  padding: 0 4.5%;
+  background-color: #2d2d2d;
+  float: right;
+  overflow-y: scroll;
+  top: 4%;
+}
+
+.window_five p {
+  text-align: center;
+}
+
+.window_six {
+  position: relative;
+  height: 20%;
+  width: 90%;
+  border-radius: 15px 5px 5px 15px;
+  padding: 0 4.5%;
+  background-color: #2d2d2d;
+  float: left;
+  overflow-y: scroll;
+  top: 6%;
+}
+
+.window_one::-webkit-scrollbar, .window_two::-webkit-scrollbar, .window_three::-webkit-scrollbar, .window_four::-webkit-scrollbar, .window_five::-webkit-scrollbar, .window_six::-webkit-scrollbar {
+  width: 10px;
+  border-radius: 0 10px 10px 0;
+  background-color: #2d2d2d;
+}
+
+.window_one::-webkit-scrollbar-thumb, .window_two::-webkit-scrollbar-thumb, .window_three::-webkit-scrollbar-thumb, .window_four::-webkit-scrollbar-thumb, .window_five::-webkit-scrollbar-thumb, .window_six::-webkit-scrollbar-thumb {
+  width: 10px;
+  border-radius: 10px;
+  background-color: #0c78f2;
+}
+
+/* ------------------------------------------------------------------------ */
+
+/* This is footer background and brand properties */
+footer {
+  position: relative;
+  height: 15%;
+  width: 100%;
+  color: #ffffff;
+  font-size: 2.5em;
+  font-family: Impact;
+  margin: 0 auto;
+  background-color: #2a2a2a;
+  top: 5px;
+}
+
+
+/* Footer text container */
+.footer_text_container {
+  position: relative;
+  height: 30%;
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+  top: 15%;
+}
+
+/* Footer text properties */
+.footer_text_container p, .footer_text_container p a {
+  position: relative;
+  display: inline-block;
+  color: #ffffff;
+  font-size: 5vmin;
+  font-family: 'Gill Sans';
+  text-decoration: none;
+  bottom: 45%;
+  transition: 0.7s;
+  overflow: hidden;
+}
+
+/* this generate a color change of footer text */
+.footer_text_container p:hover, .footer_text_container p a:hover {
+  position: relative;
+  display: inline-block;
+  color: #0c78f2;
+  font-size: 5vmin;
+  font-family: 'Gill Sans';
+  text-decoration: none;
+  bottom: 60%;
+  transition: 0.8s;
+  overflow: hidden;
+}
+
+/* Who we are? */
+.we {
+  position: relative;
+  display: inline-block;
+  margin-left: 25px;
+}
+
+/* Support to users */
+.support {
+  position: relative;
+  display: inline-block;
+  margin-left: 25px;
+}
+
+/* Privacy terms */
+.privacy {
+  position: relative;
+  display: inline-block;
+  margin-left: 25px;
+}
+
+/* Terms and conditions */
+.tyc {
+  position: relative;
+  display: inline-block;
+  margin-left: 25px;
+}
+
+/* Copyright label */
+.copyright {
+  position: relative;
+  color: #0c78f2;
+  font-size: 4vmin;
+  font-family: cursive;
+  text-align: center;
+  top: 5%;
+}

@@ -1,0 +1,989 @@
+@media (min-width: 880px) {
+
+  /* This is easy, this is the body label */
+  body {
+    height: 245vh;
+    margin: 0;
+    background-color: #e6e6e6;
+  }
+
+  .dark_mode {
+    background-color: #000000;
+  }
+
+  .dark_mode_text {
+    color: #000000;
+  }
+
+  body::-webkit-scrollbar {
+    width: 10px;
+    background-color: #2d2d2d;
+  }
+
+  body::-webkit-scrollbar-thumb {
+    width: 10px;
+    border-radius: 0 20px 0 20px;
+    background-color: #0c78f2;
+  }
+
+  /* ------------------------------------------------------------------------ */
+
+  /* This is the header background, where is the title or search-bar */
+  .header_background {
+    position: fixed;
+    height: 90px;
+    width: 100%;
+    background-color: #0c78f2;
+    z-index: 200;
+  }
+
+  /* Title of my pretty web */
+  .header_background h1 {
+    position: relative;
+    color: #ffffff;
+    font-size: 4.62em;
+    font-family: Impact;
+    text-align: left;
+    margin: 0;
+    left: 30px;
+  }
+
+  /* ------------------------------------------------------------------------ */
+
+  form {
+    position: relative;
+    height: 60%;
+    right: 40px;
+    bottom: 70px;
+    /* background-color: #b43434; */
+  }
+
+  /* This is the search-bar properties, here u can search ur fucking porn :) */
+  .search {
+    position: relative;
+    display: inline-block;
+    height: 100%;
+    width: 35%;
+    color: #ffffff;
+    font-size: 2.5vmin;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    border: none;
+    border-radius: 10px;
+    background-color: #2d2d2d;
+    left: 260px;
+  }
+
+  /* This is the login button */
+  .header_background form a {
+    position: relative;
+    height: 100%;
+    width: 15%;
+    border: none;
+    border-radius: 25px;
+    background-color: #2d2d2d;
+    right: 10px;
+    float: right;
+    transition: 0.7s;
+  }
+
+  /* This is the same login button when you pass your mouse top change his color */
+  .header_background form a:hover {
+    position: relative;
+    height: 100%;
+    width: 15%;
+    border: none;
+    border-radius: 25px;
+    background-color: #b43434;
+    float: right;
+    right: -5px;
+    transition: 0.7s;
+  }
+
+  /* This is the text of the login button */
+  .header_background form a p {
+    position: relative;
+    color: #ffffff;
+    font-size: 1.2em;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    bottom: 3px;
+  }
+
+  form a {
+    text-decoration: none;
+  }
+
+  /* ------------------------------------------------------------------------ */
+
+  /* Background color of the nav-bar */
+  .nav_background {
+    position: fixed;
+    height: 67px;
+    width: 100%;
+    background-color: #2d2d2d;
+    top: 90px;
+    z-index: 250;
+  }
+
+  /* This is the options list container, i use it to center text */
+  .nav_background div {
+    position: relative;
+    height: 60%;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    top: 20%;
+    /* background-color: #b43434; */
+  }
+
+  .list {
+    margin: 0;
+    padding: 0;
+  }
+
+  /* From here i set other parameters how inline-block */
+  .list li {
+    position: relative;
+    display: inline-block;
+    margin-left: 5%;
+    right: 4%;
+    bottom: 20px;
+    /* background-color: #46bdec; */
+  }
+
+  /* Here´s font properties */
+  .list, .list li p a {
+    position: relative;
+    color: #ffffff;
+    font-size: 4vmin;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    list-style: none;
+    text-decoration: none;
+    top: 5%;
+  }
+
+  /* Here´s font properties when mouse it top */
+  .list, .list li p a:hover {
+    position: relative;
+    color: #929292;
+    font-size: 4vmin;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    list-style: none;
+    text-decoration: none;
+    transition: 0.7s;
+  }
+
+  .change_color_button {
+    position: relative;
+    display: none;
+    height: 40px;
+    width: 7%;
+    font-size: 2vmin;
+    padding: 1.8%;
+    border: none;
+    border-radius: 15px;
+    padding: 0;
+    background-color: #0c78f2;
+    right: 15px;
+    float: right;
+    transition: 0.6s;
+  }
+
+  .change_color_button:hover {
+    position: relative;
+    display: none;
+    height: 40px;
+    width: 7%;
+    color: #ffffff;
+    font-size: 2vmin;
+    padding: 1.8%;
+    border: 2px solid #0c78f2;
+    border-radius: 15px;
+    padding: 0;
+    background-color: #144883;
+    right: 15px;
+    float: right;
+    transition: 0.3s;
+  }
+
+  .change_color_button_active {
+    position: relative;
+    display: none;
+    height: 40px;
+    width: 7%;
+    color: #ffffff;
+    font-size: 1vw;
+    padding: 1.8%;
+    border: 2px solid #0c78f2;
+    border-radius: 15px;
+    padding: 0;
+    background-color: #000000;
+    right: 15px;
+    float: right;
+    transition: 0.6s;
+  }
+
+  /* ------------------------------------------------------------------------ */
+
+
+  /* This is the mother container of all content in the body */
+  .body_container {
+    position: relative;
+    height: 87%;
+    width: 95%;
+    color: #ffffff;
+    font-size: 2.5vw;
+    font-size: 6vmin;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    margin: 0 auto;
+    top: 11%;
+  }
+
+  /* Text properties of body container */
+  .body_container p {
+    position: relative;
+    top: 15%;
+  }
+
+  /*  */
+  .recomendations_and_ads_container {
+    position: relative;
+    height: 65vh;
+    width: 100%;
+    margin: 0 auto;
+    top: 20px;
+  }
+
+  /* Recomendations to do our buyers happy :) */
+  .recomended {
+    position: relative;
+    height: 90%;
+    width: 48%;
+    border-radius: 30px;
+    background-color: #2d2d2d;
+    top: 5%;
+    float: left;
+  }
+
+  /* Background of recomendations site */
+  .recomended_text_background {
+    position: relative;
+    height: 15%;
+    width: 100%;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    background-color: #0c78f2;
+    bottom: 15%;
+  }
+
+  /* My favorite site, money site :) */
+  .ads {
+    position: relative;
+    height: 90%;
+    width: 48%;
+    border-radius: 30px;
+    background-color: #2d2d2d;
+    top: 5%;
+    float: right;
+  }
+
+  /* Background of my favorite site, money site :) */
+  .ads_text_background {
+    position: relative;
+    height: 15%;
+    width: 100%;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    background-color: #0c78f2;
+    bottom: 15%;
+  }
+
+  /* This is the place of the products */
+  .products {
+    position: relative;
+    height: 110vh;
+    width: 100%;
+    margin: 20px auto;
+    border-radius: 30px;
+    background-color: #2d2d2d;
+  }
+
+  /* Background of the products text  */
+  .products_text_background {
+    position: relative;
+    width: 100%;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    background-color: #0c78f2;
+  }
+
+
+  .product_list {
+    height: 85%;
+    width: 95%;
+    margin: 0 auto;
+    margin-top: 2.5%;
+    /* background-color: #b43434; */
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+
+  .product_list::-webkit-scrollbar {
+    width: 10px;
+    border-radius: 25px;
+    background-color: #3b3b3b;
+  }
+
+  .product_list::-webkit-scrollbar-thumb {
+    width: 10px;
+    border-radius: 25px;
+    background-color: #ffffff;
+  }
+
+  .product {
+    height: 45%;
+    width: 22%;
+    border-radius: 15px;
+    margin: 0 1.5% 3% 1.5%;
+    background-color: #0c78f2;
+    float: left;
+  }
+
+  .product_image_container {
+    height: 50%;
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 4%;
+    border-radius: 15px;
+  }
+
+  .product_image_container img {
+    height: 100%;
+    width: 100%;
+    border-radius: 15px;
+  }
+
+  .product_price_title {
+    height: 30%;
+    width: 100%;
+    /* background-color: blueviolet; */
+  }
+
+  .product_price {
+    color: #00ff00;
+    font-size: 25px;
+    margin: 0;
+  }
+
+  .product_name {
+    color: #ffffff;
+    font-size: 16px;
+    margin: 0;
+  }
+
+
+  .product_see_button {
+    position: relative;
+    height: 15%;
+    width: 50%;
+    margin: 0 auto;
+    /* background-color: bisque; */
+    top: 0%;
+    left: 0%;
+  }
+
+  .product_see_button a {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    color: #ffffff;
+    font-size: 18px;
+    text-decoration: none;
+    border: none;
+    padding: 10px 30%;
+    border-radius: 15px;
+    background-color: #2d2d2d;
+    bottom: 30%;
+  }
+
+  .product_see_button a:hover {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    color: #0c78f2;
+    font-size: 18px;
+    text-decoration: none;
+    border: none;
+    padding: 10px 30%;
+    border-radius: 15px;
+    background-color: #ffffff;
+    bottom: 30%;
+  }
+
+  /* ------------------------------------------------------------------------ */
+
+  /* This is footer background and brand properties */
+  footer {
+    position: relative;
+    height: 12%;
+    width: 100%;
+    color: #ffffff;
+    font-size: 2.5em;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 0 auto;
+    background-color: #2a2a2a;
+    top: 1%;
+  }
+
+
+  /* Footer text container */
+  .footer_text_container {
+    position: relative;
+    height: 45%;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    top: 20%;
+  }
+
+  /* Footer text properties */
+  .footer_text_container p, .footer_text_container p a {
+    position: relative;
+    display: inline-block;
+    color: #ffffff;
+    font-size: 5vmin;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-decoration: none;
+    bottom: 40%;
+    transition: 0.7s;
+  }
+
+  /* this generate a color change of footer text */
+  .footer_text_container p:hover, .footer_text_container p a:hover {
+    position: relative;
+    display: inline-block;
+    color: #0c78f2;
+    font-size: 5vmin;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-decoration: none;
+    bottom: 60%;
+    transition: 0.8s;
+  }
+
+  /* Who we are? */
+  .we {
+    position: relative;
+    display: inline-block;
+    margin-left: 25px;
+  }
+
+  /* Support to users */
+  .support {
+    position: relative;
+    display: inline-block;
+    margin-left: 25px;
+  }
+
+  /* Privacy terms */
+  .privacy {
+    position: relative;
+    display: inline-block;
+    margin-left: 25px;
+  }
+
+  /* Terms and conditions */
+  .tyc {
+    position: relative;
+    display: inline-block;
+    margin-left: 25px;
+  }
+
+  /* Copyright label */
+  .copyright {
+    position: relative;
+    color: #0c78f2;
+    font-size: 4vmin;
+    font-family: cursive;
+    text-align: center;
+    top: 15%;
+  }
+
+}
+
+@media (max-width: 425px) {
+
+  /* * {
+      border: 2px solid salmon;
+  } */
+
+  img {
+    height: 100px;
+    width: 100px;
+  }
+
+  /* This is easy, this is the body label */
+  body {
+    height: 1800px;
+    margin: 0;
+    background-color: #e6e6e6;
+  }
+
+  .dark_mode {
+    background-color: #000000;
+  }
+
+  .dark_mode_text {
+    color: #000000;
+  }
+
+  /* ------------------------------------------------------------------------ */
+
+  /* This is the header background, where is the title or search-bar */
+  .header_background {
+    position: relative;
+    height: 70px;
+    width: 100%;
+    background-color: #0c78f2;
+    z-index: 200;
+  }
+
+  /* Title of my pretty web */
+  .header_background h1 {
+    position: relative;
+    color: #ffffff;
+    font-size: 3.2em;
+    font-family: Impact;
+    text-align: center;
+    width: 100%;
+    margin: 0;
+  }
+
+  /* ------------------------------------------------------------------------ */
+
+  .search_form {
+    height: 80px;
+    width: 100%;
+    background-color: #2d2d2d;
+  }
+
+  /* This is the search-bar properties, here u can search ur products */
+  .search {
+    position: relative;
+    height: 35%;
+    width: 70%;
+    color: #2d2d2d;
+    font-size: 5vmin;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    border: none;
+    border-radius: 10px;
+    background-color: #ffffff;
+    top: 12%;
+    left: 15%;
+  }
+
+  .searchBarDarkMode {
+    position: relative;
+    height: 35%;
+    width: 70%;
+    color: #ffffff;
+    font-size: 5vmin;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    border: none;
+    border-radius: 10px;
+    background-color: #000000;
+    top: 10%;
+    left: 15%;
+  }
+
+  .login_button {
+    position: relative;
+    text-decoration: none;
+  }
+
+  .login_button p {
+    position: relative;
+    height: 25px;
+    width: 60%;
+    color: #ffffff;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 15px;
+    padding: 3px;
+    background-color: #0c78f2;
+    top: 5px;
+    left: 20%;
+    box-sizing: border-box;
+  }
+
+  .login_button p:hover {
+    position: relative;
+    height: 25px;
+    width: 60%;
+    color: #ffffff;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 15px;
+    background-color: #144883;
+    top: 5px;
+    left: 20%;
+    box-sizing: border-box;
+  }
+
+  /* Background color of the nav-bar */
+  .nav_background {
+    position: relative;
+    height: 70px;
+    width: 100%;
+    background-color: #2d2d2d;
+    top: 70px;
+  }
+
+  /* This is the options list container, i use it to center text */
+  .nav_background div {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    /* background-color: #b43434; */
+  }
+
+  .list {
+    margin: 0;
+    padding: 0;
+  }
+
+  .list li {
+    position: relative;
+    height: 25px;
+    width: 48%;
+    list-style: none;
+    margin: 0 1% 7px 1%;
+    border-radius: 15px;
+    background-color: #0c78f2;
+    top: 5px;
+    float: left;
+  }
+
+  .categories, .my_favs, .help, .account {
+    position: relative;
+    font-size: 1em;
+    bottom: 12px;
+  }
+
+  .categories a, .my_favs a, .help a, .account a {
+    color: #ffffff;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-decoration: none;
+  }
+
+  .change_color_button {
+    position: relative;
+    display: none;
+    height: 58px;
+    width: 10%;
+    color: #ffffff;
+    font-size: 3vw;
+    padding: 1.8%;
+    border: none;
+    border-radius: 15px;
+    padding: 0;
+    background-color: #0c78f2;
+    right: 3px;
+    bottom: 28px;
+    float: right;
+    z-index: 400;
+  }
+
+  .change_color_button_active {
+    position: relative;
+    display: none;
+    height: 58px;
+    width: 10%;
+    color: #ffffff;
+    font-size: 3vw;
+    padding: 1.8%;
+    border: none;
+    border-radius: 15px;
+    padding: 0;
+    background-color: #000000;
+    right: 3px;
+    bottom: 28px;
+    float: right;
+    z-index: 400;
+  }
+
+  /* ------------------------------------------------------------------------ */
+
+  /* This is the mother container of all content in the body */
+  .body_container {
+    position: relative;
+    height: 87%;
+    width: 95%;
+    color: #ffffff;
+    font-size: 2.5vw;
+    font-size: 6vmin;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    margin: 0 auto;
+    top: 11%;
+  }
+
+  /*  */
+  .recomendations_and_ads_container {
+    position: relative;
+    height: 800px;
+    width: 100%;
+    margin: 0 auto;
+    bottom: 100px;
+    /* background-color: cyan; */
+  }
+
+  /* Recomendations to do our buyers happy :) */
+  .recomended {
+    position: relative;
+    height: 44%;
+    width: 100%;
+    margin-bottom: 50px;
+    border-radius: 30px;
+    background-color: #2d2d2d;
+  }
+
+  /* Background of recomendations site */
+  .recomended_text_background {
+    position: relative;
+    height: 12%;
+    width: 100%;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    background-color: #0c78f2;
+    bottom: 5%;
+  }
+
+  /* My favorite site, money site :) */
+  .ads {
+    position: relative;
+    height: 44%;
+    width: 100%;
+    border-radius: 30px;
+    background-color: #2d2d2d;
+  }
+
+  /* Background of my favorite site, money site :) */
+  .ads_text_background {
+    position: relative;
+    height: 12%;
+    width: 100%;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    background-color: #0c78f2;
+    bottom: 5%;
+  }
+
+  #recomended_text {
+    position: relative;
+    font-size: 25px;
+    width: 80%;
+    left: 10%;
+    top: 15%;
+  }
+
+  #ads_textt {
+    position: relative;
+    font-size: 25px;
+    top: 15%;
+  }
+
+  /* ------------------------------------------------------------------------ */
+
+  /* This is the place of the products */
+  .products {
+    position: relative;
+    height: 600px;
+    width: 100%;
+    margin: 0px auto;
+    border-radius: 30px;
+    background-color: #2d2d2d;
+    bottom: 9%;
+  }
+
+  /* Background of the products text  */
+  .products_text_background {
+    position: relative;
+    height: 7%;
+    width: 100%;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    background-color: #0c78f2;
+  }
+
+  .products_text {
+    position: relative;
+    font-size: 25px;
+    top: 15%;
+  }
+
+  .product_list {
+    height: 85%;
+    width: 95%;
+    margin: 0 auto;
+    margin-top: 8%;
+    /* background-color: #b43434; */
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+
+  .product_list::-webkit-scrollbar {
+    width: 10px;
+    border-radius: 25px;
+    background-color: #3b3b3b;
+  }
+
+  .product_list::-webkit-scrollbar-thumb {
+    width: 10px;
+    border-radius: 25px;
+    background-color: #ffffff;
+  }
+
+  .product {
+    height: 48%;
+    width: 95%;
+    border-radius: 15px;
+    margin: 0 1.5% 3% 1.5%;
+    background-color: #0c78f2;
+    float: left;
+  }
+
+  .product_image_container {
+    height: 50%;
+    width: 95%;
+    margin: 0 auto;
+    margin-top: 3%;
+    border-radius: 15px;
+  }
+
+  .product_image_container img {
+    height: 100%;
+    width: 100%;
+    border-radius: 15px;
+  }
+
+  .product_price_title {
+    height: 30%;
+    width: 100%;
+    /* background-color: blueviolet; */
+  }
+
+  .product_price {
+    color: #00ff00;
+    font-size: 25px;
+    margin: 0;
+  }
+
+  .product_name {
+    color: #ffffff;
+    font-size: 16px;
+    margin: 0;
+  }
+
+  .product_see_button {
+    position: relative;
+    height: 15%;
+    width: 50%;
+    margin: 0 auto;
+    /* background-color: bisque; */
+    top: 5px;
+    left: 0%;
+  }
+
+  .product_see_button a {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    color: #ffffff;
+    font-size: 18px;
+    text-decoration: none;
+    border: none;
+    padding: 10px 30%;
+    border-radius: 15px;
+    background-color: #2d2d2d;
+    bottom: 30%;
+  }
+
+  .product_see_button a:hover {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    color: #0c78f2;
+    font-size: 18px;
+    text-decoration: none;
+    border: none;
+    padding: 10px 30%;
+    border-radius: 15px;
+    background-color: #ffffff;
+    bottom: 30%;
+  }
+
+  /* ------------------------------------------------------------------------ */
+
+  /* This is footer background and brand properties */
+  footer {
+    position: relative;
+    height: 270px;
+    width: 100%;
+    color: #ffffff;
+    font-size: 2.5em;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 0 auto;
+    background-color: #2a2a2a;
+    bottom: 4%;
+  }
+
+
+  /* Footer text container */
+  .footer_text_container {
+    height: 85%;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    /* background-color: coral; */
+  }
+
+  /* Footer text properties */
+  .footer_text_container p, .footer_text_container p a {
+    position: relative;
+    color: #ffffff;
+    font-size: 7vmin;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-decoration: none;
+    top: 5%;
+  }
+
+  /* this generate a color change of footer text */
+  .footer_text_container p:hover, .footer_text_container p a:hover {
+    position: relative;
+    color: #0c78f2;
+    font-size: 7vmin;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-decoration: none;
+    top: 5%;
+  }
+
+  /* Copyright label */
+  .copyright {
+    position: relative;
+    color: #0c78f2;
+    font-size: 4vmin;
+    font-family: cursive;
+    text-align: center;
+    bottom: 5%;
+  }
+}

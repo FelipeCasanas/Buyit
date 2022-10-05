@@ -1,0 +1,711 @@
+@media (min-width: 880px) {
+
+  /* This is easy, this is the body label */
+  body {
+    height: 1000px;
+    width: 100%;
+    margin: 0;
+    background-image: url('../Img/errorBackground.jpg');
+    background-size: auto;
+  }
+
+  .dark_mode {
+    background-color: #000000;
+  }
+
+  body::-webkit-scrollbar {
+    width: 10px;
+    background-color: #2d2d2d;
+  }
+
+  body::-webkit-scrollbar-thumb {
+    width: 10px;
+    border-radius: 0 20px 0 20px;
+    background-color: #0c78f2;
+  }
+
+  /* ------------------------------------------------------------------------ */
+
+  /* This is the header background, where is the title or search-bar */
+  .header_background {
+    position: relative;
+    height: 80px;
+    width: 100%;
+    background-color: #0c78f2;
+  }
+
+  /* Title of my pretty web */
+  .buyit_title {
+    position: relative;
+    display: inline-block;
+    width: 40%;
+    color: #ffffff;
+    font-size: 65px;
+    font-family: Impact;
+    margin: 0;
+    left: 30px;
+  }
+
+  .return_button {
+    position: relative;
+    height: 60%;
+    width: 10%;
+    text-decoration: none;
+    border-radius: 25px;
+    background-color: #2d2d2d;
+    top: 20%;
+    right: 15px;
+    float: right;
+    transition: 0.5s;
+  }
+
+  .return_button:hover {
+    position: relative;
+    height: 60%;
+    width: 10%;
+    border-radius: 25px;
+    background-color: #b43434;
+    float: right;
+    right: 25px;
+  }
+
+  .return_button p {
+    position: relative;
+    color: #ffffff;
+    font-size: 1.2em;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    bottom: 6px;
+  }
+
+  /* ------------------------------------------------------------------------ */
+
+  .main_container {
+    height: 75%;
+  }
+
+  .login_container {
+    position: relative;
+    display: inline-block;
+    height: 100%;
+    width: 40%;
+    left: 30%;
+  }
+
+  .utilities_container {
+    height: 100%;
+    width: 30%;
+    float: right;
+    /* background-color: burlywood; */
+  }
+
+  .utilities {
+    position: relative;
+    height: 80%;
+    width: 60px;
+    border: 3px solid #0c78f2;
+    border-radius: 25px;
+    background-color: #2a2a2a;
+    top: 10%;
+    right: 20px;
+    float: right;
+  }
+
+  .utilities_buttons {
+    position: relative;
+    height: 45px;
+    width: 45px;
+    margin: 15px 0;
+    border: none;
+    border-radius: 15px;
+    left: 11%;
+    transition: 0.2s;
+  }
+
+  .utilities_buttons:hover {
+    position: relative;
+    height: 45px;
+    width: 45px;
+    margin: 15px 0;
+    border: none;
+    border-radius: 50%;
+    background-color: #0c78f2;
+    left: 11%;
+    transition: 0.2s;
+  }
+
+  .utilities_buttons_active {
+    border: none;
+    border-radius: 50%;
+    background-color: #074994;
+  }
+
+  /* ------------------------------------------------------------------------ */
+
+  .user_icon_container {
+    height: 50%;
+  }
+
+  .user_icon_background {
+    position: relative;
+    height: 90%;
+    width: 60%;
+    border-radius: 50%;
+    background-color: #2a2a2a;
+    box-sizing: border-box;
+    top: 5%;
+    left: 20%;
+  }
+
+  .dark_user_icon_background {
+    background-color: #ffffff;
+  }
+
+  .user_icon_head {
+    position: relative;
+    height: 40%;
+    width: 40%;
+    border-radius: 50%;
+    background-color: #ffffff;
+    top: 7%;
+    left: 30%;
+  }
+
+  .dark_user_icon_head {
+    background-color: #000000;
+  }
+
+  .user_icon_body {
+    position: relative;
+    height: 40%;
+    width: 50%;
+    border-radius: 10% 10% 45% 45%;
+    background-color: #ffffff;
+    top: 12%;
+    left: 25%;
+  }
+
+  .dark_user_icon_body {
+    background-color: #000000;
+  }
+
+  /* ------------------------------------------------------------------------ */
+
+  form {
+    height: 42%;
+    width: 75%;
+    margin: 0 auto;
+    /* background-color: aqua; */
+  }
+
+  .inputs_container {
+    position: relative;
+    height: 75%;
+    padding: 0;
+    /* background-color: #495c61; */
+    bottom: 20px;
+  }
+
+  .input_div {
+    height: 45%;
+    width: 90%;
+    margin: 20px auto;
+    border: 2px solid #074994;
+    border-radius: 15px;
+    padding: 10px;
+    background-color: #0c78f2;
+    box-sizing: border-box;
+  }
+
+  .input_div p {
+    position: relative;
+    margin: 0;
+    color: #ffffff;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    top: 10%;
+  }
+
+  .dark_input_label {
+    color: #000000;
+  }
+
+  .input_div input {
+    position: relative;
+    height: 35%;
+    width: 80%;
+    color: #ffffff;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    border: none;
+    border-radius: 15px;
+    background-color: #2a2a2a;
+    top: 20%;
+    left: 10%;
+  }
+
+  .buttons_container {
+    position: relative;
+    height: 18%;
+    /* background-color: #ddda25; */
+    bottom: 10px;
+  }
+
+  .register_button, .login_button {
+    height: 80%;
+    width: 42%;
+    color: #ffffff;
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border: 2px solid #074994;
+    border-radius: 25px;
+    background-color: #0c78f2;
+  }
+
+  .register_button:hover, .login_button:hover {
+    height: 80%;
+    width: 42%;
+    color: #000000;
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border: none;
+    border-radius: 25px;
+    background-color: #074994;
+  }
+
+  .register_button {
+    position: relative;
+    top: 10%;
+    left: 5%;
+    float: left;
+  }
+
+  .login_button {
+    position: relative;
+    top: 10%;
+    right: 5%;
+    float: right;
+  }
+
+  .dark_mode_button_text {
+    color: #000000;
+  }
+
+  /* ------------------------------------------------------------------------ */
+
+  /* This is footer background and here is some text properties */
+  .footer_background {
+    position: relative;
+    display: block;
+    height: 200px;
+    width: 100%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 0 auto;
+    background-color: #2a2a2a;
+  }
+
+  /* Footer text container */
+  .footer_text_container {
+    position: relative;
+    display: block;
+    height: 50%;
+    width: 90%;
+    padding: 0 auto;
+    text-align: center;
+    top: 25%;
+    left: 5%;
+  }
+
+  /* Footer text properties */
+  .footer_text_container p, .footer_text_container p a {
+    position: relative;
+    display: inline-block;
+    color: #ffffff;
+    font-size: 60px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-decoration: none;
+    margin: 0 10px;
+  }
+
+  /* this generate a color change of footer text */
+  .footer_text_container p:hover, .footer_text_container p a:hover {
+    position: relative;
+    display: inline-block;
+    color: #0c78f2;
+    font-size: 60px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-decoration: none;
+    bottom: 20%;
+    transition: 0.6s;
+  }
+
+  /* Who we are? */
+  .we {
+    position: relative;
+    display: inline-block;
+    margin: 0 25px;
+  }
+
+  /* Support to users */
+  .support {
+    position: relative;
+    display: inline-block;
+    margin: 0 25px;
+  }
+
+  /* Privacy terms */
+  .privacy {
+    position: relative;
+    display: inline-block;
+    margin: 0 25px;
+  }
+
+  /* Terms and conditions */
+  .tyc {
+    position: relative;
+    display: inline-block;
+    margin: 0 25px;
+  }
+
+}
+
+@media (max-width: 425px) {
+
+  /* * {
+        border: 2px solid salmon;
+    } */
+
+  /* This is easy, this is the body label */
+  body {
+    height: 800px;
+    width: 100%;
+    margin: 0;
+    background-color: #e6e6e6;
+  }
+
+  .dark_mode {
+    background-color: #000000;
+  }
+
+  /* ------------------------------------------------------------------------ */
+
+  /* This is the header background, where is the title or search-bar */
+  .header_background {
+    position: relative;
+    height: 70px;
+    background-color: #0c78f2;
+  }
+
+  /* This is the header background, where is the title or search-bar */
+  .header_background {
+    position: relative;
+    height: 70px;
+    width: 100%;
+    background-color: #0c78f2;
+    z-index: 200;
+  }
+
+  /* Title of my pretty web */
+  .buyit_title {
+    position: relative;
+    color: #ffffff;
+    font-size: 3.2em;
+    font-family: Impact;
+    text-align: center;
+    width: 100%;
+    margin: 0;
+  }
+
+  .return_button {
+    text-decoration: none;
+  }
+
+  .return_button p {
+    height: 35%;
+    width: 100%;
+    color: #ffffff;
+    font-size: 1.2em;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    background-color: #2d2d2d;
+  }
+
+  .return_button p:hover {
+    height: 35%;
+    width: 100%;
+    color: #ffffff;
+    font-size: 1.2em;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    background-color: #074994;
+  }
+
+  /* ------------------------------------------------------------------------ */
+
+  .main_container {
+    height: 75%;
+    /* background-color: yellow; */
+  }
+
+  .utilities_container {
+    position: relative;
+    height: 10%;
+    width: 100%;
+    /* background-color: burlywood; */
+    bottom: 78%;
+  }
+
+  .utilities {
+    position: relative;
+    display: none;
+    height: 70%;
+    width: 97%;
+    margin: 0 auto;
+    border: 2px solid #0c78f2;
+    border-radius: 15px;
+    background-color: #2a2a2a;
+    top: 15%;
+  }
+
+  .utilities_buttons {
+    height: 60%;
+    width: 14%;
+    margin: 10px 1.32%;
+    border: none;
+    border-radius: 15px;
+    float: left;
+  }
+
+  .utilities_buttons_active {
+    height: 60%;
+    width: 14%;
+    color: #ffffff;
+    margin: 10px 1.32%;
+    border: none;
+    border-radius: 15px;
+    background-color: #074994;
+    float: left;
+  }
+
+  .login_container {
+    position: relative;
+    height: 80%;
+    width: 100%;
+    /* background-color: violet; */
+    top: 5%;
+  }
+
+  /* ------------------------------------------------------------------------ */
+
+  .user_icon_container {
+    height: 50%;
+    width: 100%;
+    margin: 0 auto;
+    /* background-color: tomato; */
+  }
+
+  .user_icon_background {
+    position: relative;
+    height: 90%;
+    width: 70%;
+    border-radius: 50%;
+    background-color: #2a2a2a;
+    box-sizing: border-box;
+    top: 3%;
+    left: 15%;
+  }
+
+  .dark_user_icon_background {
+    background-color: #ffffff;
+  }
+
+  .user_icon_head {
+    position: relative;
+    height: 40%;
+    width: 40%;
+    border-radius: 50%;
+    background-color: #ffffff;
+    top: 7%;
+    left: 30%;
+  }
+
+  .dark_user_icon_head {
+    background-color: #000000;
+  }
+
+  .user_icon_body {
+    position: relative;
+    height: 40%;
+    width: 50%;
+    border-radius: 10% 10% 45% 45%;
+    background-color: #ffffff;
+    top: 12%;
+    left: 25%;
+  }
+
+  .dark_user_icon_body {
+    background-color: #000000;
+  }
+
+  /* ------------------------------------------------------------------------ */
+
+  form {
+    position: relative;
+    height: 60%;
+    margin: 0 auto;
+    /* background-color: aqua; */
+    bottom: 3%;
+  }
+
+  .inputs_container {
+    position: relative;
+    height: 60%;
+    padding: 0;
+    /* background-color: #495c61; */
+  }
+
+  .input_div {
+    height: 45%;
+    width: 90%;
+    margin: 10px auto;
+    border: 2px solid #074994;
+    border-radius: 15px;
+    padding: 10px;
+    background-color: #0c78f2;
+    box-sizing: border-box;
+  }
+
+  .input_div p {
+    position: relative;
+    margin: 0;
+    color: #ffffff;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    top: 10%;
+  }
+
+  .dark_input_label {
+    color: #000000;
+  }
+
+  .input_div input {
+    position: relative;
+    height: 35%;
+    width: 80%;
+    color: #ffffff;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    border: none;
+    border-radius: 15px;
+    background-color: #2a2a2a;
+    top: 20%;
+    left: 10%;
+  }
+
+  .buttons_container {
+    position: relative;
+    height: 40%;
+    width: 100%;
+    /* background-color: #ddda25; */
+    bottom: 0px;
+  }
+
+  .register_button, .login_button {
+    position: relative;
+    height: 40%;
+    width: 90%;
+    color: #ffffff;
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border: 2px solid #074994;
+    border-radius: 25px;
+    background-color: #0c78f2;
+    left: 5%;
+  }
+
+  .register_button:hover, .login_button:hover {
+    position: relative;
+    height: 40%;
+    width: 90%;
+    color: #000000;
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border: 2px solid #0c78f2;
+    border-radius: 25px;
+    background-color: #074994;
+    left: 5%;
+  }
+
+  .register_button {
+    position: relative;
+    top: 50%;
+  }
+
+  .login_button {
+    position: relative;
+    bottom: 35%;
+  }
+
+  .dark_mode_button_text {
+    color: #000000;
+  }
+
+  /* ------------------------------------------------------------------------ */
+
+  /* This is footer background and brand properties */
+  footer {
+    position: relative;
+    height: 270px;
+    width: 100%;
+    color: #ffffff;
+    font-size: 2.5em;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 0 auto;
+    background-color: #2a2a2a;
+  }
+
+
+  /* Footer text container */
+  .footer_text_container {
+    position: relative;
+    height: 85%;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    /* background-color: coral; */
+    top: 20px;
+  }
+
+  /* Footer text properties */
+  .footer_text_container p, .footer_text_container p a {
+    position: relative;
+    color: #ffffff;
+    font-size: 7vmin;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-decoration: none;
+    top: 5%;
+  }
+
+  /* this generate a color change of footer text */
+  .footer_text_container p:hover, .footer_text_container p a:hover {
+    position: relative;
+    color: #0c78f2;
+    font-size: 7vmin;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-decoration: none;
+    top: 5%;
+  }
+
+  /* Copyright label */
+  .copyright {
+    position: relative;
+    color: #0c78f2;
+    font-size: 4vmin;
+    font-family: cursive;
+    text-align: center;
+    bottom: 55%;
+    z-index: 4000;
+  }
+}

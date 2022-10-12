@@ -5,6 +5,7 @@
     height: 245vh;
     margin: 0;
     background-color: #e6e6e6;
+    overflow-x: hidden;
   }
 
   .dark_mode {
@@ -290,10 +291,27 @@
   .recomended_Square {
     display: inline-block;
     height: 100%;
-    width: 30%;
+    width: 28%;
     margin: 0 0.5%;
     border-radius: 15px;
     background-color: #0c78f2;
+    transition: 0.6s;
+  }
+
+  .recomended_Square:hover {
+    display: inline-block;
+    height: 100%;
+    width: 35%;
+    margin: 0 0.5%;
+    border-radius: 15px;
+    background-color: #0c78f2;
+    transition: 0.6s;
+  }
+
+  .recomended_Square img {
+    height: 100%;
+    width: 100%;
+    border-radius: 15px;
   }
 
   /* My favorite site, money site :) */
@@ -326,12 +344,43 @@
   }
 
   .ad_Square {
+    position: relative;
     display: inline-block;
     height: 45%;
     width: 30%;
+    margin: 4px 1%;
+    border-radius: 15px;
+    background-color: #0c78f2;
+    transition: 0.6s;
+  }
+
+  .ad_Square:hover {
+    position: relative;
+    display: inline-block;
+    height: 50%;
+    width: 35%;
     margin: 5px 0.5%;
     border-radius: 15px;
     background-color: #0c78f2;
+    transition: 0.6s;
+  }
+
+  .ad_Square img {
+    height: 100%;
+    width: 100%;
+    border-radius: 15px;
+  }
+
+  .sponsor_title {
+    display: none;
+  }
+
+  .sponsor_description {
+    display: none;
+  }
+
+  .sponsor_contact_info {
+    display: none;
   }
 
   /* This is the place of the products */
@@ -391,6 +440,16 @@
     margin: 0 auto;
     margin-top: 4%;
     border-radius: 15px;
+    transition: 0.5s;
+  }
+
+  .product_image_container:hover {
+    height: 51%;
+    width: 65%;
+    margin: 0 auto;
+    margin-top: 4%;
+    border-radius: 15px;
+    transition: 0.5s;
   }
 
   .product_image_container img {
@@ -439,6 +498,7 @@
     padding: 10px 30%;
     border-radius: 15px;
     background-color: #2d2d2d;
+    transition: 0.6s;
     bottom: 30%;
   }
 
@@ -453,6 +513,7 @@
     padding: 10px 30%;
     border-radius: 15px;
     background-color: #ffffff;
+    transition: 0.6s;
     bottom: 30%;
   }
 

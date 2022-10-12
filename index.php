@@ -100,7 +100,7 @@
     <div class="body_container">
 
         <!-- Recomendations and ads container -->
-        <div class="recomendations_and_ads_container">
+        <div class="recomendations_and_ads_container" id="recomendationsAndAdsContainer">
 
             <!-- Recomendations div -->
             <div class="recomended">
@@ -111,9 +111,9 @@
                 </div>
 
                 <div class="recomended_group">
-                    <div class="recomended_Square"></div>
-                    <div class="recomended_Square"></div>
-                    <div class="recomended_Square"></div>
+                    <div class="recomended_Square"><img src="img/products/box.png" alt=""></div>
+                    <div class="recomended_Square"><img src="img/products/box.png" alt=""></div>
+                    <div class="recomended_Square"><img src="img/products/box.png" alt=""></div>
                 </div>
             </div>
 
@@ -127,7 +127,7 @@
 
                 <div class="ads_group">
                     <?php
-                        require('phpLogics/connection');
+                        require('phpLogics/connection.php');
 
                         $my_query = $my_link->query("SELECT * FROM ad WHERE active = 1");
 
@@ -138,12 +138,16 @@
                                 $title = $result['title'];
                                 $description = $result['description'];
                                 $contact_info = $result['contact_info'];
+
+                                echo '<div class="ad_Square">
+                                        <img src="img/products/box.png" alt="" onclick="showTile(this)">
+                                        <p class="sponsor_title">'.$title.'</p>
+                                        <p class="sponsor_description">'.$description.'</p>
+                                        <p class="sponsor_contact_info">'.$contact_info.'</p>
+                                      </div>';
                             }
                         }
                     ?>
-                    <div class="ad_Square">
-                        
-                    </div>
                 </div>
             </div>
 

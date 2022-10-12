@@ -109,6 +109,12 @@
                 <div class="recomended_text_background">
                     <p id="recomended_text">Recomendado</p>
                 </div>
+
+                <div class="recomended_group">
+                    <div class="recomended_Square"></div>
+                    <div class="recomended_Square"></div>
+                    <div class="recomended_Square"></div>
+                </div>
             </div>
 
             <!-- Ads div -->
@@ -117,6 +123,27 @@
                 <!-- Ads text background -->
                 <div class="ads_text_background">
                     <p id="ads_textt">Anuncios</p>
+                </div>
+
+                <div class="ads_group">
+                    <?php
+                        require('phpLogics/connection');
+
+                        $my_query = $my_link->query("SELECT * FROM ad WHERE active = 1");
+
+                        if(!$my_query) {
+                            header("Location: error.php?cod=1");
+                        } else {
+                            while($result = $my_query->fetch_array()) {
+                                $title = $result['title'];
+                                $description = $result['description'];
+                                $contact_info = $result['contact_info'];
+                            }
+                        }
+                    ?>
+                    <div class="ad_Square">
+                        
+                    </div>
                 </div>
             </div>
 

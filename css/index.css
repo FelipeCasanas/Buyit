@@ -153,7 +153,8 @@
   }
 
   /* Here´s font properties */
-  .list, .list li p a {
+  .list,
+  .list li p a {
     position: relative;
     color: #ffffff;
     font-size: 4vmin;
@@ -164,7 +165,8 @@
   }
 
   /* Here´s font properties when mouse it top */
-  .list, .list li p a:hover {
+  .list,
+  .list li p a:hover {
     position: relative;
     color: #929292;
     font-size: 4vmin;
@@ -278,6 +280,22 @@
     bottom: 15%;
   }
 
+  .recomended_group {
+    position: relative;
+    height: 80%;
+    /* background-color: #ffffff; */
+    bottom: 10%;
+  }
+
+  .recomended_Square {
+    display: inline-block;
+    height: 100%;
+    width: 30%;
+    margin: 0 0.5%;
+    border-radius: 15px;
+    background-color: #0c78f2;
+  }
+
   /* My favorite site, money site :) */
   .ads {
     position: relative;
@@ -298,6 +316,22 @@
     border-top-right-radius: 25px;
     background-color: #0c78f2;
     bottom: 15%;
+  }
+
+  .ads_group {
+    position: relative;
+    height: 80%;
+    /* background-color: #ffffff; */
+    bottom: 10%;
+  }
+
+  .ad_Square {
+    display: inline-block;
+    height: 45%;
+    width: 30%;
+    margin: 5px 0.5%;
+    border-radius: 15px;
+    background-color: #0c78f2;
   }
 
   /* This is the place of the products */
@@ -449,7 +483,8 @@
   }
 
   /* Footer text properties */
-  .footer_text_container p, .footer_text_container p a {
+  .footer_text_container p,
+  .footer_text_container p a {
     position: relative;
     display: inline-block;
     color: #ffffff;
@@ -461,7 +496,8 @@
   }
 
   /* this generate a color change of footer text */
-  .footer_text_container p:hover, .footer_text_container p a:hover {
+  .footer_text_container p:hover,
+  .footer_text_container p a:hover {
     position: relative;
     display: inline-block;
     color: #0c78f2;
@@ -673,13 +709,19 @@
     float: left;
   }
 
-  .categories, .my_favs, .help, .account {
+  .categories,
+  .my_favs,
+  .help,
+  .account {
     position: relative;
     font-size: 1em;
     bottom: 12px;
   }
 
-  .categories a, .my_favs a, .help a, .account a {
+  .categories a,
+  .my_favs a,
+  .help a,
+  .account a {
     color: #ffffff;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-decoration: none;
@@ -958,7 +1000,8 @@
   }
 
   /* Footer text properties */
-  .footer_text_container p, .footer_text_container p a {
+  .footer_text_container p,
+  .footer_text_container p a {
     position: relative;
     color: #ffffff;
     font-size: 7vmin;
@@ -968,7 +1011,8 @@
   }
 
   /* this generate a color change of footer text */
-  .footer_text_container p:hover, .footer_text_container p a:hover {
+  .footer_text_container p:hover,
+  .footer_text_container p a:hover {
     position: relative;
     color: #0c78f2;
     font-size: 7vmin;

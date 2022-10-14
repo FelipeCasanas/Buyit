@@ -44,6 +44,28 @@
 
 <body id="body">
 
+    <div class="pop-up_hidden" id="popUp">
+        <div class="pop-up">
+            <p class="pop-up_title" id="popUpTitle"></p>
+
+            <div class="pop-up_description_container">
+                <div class="pop-up_ad_container">
+                    <img src="img/products/box.png" alt="">
+                </div>
+                <p class="pop-up_description" id="popUpDescription"></p>
+            </div>
+
+            <div class="pop-up_contact_info_container">
+                <p class="pop-up_contact_info" id="popUpContactInfo"></p>
+            </div>
+            
+            <div class="buttons_div">
+                <button class="close_ad" id="closeAd">CERRAR</button>
+                <button class="contact_them">CONTACTAR</button>
+            </div>
+        </div>
+    </div>
+
     <!-- Header -->
     <header>
 
@@ -127,7 +149,7 @@
     <div class="body_container">
 
         <!-- Recomendations and ads container -->
-        <div class="recomendations_and_ads_container">
+        <div class="recomendations_and_ads_container" id="recomendationsAndAdsContainer">
 
             <!-- Recomendations div -->
             <div class="recomended">
@@ -135,6 +157,12 @@
                 <!-- Recomendations text background -->
                 <div class="recomended_text_background">
                     <p id="recomended_text">Recomendado</p>
+                </div>
+
+                <div class="recomended_group">
+                    <div class="recomended_Square"><img src="img/products/box.png" alt=""></div>
+                    <div class="recomended_Square"><img src="img/products/box.png" alt=""></div>
+                    <div class="recomended_Square"><img src="img/products/box.png" alt=""></div>
                 </div>
             </div>
 
@@ -144,6 +172,33 @@
                 <!-- Ads text background -->
                 <div class="ads_text_background">
                     <p id="ads_textt">Anuncios</p>
+                </div>
+
+                <div class="ads_group">
+                    <?php
+                        require('phpLogics/connection.php');
+
+                        $my_query = $my_link->query("SELECT * FROM ad WHERE active = 1");
+
+                        if(!$my_query) {
+                            header("Location: error.php?cod=1");
+                        } else {
+                            $i = 1;
+                            while($result = $my_query->fetch_array()) {
+                                $title = $result['title'];
+                                $description = $result['description'];
+                                $contact_info = $result['contact_info'];
+
+                                echo '<div class="ad_Square" onclick="showAd('.$i.')">
+                                        <img src="img/products/box.png" alt="" onclick="showTile(this)">
+                                        <p class="sponsor_title" id="sponsorTitle'.$i.'">'.$title.'</p>
+                                        <p class="sponsor_description" id="sponsorDescription'.$i.'">'.$description.'</p>
+                                        <p class="sponsor_contact_info" id="sponsorContactInfo'.$i.'">'.$contact_info.'</p>
+                                      </div>';
+                                $i++;
+                            }
+                        }
+                    ?>
                 </div>
             </div>
 

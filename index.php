@@ -18,6 +18,28 @@
 
 <body id="body">
 
+    <div class="pop-up_hidden" id="popUp">
+        <div class="pop-up">
+            <p class="pop-up_title" id="popUpTitle"></p>
+
+            <div class="pop-up_description_container">
+                <div class="pop-up_ad_container">
+                    <img src="img/products/box.png" alt="">
+                </div>
+                <p class="pop-up_description" id="popUpDescription"></p>
+            </div>
+
+            <div class="pop-up_contact_info_container">
+                <p class="pop-up_contact_info" id="popUpContactInfo"></p>
+            </div>
+            
+            <div class="buttons_div">
+                <button class="close_ad" id="closeAd">CERRAR</button>
+                <button class="contact_them">CONTACTAR</button>
+            </div>
+        </div>
+    </div>
+
     <!-- Header -->
     <header>
 
@@ -134,17 +156,19 @@
                         if(!$my_query) {
                             header("Location: error.php?cod=1");
                         } else {
+                            $i = 1;
                             while($result = $my_query->fetch_array()) {
                                 $title = $result['title'];
                                 $description = $result['description'];
                                 $contact_info = $result['contact_info'];
 
-                                echo '<div class="ad_Square">
+                                echo '<div class="ad_Square" onclick="showAd('.$i.')">
                                         <img src="img/products/box.png" alt="" onclick="showTile(this)">
-                                        <p class="sponsor_title">'.$title.'</p>
-                                        <p class="sponsor_description">'.$description.'</p>
-                                        <p class="sponsor_contact_info">'.$contact_info.'</p>
+                                        <p class="sponsor_title" id="sponsorTitle'.$i.'">'.$title.'</p>
+                                        <p class="sponsor_description" id="sponsorDescription'.$i.'">'.$description.'</p>
+                                        <p class="sponsor_contact_info" id="sponsorContactInfo'.$i.'">'.$contact_info.'</p>
                                       </div>';
+                                $i++;
                             }
                         }
                     ?>

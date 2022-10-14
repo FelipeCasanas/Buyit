@@ -1,4 +1,11 @@
 const body = document.getElementById('body');
+const popUp = document.getElementById('popUp');
+const closeAd = document.getElementById('closeAd');
+
+const popUpTitle = document.getElementById('popUpTitle');
+const popUpDescription = document.getElementById('popUpDescription');
+const popUpContactInfo = document.getElementById('popUpContactInfo');
+
 const darkModeButton = document.getElementById('change_color_button');
 const searchBar = document.getElementById('searchBar');
 const recomendedText = document.getElementById('recomended_text');
@@ -16,24 +23,26 @@ const changeColor = () => {
     productsText.classList.toggle('dark_mode_text');
 }
 
-const showTile = (tile) => {
-    let popUpDIV = document.createElement('div');
-    popUpDIV.style.height = "80%";
-    popUpDIV.style.width = "40%";
-    popUpDIV.style.backgroundColor = "red";
-    popUpDIV.style.margin = "0 auto";
-    popUpDIV.style.zIndex = 60000;
-    recomendationsAndAdsContainer.appendChild.appendChild(popUpDIV);
+const showAd = (tileNumber) => {
+    let title, description, contactInfo;
+    title = `sponsorTitle${tileNumber}`;
+    title = document.getElementById(title).textContent;
 
-    tile.style.height = "150%";
-    tile.style.width = "150%";
-    tile.style.bottom = "35%";
-    tile.style.right = "80%";
+    description = `sponsorDescription${tileNumber}`;
+    description = document.getElementById(description).textContent;
+
+    contactInfo = `sponsorContactInfo${tileNumber}`;
+    contactInfo = document.getElementById(contactInfo).textContent;
+
+    popUp.removeAttribute('class');
+    popUp.setAttribute('class', 'pop-up-background');
+
+    popUpTitle.textContent = title;
+    popUpDescription.textContent = description;
+    popUpContactInfo.textContent = contactInfo;
 }
 
-const hideTile = (tile) => {
-    tile.style.height = "45%";
-    tile.style.width = "30%";
-    tile.style.bottom = "0%";
-    tile.style.right = "0%";
-}
+closeAd.addEventListener('click', function () {
+    popUp.removeAttribute('class');
+    popUp.setAttribute('class', 'pop-up_hidden');
+});

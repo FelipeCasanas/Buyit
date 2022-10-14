@@ -2,17 +2,15 @@ const body = document.getElementById('body');
 const userIconBackground = document.getElementById('userIconBackground');
 const userIconHead = document.getElementById('userIconHead');
 const userIconBody = document.getElementById('userIconBody');
+const lightAndDarkMode = document.getElementById('lightAndDarkMode');
+
 
 const emailInputLabel = document.getElementById('emailInputLabel');
 const passwordInputLabel = document.getElementById('passwordInputLabel');
-
 const emailInput = document.getElementById('emailInput');
 const passwordInput = document.getElementById('passwordInput');
-
 const registerButton = document.getElementById('registerButton');
 const loginButton = document.getElementById('loginButton');
-
-const lightAndDarkMode = document.getElementById('lightAndDarkMode');
 
 lightAndDarkMode.addEventListener('click', () => {
   body.classList.toggle('dark_mode');

@@ -33,10 +33,7 @@
                 <p class="pop-up_contact_info" id="popUpContactInfo"></p>
             </div>
             
-            <div class="buttons_div">
-                <button class="close_ad" id="closeAd">CERRAR</button>
-                <button class="contact_them">CONTACTAR</button>
-            </div>
+            <div class="buttons_div" id="buttonsDiv"></div>
         </div>
     </div>
 
@@ -133,9 +130,32 @@
                 </div>
 
                 <div class="recomended_group">
-                    <div class="recomended_Square"><img src="img/products/box.png" alt=""></div>
-                    <div class="recomended_Square"><img src="img/products/box.png" alt=""></div>
-                    <div class="recomended_Square"><img src="img/products/box.png" alt=""></div>
+                    <?php
+                        require('phpLogics/connection.php');
+
+                        $my_query = $my_link->query("SELECT * FROM product WHERE exposed = 1;");
+
+                        if(!$my_query) {
+                            header("Location: error.php?cod=1");
+                        } else {
+                            $i = 1;
+                            while($result = $my_query->fetch_array()) {
+                                $product_id = $result['id'];
+                                $product_name = $result['product_name'];
+                                $description = $result['description'];
+                                $contact_info = $result['product_condition'];
+                                $operation = 0;
+
+                                echo '<div class="recomended_Square">
+                                        <img src="img/products/box.png" alt="" onclick="showAd('.$i.', '.$operation.', '.$product_id.')">
+                                        <p class="sponsor_title" id="recomendedTitle'.$i.'">'.$product_name.'</p>
+                                        <p class="sponsor_description" id="recomendedDescription'.$i.'">'.$description.'</p>
+                                        <p class="sponsor_contact_info" id="recomendedContactInfo'.$i.'">'.$contact_info.'</p>
+                                      </div>';
+                                $i++;
+                            }
+                        }
+                    ?>
                 </div>
             </div>
 
@@ -151,7 +171,7 @@
                     <?php
                         require('phpLogics/connection.php');
 
-                        $my_query = $my_link->query("SELECT * FROM ad WHERE active = 1");
+                        $my_query = $my_link->query("SELECT * FROM ad WHERE active = 1;");
 
                         if(!$my_query) {
                             header("Location: error.php?cod=1");
@@ -161,9 +181,11 @@
                                 $title = $result['title'];
                                 $description = $result['description'];
                                 $contact_info = $result['contact_info'];
+                                $redirect_to = $result['redirect_to'];
+                                $operation = 1;
 
-                                echo '<div class="ad_Square" onclick="showAd('.$i.')">
-                                        <img src="img/products/box.png" alt="" onclick="showTile(this)">
+                                echo '<div class="ad_Square">
+                                        <img src="img/products/box.png" alt="" onclick="showAd('.$i.', '.$operation.',`'.$redirect_to.'`)">
                                         <p class="sponsor_title" id="sponsorTitle'.$i.'">'.$title.'</p>
                                         <p class="sponsor_description" id="sponsorDescription'.$i.'">'.$description.'</p>
                                         <p class="sponsor_contact_info" id="sponsorContactInfo'.$i.'">'.$contact_info.'</p>

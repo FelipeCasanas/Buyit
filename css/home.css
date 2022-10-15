@@ -140,12 +140,17 @@
     .contact_them {
         height: 100%;
         width: 48%;
+        color: #000000;
         font-size: 18px;
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        text-align: center;
+        text-decoration: none;
         border: none;
         border-radius: 15px;
+        padding: 10px;
         background-color: #ffffff;
         transition: 0.5s;
+        box-sizing: border-box;
     }
 
     .close_ad:hover,
@@ -443,29 +448,47 @@
 
     .recomended_group {
         position: relative;
-        height: 80%;
-        /* background-color: #ffffff; */
-        bottom: 10%;
+        display: flex;
+        height: 84%;
+        width: 98%;
+        margin: 0 auto;
+        /* background-color: #e41f1f; */
+        bottom: 12%;
+        overflow-x: auto;
+        overflow-y: hidden;
+    }
+
+    .recomended_group::-webkit-scrollbar {
+        height: 10px;
+        width: 50%;
+        border-radius: 15px;
+        background-color: #2d2d2d;
+    }
+
+    .recomended_group::-webkit-scrollbar-thumb {
+        height: 10px;
+        width: 50%;
+        border-radius: 15px;
+        background-color: #ffffff;
     }
 
     .recomended_Square {
-        display: inline-block;
-        height: 100%;
-        width: 28%;
+        height: 99%;
+        line-height: 0px;
+        min-width: 195px;
         margin: 0 0.5%;
         border-radius: 15px;
         background-color: #0c78f2;
-        transition: 0.8s;
+        transition: 0.2s;
     }
 
     .recomended_Square:hover {
-        display: inline-block;
-        height: 100%;
-        width: 35%;
+        height: 97%;
+        line-height: 0px;
         margin: 0 0.5%;
         border-radius: 15px;
         background-color: #0c78f2;
-        transition: 0.8s;
+        transition: 0.2s;
     }
 
     .recomended_Square img {
@@ -501,6 +524,21 @@
         height: 80%;
         /* background-color: #ffffff; */
         bottom: 9%;
+        overflow-y: scroll;
+    }
+
+    .ads_group::-webkit-scrollbar {
+        height: 10px;
+        width: 50%;
+        border-radius: 15px;
+        background-color: #2d2d2d;
+    }
+
+    .ads_group::-webkit-scrollbar-thumb {
+        height: 10px;
+        width: 50%;
+        border-radius: 15px;
+        background-color: #ffffff;
     }
 
     .ad_Square {
@@ -511,7 +549,7 @@
         margin: 4px 1%;
         border-radius: 15px;
         background-color: #0c78f2;
-        transition: 0.6s;
+        transition: 0.8s;
     }
 
     .ad_Square:hover {
@@ -522,7 +560,7 @@
         margin: 5px 0.5%;
         border-radius: 15px;
         background-color: #0c78f2;
-        transition: 0.6s;
+        transition: 0.8s;
     }
 
     .ad_Square img {

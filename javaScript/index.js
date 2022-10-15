@@ -1,10 +1,10 @@
 const body = document.getElementById('body');
 const popUp = document.getElementById('popUp');
-const closeAd = document.getElementById('closeAd');
 
 const popUpTitle = document.getElementById('popUpTitle');
 const popUpDescription = document.getElementById('popUpDescription');
 const popUpContactInfo = document.getElementById('popUpContactInfo');
+const buttonsDiv = document.getElementById('buttonsDiv');
 
 const darkModeButton = document.getElementById('change_color_button');
 const searchBar = document.getElementById('searchBar');
@@ -23,26 +23,35 @@ const changeColor = () => {
     productsText.classList.toggle('dark_mode_text');
 }
 
-const showAd = (tileNumber) => {
+const showAd = (tileNumber, operation, redirectTo) => {
     let title, description, contactInfo;
-    title = `sponsorTitle${tileNumber}`;
-    title = document.getElementById(title).textContent;
 
-    description = `sponsorDescription${tileNumber}`;
-    description = document.getElementById(description).textContent;
+    if (operation == 0) {
+        title = `recomendedTitle${tileNumber}`;
+        title = document.getElementById(title).textContent;
 
-    contactInfo = `sponsorContactInfo${tileNumber}`;
-    contactInfo = document.getElementById(contactInfo).textContent;
+        description = `recomendedDescription${tileNumber}`;
+        description = document.getElementById(description).textContent;
 
-    popUp.removeAttribute('class');
-    popUp.setAttribute('class', 'pop-up-background');
+        contactInfo = `recomendedContactInfo${tileNumber}`;
+        contactInfo = document.getElementById(contactInfo).textContent;
+        buttonsDiv.innerHTML = `<a href="" class="close_ad" id="closeAd">CERRAR</a><a href="productView.php?id=${redirectTo}" class="contact_them">VER RECOMENDADO</a>`;
+    } else if (operation == 1) {
+        title = `sponsorTitle${tileNumber}`;
+        title = document.getElementById(title).textContent;
+
+        description = `sponsorDescription${tileNumber}`;
+        description = document.getElementById(description).textContent;
+
+        contactInfo = `sponsorContactInfo${tileNumber}`;
+        contactInfo = document.getElementById(contactInfo).textContent;
+        buttonsDiv.innerHTML = `<a href="" class="close_ad" id="closeAd">CERRAR</a><a href="${redirectTo}" class="contact_them">VER ANUNCIANTE</a>`;
+    }
 
     popUpTitle.textContent = title;
     popUpDescription.textContent = description;
     popUpContactInfo.textContent = contactInfo;
-}
 
-closeAd.addEventListener('click', function () {
     popUp.removeAttribute('class');
-    popUp.setAttribute('class', 'pop-up_hidden');
-});
+    popUp.setAttribute('class', 'pop-up-background');
+}

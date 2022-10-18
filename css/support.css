@@ -68,7 +68,7 @@ body::-webkit-scrollbar-thumb {
     position: relative;
     color: #ffffff;
     font-size: 1.2em;
-    font-family: 'Lucida Sans';
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-align: center;
     bottom: 6px;
 }
@@ -102,7 +102,9 @@ body::-webkit-scrollbar-thumb {
     margin: 30px 0;
 }
 
-.option1, .option2, .option3 {
+.option1,
+.option2,
+.option3 {
     position: relative;
     height: 80%;
     width: 28%;
@@ -115,7 +117,9 @@ body::-webkit-scrollbar-thumb {
     transition: 0.4s;
 }
 
-.option1:hover, .option2:hover, .option3:hover {
+.option1:hover,
+.option2:hover,
+.option3:hover {
     position: relative;
     height: 80%;
     width: 28%;
@@ -139,9 +143,12 @@ body::-webkit-scrollbar-thumb {
     float: left;
 }
 
-.option1 p, .option2 p, .option3 p {
+.option1 p,
+.option2 p,
+.option3 p {
     color: #ffffff;
     font-size: 5vmin;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     margin: 0;
 }
 
@@ -202,6 +209,7 @@ body::-webkit-scrollbar-thumb {
     display: inline-block;
     height: 25px;
     width: 25px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     margin: 7px;
 }
 
@@ -244,6 +252,7 @@ body::-webkit-scrollbar-thumb {
     height: 60%;
     width: 45%;
     color: #ffffff;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     margin-left: 3%;
     border: none;
     border-radius: 20px;
@@ -305,24 +314,26 @@ footer {
 }
 
 /* Footer text properties */
-.footer_text_container p, .footer_text_container p a {
+.footer_text_container p,
+.footer_text_container p a {
     position: relative;
     display: inline-block;
     color: #ffffff;
     font-size: 5vmin;
-    font-family: 'Gill Sans';
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-decoration: none;
     transition: 0.7s;
     overflow: hidden;
 }
 
 /* this generate a color change of footer text */
-.footer_text_container p:hover, .footer_text_container p a:hover {
+.footer_text_container p:hover,
+.footer_text_container p a:hover {
     position: relative;
     display: inline-block;
     color: #0c78f2;
     font-size: 5vmin;
-    font-family: 'Gill Sans';
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-decoration: none;
     bottom: 10%;
     transition: 0.8s;
@@ -362,6 +373,6 @@ footer {
     position: relative;
     color: #0c78f2;
     font-size: 4vmin;
-    font-family: cursive;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-align: center;
 }

@@ -1,11 +1,9 @@
 <?php
-    session_start(); 
-    $usr_id = $_SESSION['id'];
-    
-    if(!$usr_id) {
-        echo 'Session no iniciada, volver al index';
-        header('Location: phpLogics/error.php?cod=4');
-    } else {
+    require('phpLogics/connection.php');
+    require('phpLogics/methods.php');
+    $isLogged = validateCredentials();
+
+    if($isLogged == true) {
         $usr_name = $_SESSION['name'];
         $usr_sex = $_SESSION['sex'];
 
@@ -158,30 +156,8 @@
 
                 <div class="recomended_group">
                     <?php
-                        require('phpLogics/connection.php');
-
-                        $my_query = $my_link->query("SELECT * FROM product WHERE exposed = 1;");
-
-                        if(!$my_query) {
-                            header("Location: error.php?cod=1");
-                        } else {
-                            $i = 1;
-                            while($result = $my_query->fetch_array()) {
-                                $product_id = $result['id'];
-                                $product_name = $result['product_name'];
-                                $description = $result['description'];
-                                $contact_info = $result['product_condition'];
-                                $operation = 0;
-
-                                echo '<div class="recomended_Square">
-                                        <img src="img/products/box.png" alt="" onclick="showAd('.$i.', '.$operation.', '.$product_id.')">
-                                        <p class="sponsor_title" id="recomendedTitle'.$i.'">'.$product_name.'</p>
-                                        <p class="sponsor_description" id="recomendedDescription'.$i.'">'.$description.'</p>
-                                        <p class="sponsor_contact_info" id="recomendedContactInfo'.$i.'">'.$contact_info.'</p>
-                                      </div>';
-                                $i++;
-                            }
-                        }
+                        setRecomended();
+                        $my_link->close();
                     ?>
                 </div>
             </div>
@@ -195,31 +171,9 @@
                 </div>
 
                 <div class="ads_group">
-                <?php
-                        require('phpLogics/connection.php');
-
-                        $my_query = $my_link->query("SELECT * FROM ad WHERE active = 1;");
-
-                        if(!$my_query) {
-                            header("Location: error.php?cod=1");
-                        } else {
-                            $i = 1;
-                            while($result = $my_query->fetch_array()) {
-                                $title = $result['title'];
-                                $description = $result['description'];
-                                $contact_info = $result['contact_info'];
-                                $redirect_to = $result['redirect_to'];
-                                $operation = 1;
-
-                                echo '<div class="ad_Square">
-                                        <img src="img/products/box.png" alt="" onclick="showAd('.$i.', '.$operation.',`'.$redirect_to.'`)">
-                                        <p class="sponsor_title" id="sponsorTitle'.$i.'">'.$title.'</p>
-                                        <p class="sponsor_description" id="sponsorDescription'.$i.'">'.$description.'</p>
-                                        <p class="sponsor_contact_info" id="sponsorContactInfo'.$i.'">'.$contact_info.'</p>
-                                      </div>';
-                                $i++;
-                            }
-                        }
+                    <?php
+                        setAds();
+                        $my_link->close();
                     ?>
                 </div>
             </div>
@@ -235,43 +189,10 @@
             </div>
 
             <div class="product_list">
-
                 <?php
-                
-                    require('phpLogics/connection.php');
-                    $sentence = "SELECT * FROM product ORDER BY sold DESC LIMIT 50;";
-                    $my_query = $my_link->query($sentence);
-
-                    if(!$my_query) {
-                        header("Location: error.php?cod=1");
-                    } else {
-                        while($result = $my_query->fetch_array()) {
-                            $id = $result['id'];
-                            $product_name = strtoupper($result['product_name']);
-                            $product_condition = strtoupper($result['product_condition']);
-                            $price = $result['price'];
-
-                            echo '<div class="product">
-
-                            <div class="product_image_container">
-                                <img src="img/products/box.png" alt="imagen de prueba">
-                            </div>
-        
-                            <div class="product_price_title">
-                                <p class="product_price">$' . number_format($price,2,',','.') . '</p>
-                                <p class="product_name">' . $product_name . '</p>
-                            </div>
-        
-                            <div class="product_see_button">
-                                <a href="productView.php?id='.$id.'">Ver</a>
-                            </div>
-        
-                        </div>';
-                        }
-                    }
+                    setProducts();
                     $my_link->close();
                 ?>
-
             </div>
 
         </div>

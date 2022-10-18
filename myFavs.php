@@ -1,31 +1,8 @@
 <?php
-
     require('phpLogics/connection.php');
-    session_start(); 
+    require('phpLogics/methods.php');
 
-    if(isset($_GET['id'])) {
-        $usr_id = $_SESSION['id'];
-        $product_id = $_GET['id'];
-        
-        $sentence = "SELECT id FROM favourite WHERE user_id = '".$usr_id."' AND product_id = '".$product_id."';";
-        $my_query = $my_link->query($sentence);
-
-        if(!$my_query) {
-            header("Location: error.php?cod=1");
-        } else {
-            if($my_query->num_rows > 0) {
-                $sentence = "DELETE FROM favourite WHERE user_id = '".$usr_id."' AND product_id = '".$product_id."';";
-                $my_query = $my_link->query($sentence);
-
-                if(!$my_query) {
-                    header("Location: phpLogics/error.php?cod=7");
-                } else {
-                    echo '<h6 class="favourite_process_state">Favorito eliminado correctamente</h6>';
-                }
-            }
-        }
-    }
-
+    getUserFavourites();
 ?>
 
 <!DOCTYPE html>
@@ -81,48 +58,7 @@
                 <div class="downArrowContainer"><img src="img/downArrow.png" alt=""></div>
 
                     <?php
-
-                        $usr_id = $_SESSION['id'];
-
-                        $sentence = "SELECT product_id FROM favourite WHERE user_id = '".$usr_id."';";
-                        $my_query = $my_link->query($sentence);
-
-                        if(!$my_query) {
-                            header("Location: error.php?cod=1");
-                        } else {
-                            while($result = $my_query->fetch_array()) {
-
-                                $sentence2 = "SELECT * FROM product WHERE id = '".$result['product_id']."'";
-                                $product_info_query = $my_link->query($sentence2);
-
-                                if(!$product_info_query) {
-                                    header('Location: phpLogics/error.php?cod=5');
-                                } else {
-                                    while($product_info = $product_info_query->fetch_array()) {
-                                        $product_name = strtoupper($product_info['product_name']);
-                                        echo '<div class="product">
-    
-                                        <div class="product_img_container"><img src="img/products/box.png" alt="Foto del favorito"></div>
-    
-                                            <div class="product_info_container">
-                                                <div class="product_name_container"><a href="productView.php?id='.$product_info['id'].'" class="product_name">'.$product_name.'</a></div>
-                                                <div class="description_container"><p class="product_description">'.$product_info['description'].'</p></div>
-                                            </div>
-
-                                            <form action="myFavs.php" class="actions_container" method="get">
-                                                <p class="product_condition">'.strtoupper($product_info['product_condition']).'</p>
-                                                <p class="product_price">$'.number_format($product_info['price'],2,',','.').'</p>
-
-                                                <div>
-                                                    <a href="myFavs.php?id='.$product_info['id'].'">Eliminar</a>
-                                                </div>
-
-                                            </form>
-                                        </div>';
-                                    }
-                                }
-                            }
-                        }
+                        setFavProducts();
                         $my_link->close();
                     ?>
 

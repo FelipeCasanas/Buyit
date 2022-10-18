@@ -351,7 +351,17 @@
 
                 <button class="left_button" onClick="clearFields()">Limpiar</button>
 
-                <div class="my_web_preferences"></div>
+                <div class="my_web_preferences">
+                    <div>
+                        <div><p>Modo oscuro: </p></div>
+                    </div>
+                    
+                    <div>
+                        <form action="account.php" method="get">
+                            <input type="checkbox" name="dark_mode" id="">
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

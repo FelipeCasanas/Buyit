@@ -257,7 +257,8 @@
     float: left;
   }
 
-  .product_name, .product_description {
+  .product_name,
+  .product_description {
     margin: 0;
   }
 
@@ -550,16 +551,19 @@
     top: 60px;
   }
 
-  #free_shipping_checkbox, #warranty_checkbox {
+  #free_shipping_checkbox,
+  #warranty_checkbox {
     position: relative;
     display: inline-block;
     margin: 0 15px;
     top: 30%;
   }
 
-  #free_shipping_label, #warranty_label {
+  #free_shipping_label,
+  #warranty_label {
     position: relative;
     display: inline-block;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     top: 28%;
     right: 5%;
   }
@@ -590,7 +594,8 @@
   }
 
   /* Footer text properties */
-  .footer_text_container p, .footer_text_container p a {
+  .footer_text_container p,
+  .footer_text_container p a {
     position: relative;
     display: inline-block;
     color: #ffffff;
@@ -602,7 +607,8 @@
   }
 
   /* this generate a color change of footer text */
-  .footer_text_container p:hover, .footer_text_container p a:hover {
+  .footer_text_container p:hover,
+  .footer_text_container p a:hover {
     position: relative;
     display: inline-block;
     color: #0c78f2;
@@ -647,7 +653,7 @@
     position: relative;
     color: #0c78f2;
     font-size: 4vmin;
-    font-family: cursive;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-align: center;
   }
 }
@@ -907,7 +913,8 @@
     box-sizing: border-box;
   }
 
-  #left_div_general_container::-webkit-scrollbar, #left_div_general_container::-webkit-scrollbar-thumb {
+  #left_div_general_container::-webkit-scrollbar,
+  #left_div_general_container::-webkit-scrollbar-thumb {
     display: none;
   }
 
@@ -1089,7 +1096,8 @@
   }
 
   /* Footer text properties */
-  .footer_text_container p, .footer_text_container p a {
+  .footer_text_container p,
+  .footer_text_container p a {
     position: relative;
     color: #ffffff;
     font-size: 7vmin;
@@ -1099,7 +1107,8 @@
   }
 
   /* this generate a color change of footer text */
-  .footer_text_container p:hover, .footer_text_container p a:hover {
+  .footer_text_container p:hover,
+  .footer_text_container p a:hover {
     position: relative;
     color: #0c78f2;
     font-size: 7vmin;

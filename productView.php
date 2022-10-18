@@ -1,37 +1,42 @@
 <?php
-    session_start();
     require('phpLogics/connection.php');
+    require('phpLogics/methods.php');
+    $isLogged = validateCredentials();
 
-    if(isset($_GET['id'])) {
-        $id = $_GET['id'];
-        $_SESSION['product_id'] = $id;
-
-        $sentence = "SELECT * FROM favourite WHERE user_id = '".$_SESSION['id']."' AND product_id = '".$id."';";
-        $my_query = $my_link->query($sentence);
-
-        if(!$my_query) {
-            header("Location: error.php?cod=1");
-        } else {
-            
-            if($my_query->num_rows > 0) {
-                echo '<h6 class="favourite_process_state" id="addedToFavs">Añadido a favoritos</h6>';
-            }
-
-            $sentence = "SELECT * FROM product WHERE id = '".$id."';";
+    if($isLogged == true) {
+        if(isset($_GET['id'])) {
+            $id = $_GET['id'];
+            $_SESSION['product_id'] = $id;
+    
+            $sentence = "SELECT * FROM favourite WHERE user_id = '".$_SESSION['id']."' AND product_id = '".$id."';";
             $my_query = $my_link->query($sentence);
-
-            $result = $my_query->fetch_array();
-
-            $product_name = strtoupper($result['product_name']);
-            $description = $result['description'];
-            $product_condition = strtoupper($result['product_condition']);
-            $price = $result['price'];
-            $category = strtoupper($result['category']);
-            $available_units = $result['available_units'];
-            $sold = $result['sold'];
-            $seller = strtoupper($result['seller']);
+    
+            if(!$my_query) {
+                header("Location: error.php?cod=1");
+            } else {
+                
+                if($my_query->num_rows > 0) {
+                    echo '<h6 class="favourite_process_state" id="addedToFavs">Añadido a favoritos</h6>';
+                }
+    
+                $sentence = "SELECT * FROM product WHERE id = '".$id."';";
+                $my_query = $my_link->query($sentence);
+    
+                $result = $my_query->fetch_array();
+    
+                $product_name = strtoupper($result['product_name']);
+                $description = $result['description'];
+                $product_condition = strtoupper($result['product_condition']);
+                $price = $result['price'];
+                $category = strtoupper($result['category']);
+                $available_units = $result['available_units'];
+                $sold = $result['sold'];
+                $seller = strtoupper($result['seller']);
+            }
         }
     }
+
+    $my_link->close();
 
 ?>
 

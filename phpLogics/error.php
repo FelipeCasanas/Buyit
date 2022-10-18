@@ -23,6 +23,7 @@
 
             case 4:
                 $message = 'Sesión no iniciada';
+                $message_two = "";
             break;
 
             case 5:

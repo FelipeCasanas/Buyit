@@ -68,7 +68,7 @@ body::-webkit-scrollbar-thumb {
   position: relative;
   color: #ffffff;
   font-size: 1.2em;
-  font-family: 'Lucida Sans';
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   text-align: center;
   bottom: 6px;
 }
@@ -192,13 +192,23 @@ body::-webkit-scrollbar-thumb {
   top: 6%;
 }
 
-.window_one::-webkit-scrollbar, .window_two::-webkit-scrollbar, .window_three::-webkit-scrollbar, .window_four::-webkit-scrollbar, .window_five::-webkit-scrollbar, .window_six::-webkit-scrollbar {
+.window_one::-webkit-scrollbar,
+.window_two::-webkit-scrollbar,
+.window_three::-webkit-scrollbar,
+.window_four::-webkit-scrollbar,
+.window_five::-webkit-scrollbar,
+.window_six::-webkit-scrollbar {
   width: 10px;
   border-radius: 0 10px 10px 0;
   background-color: #2d2d2d;
 }
 
-.window_one::-webkit-scrollbar-thumb, .window_two::-webkit-scrollbar-thumb, .window_three::-webkit-scrollbar-thumb, .window_four::-webkit-scrollbar-thumb, .window_five::-webkit-scrollbar-thumb, .window_six::-webkit-scrollbar-thumb {
+.window_one::-webkit-scrollbar-thumb,
+.window_two::-webkit-scrollbar-thumb,
+.window_three::-webkit-scrollbar-thumb,
+.window_four::-webkit-scrollbar-thumb,
+.window_five::-webkit-scrollbar-thumb,
+.window_six::-webkit-scrollbar-thumb {
   width: 10px;
   border-radius: 10px;
   background-color: #0c78f2;
@@ -231,12 +241,13 @@ footer {
 }
 
 /* Footer text properties */
-.footer_text_container p, .footer_text_container p a {
+.footer_text_container p,
+.footer_text_container p a {
   position: relative;
   display: inline-block;
   color: #ffffff;
   font-size: 5vmin;
-  font-family: 'Gill Sans';
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   text-decoration: none;
   bottom: 45%;
   transition: 0.7s;
@@ -244,12 +255,13 @@ footer {
 }
 
 /* this generate a color change of footer text */
-.footer_text_container p:hover, .footer_text_container p a:hover {
+.footer_text_container p:hover,
+.footer_text_container p a:hover {
   position: relative;
   display: inline-block;
   color: #0c78f2;
   font-size: 5vmin;
-  font-family: 'Gill Sans';
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   text-decoration: none;
   bottom: 60%;
   transition: 0.8s;
@@ -289,7 +301,7 @@ footer {
   position: relative;
   color: #0c78f2;
   font-size: 4vmin;
-  font-family: cursive;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   text-align: center;
   top: 5%;
 }

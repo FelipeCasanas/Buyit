@@ -1,6 +1,8 @@
 <?php
     require('phpLogics/connection.php');
     require('phpLogics/methods.php');
+    session_start(); 
+    $_SESSION['id'] = null;
 ?>
 
 <!-- HTML5 document -->
@@ -37,7 +39,7 @@
             <div class="pop-up_contact_info_container">
                 <p class="pop-up_contact_info" id="popUpContactInfo"></p>
             </div>
-            
+
             <div class="buttons_div" id="buttonsDiv"></div>
         </div>
     </div>

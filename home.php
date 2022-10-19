@@ -56,7 +56,7 @@
             <div class="pop-up_contact_info_container">
                 <p class="pop-up_contact_info" id="popUpContactInfo"></p>
             </div>
-            
+
             <div class="buttons_div" id="buttonsDiv"></div>
         </div>
     </div>
@@ -72,7 +72,8 @@
 
             <!-- SearchBar & LoginButton -->
             <form action="phpLogics/productQuery.php" method="get" class="search_form">
-                <input class="search" id="searchBar" type="search" name="search" placeholder="Busca aqui" list="options">
+                <input class="search" id="searchBar" type="search" name="search" placeholder="Busca aqui"
+                    list="options">
                 <datalist id="options">
                     <option value="computador">Computador</option>
                     <option value="celular">Celular</option>

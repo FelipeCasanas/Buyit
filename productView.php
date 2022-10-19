@@ -8,8 +8,7 @@
             $id = $_GET['id'];
             $_SESSION['product_id'] = $id;
     
-            $sentence = "SELECT * FROM favourite WHERE user_id = '".$_SESSION['id']."' AND product_id = '".$id."';";
-            $my_query = $my_link->query($sentence);
+            $my_query = $my_link->query("SELECT * FROM favourite WHERE user_id = '".$_SESSION['id']."' AND product_id = '".$id."';");
     
             if(!$my_query) {
                 header("Location: error.php?cod=1");

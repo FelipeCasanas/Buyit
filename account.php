@@ -1,14 +1,11 @@
 <?php 
     require('phpLogics/connection.php');
-    session_start();
-    $usr_id = $_SESSION['id'];
-
-    if(!$usr_id) {
-        echo 'Session no iniciada, volver al index';
-        header('Location: phpLogics/error.php?cod=4');
-    } else {
-        $sentence = "SELECT * FROM my_user WHERE id = '".$usr_id."'";
-        $my_query = $my_link->query($sentence);
+    require('phpLogics/methods.php');
+    $isLogged = validateCredentials();
+ 
+    if($isLogged == true) {
+        $usr_id = $_SESSION['id'];
+        $my_query = $my_link->query("SELECT * FROM my_user WHERE id = '".$usr_id."';");
 
         if(!$my_query) {
             header('Location: phpLogics/error.php?cod=1');
@@ -21,130 +18,12 @@
             $usr_sex = $result['sex'];
             $usr_country = $result['country'];
             $usr_email = $result['email'];
+
+            $personalInfo = getUserData($birthDate, $usr_sex, $usr_country);
+            $age = $personalInfo[0]['age'];
+            $usr_sex = $personalInfo[0]['sex'];
+            $usr_country = $personalInfo[0]['country'];
         }
-    }
-
-    function getAge($birthDate) {
-        $birth = new DateTime($birthDate);
-        $now = new DateTime(date("Y-m-d"));
-        $diference = $now->diff($birth);
-        return $diference->format("%y");
-    }
-
-    if($usr_sex == 'f') {
-        $usr_sex = 'Mujer';
-    } else if($usr_sex == 'm') {
-        $usr_sex = 'Hombre';
-    } else {
-        $usr_sex = 'No binario';
-    }
-
-    switch($usr_country) {
-        case 'AF': $usr_country = 'Afganistan'; break;
-        case 'AL': $usr_country = 'Albania'; break;
-        case 'DZ': $usr_country = 'Algeria'; break;
-        case 'AS': $usr_country = 'Somoa Americana'; break;
-        case 'AD': $usr_country = 'Andorra'; break;
-        case 'AO': $usr_country = 'Angola'; break;
-        case 'AI': $usr_country = 'Anguila'; break;
-        case 'AR': $usr_country = 'Argentina'; break;
-        case 'AM': $usr_country = 'Armenia'; break;
-        case 'AW': $usr_country = 'Aruba'; break;
-        case 'AU': $usr_country = 'Australia'; break;
-        case 'AT': $usr_country = 'Austria'; break;
-        case 'AZ': $usr_country = 'Azerbaijan'; break;
-        case 'BS': $usr_country = 'Bahamas'; break;
-        case 'BH': $usr_country = 'Baréin'; break;
-        case 'BD': $usr_country = 'Bangladesh'; break;
-        case 'BB': $usr_country = 'Barbados'; break;
-        case 'BY': $usr_country = 'Bielorrusia'; break;
-        case 'BE': $usr_country = 'Belgica'; break;
-        case 'BZ': $usr_country = 'Belice'; break;
-        case 'BJ': $usr_country = 'Benin'; break;
-        case 'BM': $usr_country = 'Bermuda'; break;
-        case 'BT': $usr_country = 'Butan'; break;
-        case 'BO': $usr_country = 'Bolivia'; break;
-        case 'BA': $usr_country = 'Bosnia'; break;
-        case 'BW': $usr_country = 'Botsuana'; break;
-        case 'BR': $usr_country = 'Brazil'; break;
-        case 'BG': $usr_country = 'Bulgaria'; break;
-        case 'KH': $usr_country = 'Camboya'; break;
-        case 'CM': $usr_country = 'Camerún'; break;
-        case 'CA': $usr_country = 'Canada'; break;
-        case 'CV': $usr_country = 'Cabo Verde'; break;
-        case 'KY': $usr_country = 'Islas Caiman'; break;
-        case 'CF': $usr_country = 'R. Central Africa'; break;
-        case 'TD': $usr_country = 'Chad'; break;
-        case 'CL': $usr_country = 'Chile'; break;
-        case 'CN': $usr_country = 'China'; break;
-        case 'CO': $usr_country = 'Colombia'; break;
-        case 'KM': $usr_country = 'Comoros'; break;
-        case 'CG': $usr_country = 'República Democrática del Congo'; break;
-        case 'CR': $usr_country = 'Costa Rica'; break;
-        case 'HR': $usr_country = 'Croacia'; break;
-        case 'CU': $usr_country = 'Cuba'; break;
-        case 'CZ': $usr_country = 'Republica Checa'; break;
-        case 'DK': $usr_country = 'Dinamarca'; break;
-        case 'DO': $usr_country = 'Republica Dominicana'; break;
-        case 'EC': $usr_country = 'Ecuador'; break;
-        case 'EG': $usr_country = 'Egipto'; break;
-        case 'SV': $usr_country = 'El Salvador'; break;
-        case 'GQ': $usr_country = 'Guinea Ecuatorial'; break;
-        case 'EE': $usr_country = 'Estonia'; break;
-        case 'ET': $usr_country = 'Etiopia'; break;
-        case 'FI': $usr_country = 'Finlandia'; break;
-        case 'FR': $usr_country = 'Francia'; break;
-        case 'GF': $usr_country = 'Guyana Francesa'; break;
-        case 'GE': $usr_country = 'Georgia'; break;
-        case 'DE': $usr_country = 'Alemania'; break;
-        case 'GR': $usr_country = 'Grecia'; break;
-        case 'GT': $usr_country = 'Guatemala'; break;
-        case 'HT': $usr_country = 'Haiti'; break;
-        case 'HN': $usr_country = 'Honduras'; break;
-        case 'HK': $usr_country = 'Hong Kong'; break;
-        case 'HU': $usr_country = 'Hungary'; break;
-        case 'IS': $usr_country = 'IceLand'; break;
-        case 'IN': $usr_country = 'India'; break;
-        case 'ID': $usr_country = 'Indonesia'; break;
-        case 'IR': $usr_country = 'Iran'; break;
-        case 'IQ': $usr_country = 'Iraq'; break;
-        case 'IE': $usr_country = 'Irlanda'; break;
-        case 'IL': $usr_country = 'Israel'; break;
-        case 'IT': $usr_country = 'Italia'; break;
-        case 'JM': $usr_country = 'Jamaica'; break;
-        case 'JP': $usr_country = 'Japon'; break;
-        case 'KZ': $usr_country = 'Kazajistan'; break;
-        case 'KE': $usr_country = 'Kenia'; break;
-        case 'KR': $usr_country = 'Corea del Sur'; break;
-        case 'KW': $usr_country = 'Kuwait'; break;
-        case 'LT': $usr_country = 'Lituania'; break;
-        case 'LU': $usr_country = 'Luxemburgo'; break;
-        case 'MG': $usr_country = 'Madagascar'; break;
-        case 'MX': $usr_country = 'Mexico'; break;
-        case 'MC': $usr_country = 'Monaco'; break;
-        case 'NP': $usr_country = 'Nepal'; break;
-        case 'NL': $usr_country = 'Paises Bajos'; break;
-        case 'NI': $usr_country = 'Nicaragua'; break;
-        case 'PA': $usr_country = 'Panama'; break;
-        case 'PY': $usr_country = 'Paraguay'; break;
-        case 'PE': $usr_country = 'Peru'; break;
-        case 'PL': $usr_country = 'Polonia'; break;
-        case 'PT': $usr_country = 'Portugal'; break;
-        case 'PR': $usr_country = 'Puerto Rico'; break;
-        case 'QA': $usr_country = 'Qatar'; break;
-        case 'RO': $usr_country = 'Romania'; break;
-        case 'RU': $usr_country = 'Rusia'; break;
-        case 'SA': $usr_country = 'Arabia Saudita'; break;
-        case 'SG': $usr_country = 'Singapur'; break;
-        case 'ES': $usr_country = 'España'; break;
-        case 'SE': $usr_country = 'Suecia'; break;
-        case 'CH': $usr_country = 'Suiza'; break;
-        case 'AE': $usr_country = 'Emiratos Arabes'; break;
-        case 'GB': $usr_country = 'Reino Unido'; break;
-        case 'US': $usr_country = 'Estados Unidos'; break;
-        case 'UY': $usr_country = 'Uruguay'; break;
-        case 'VE': $usr_country = 'Venezuela'; break;
-        case 'VN': $usr_country = 'Vietnam'; break;
     }
 
     $my_link->close();
@@ -353,9 +232,11 @@
 
                 <div class="my_web_preferences">
                     <div>
-                        <div><p>Modo oscuro: </p></div>
+                        <div>
+                            <p>Modo oscuro: </p>
+                        </div>
                     </div>
-                    
+
                     <div>
                         <form action="account.php" method="get">
                             <input type="checkbox" name="dark_mode" id="">

@@ -158,7 +158,6 @@
                 <div class="recomended_group">
                     <?php
                         setRecomended();
-                        $my_link->close();
                     ?>
                 </div>
             </div>
@@ -174,7 +173,6 @@
                 <div class="ads_group">
                     <?php
                         setAds();
-                        $my_link->close();
                     ?>
                 </div>
             </div>
@@ -192,7 +190,6 @@
             <div class="product_list">
                 <?php
                     setProducts();
-                    $my_link->close();
                 ?>
             </div>
 

@@ -513,6 +513,7 @@
     height: 80%;
     /* background-color: #ffffff; */
     bottom: 9%;
+    overflow-x: hidden;
     overflow-y: scroll;
   }
 
@@ -822,6 +823,10 @@
     color: #000000;
   }
 
+  .pop-up_hidden {
+    display: none;
+  }
+
   /* ------------------------------------------------------------------------ */
 
   /* This is the header background, where is the title or search-bar */
@@ -1058,6 +1063,58 @@
     bottom: 5%;
   }
 
+  .recomended_group {
+    position: relative;
+    display: flex;
+    height: 78%;
+    width: 98%;
+    margin: 0 auto;
+    /* background-color: #e41f1f; */
+    top: 2%;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  .recomended_group::-webkit-scrollbar {
+    display: none;
+    height: 10px;
+    width: 50%;
+    border-radius: 15px;
+    background-color: #2d2d2d;
+  }
+
+  .recomended_group::-webkit-scrollbar-thumb {
+    height: 10px;
+    width: 50%;
+    border-radius: 15px;
+    background-color: #ffffff;
+  }
+
+  .recomended_Square {
+    height: 99%;
+    line-height: 0px;
+    min-width: 195px;
+    margin: 0 0.5%;
+    border-radius: 15px;
+    background-color: #0c78f2;
+    transition: 0.2s;
+  }
+
+  .recomended_Square:hover {
+    height: 97%;
+    line-height: 0px;
+    margin: 0 0.5%;
+    border-radius: 15px;
+    background-color: #0c78f2;
+    transition: 0.2s;
+  }
+
+  .recomended_Square img {
+    height: 100%;
+    width: 100%;
+    border-radius: 15px;
+  }
+
   /* My favorite site, money site :) */
   .ads {
     position: relative;
@@ -1076,6 +1133,58 @@
     border-top-right-radius: 25px;
     background-color: #0c78f2;
     bottom: 5%;
+  }
+
+  .ads_group {
+    position: relative;
+    display: flex;
+    height: 80%;
+    width: 98%;
+    margin: 0 auto;
+    /* background-color: #e41f1f; */
+    top: 2%;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  .ads_group::-webkit-scrollbar {
+    display: none;
+    height: 10px;
+    width: 50%;
+    border-radius: 15px;
+    background-color: #2d2d2d;
+  }
+
+  .ads_group::-webkit-scrollbar-thumb {
+    height: 10px;
+    width: 50%;
+    border-radius: 15px;
+    background-color: #ffffff;
+  }
+
+  .ad_Square {
+    height: 99%;
+    line-height: 0px;
+    min-width: 195px;
+    margin: 0 0.5%;
+    border-radius: 15px;
+    background-color: #0c78f2;
+    transition: 0.2s;
+  }
+
+  .ad_Square:hover {
+    height: 97%;
+    line-height: 0px;
+    margin: 0 0.5%;
+    border-radius: 15px;
+    background-color: #0c78f2;
+    transition: 0.2s;
+  }
+
+  .ad_Square img {
+    height: 100%;
+    width: 100%;
+    border-radius: 15px;
   }
 
   #recomended_text {

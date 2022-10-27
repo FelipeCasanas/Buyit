@@ -1,4 +1,3 @@
-
 <!-- HTML5 document -->
 <!DOCTYPE html>
 
@@ -63,8 +62,9 @@
                 </div>
 
                 <div class="buttons_container">
-                    <a href="register.php"><input type="button" class="register_button" id="registerButton" value="Registrarme"></a>
-                    <input type="submit" class="login_button" id="loginButton"value="Iniciar">
+                    <a href="register.php"><input type="button" class="register_button" id="registerButton"
+                            value="Registrarme"></a>
+                    <input type="submit" class="login_button" id="loginButton" value="Iniciar">
                 </div>
 
             </form>
@@ -84,7 +84,7 @@
         </div>
 
         <!-- **************************************************************************** -->
-        
+
         <!-- Footer -->
         <footer>
 

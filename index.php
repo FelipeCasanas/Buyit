@@ -1,8 +1,7 @@
 <?php
-    require('phpLogics/connection.php');
     require('phpLogics/methods.php');
     session_start(); 
-    $_SESSION['id'] = null;
+    $_SESSION['id'] = 0;
 ?>
 
 <!-- HTML5 document -->
@@ -139,7 +138,6 @@
                 <div class="recomended_group">
                     <?php
                         setRecomended();
-                        $my_link->close();
                     ?>
                 </div>
             </div>
@@ -155,7 +153,6 @@
                 <div class="ads_group">
                     <?php
                         setAds();
-                        $my_link->close();
                     ?>
                 </div>
             </div>
@@ -174,7 +171,6 @@
 
                 <?php
                     setProducts();
-                    $my_link->close();
                 ?>
 
             </div>

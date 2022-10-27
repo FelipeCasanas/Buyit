@@ -1,7 +1,3 @@
-<?php
-    require('phpLogics/connection.php');
-?>
-
 <!-- HTML5 document -->
 <!DOCTYPE html>
 
@@ -50,22 +46,26 @@
 
                 <div class="inputs_container">
                     <div class="left_input_div">
-                        <p class="dark_input_label"><label for="nameInput" id="nameInputLabel">Ingrese nombre</label></p>
+                        <p class="dark_input_label"><label for="nameInput" id="nameInputLabel">Ingrese nombre</label>
+                        </p>
                         <input type="text" name="name" id="nameInput" required autofocus>
                     </div>
 
                     <div class="right_input_div">
-                        <p class="dark_input_label"><label for="lastNameInput" id="lastNameInputLabel">Ingrese apellido</label></p>
+                        <p class="dark_input_label"><label for="lastNameInput" id="lastNameInputLabel">Ingrese
+                                apellido</label></p>
                         <input type="text" name="lastName" id="lastNameInput" required>
                     </div>
 
                     <div class="left_input_div">
-                        <p class="dark_input_label"><label for="emailInput" id="emailInputLabel">Ingrese email</label></p>
+                        <p class="dark_input_label"><label for="emailInput" id="emailInputLabel">Ingrese email</label>
+                        </p>
                         <input type="email" name="email" id="emailInput" required>
                     </div>
 
                     <div class="right_input_div">
-                        <p class="dark_input_label"><label for="passwordInput" id="passwordInputLabel">Ingrese contraseña</label></p>
+                        <p class="dark_input_label"><label for="passwordInput" id="passwordInputLabel">Ingrese
+                                contraseña</label></p>
                         <input type="password" name="password" id="passwordInput" required>
                     </div>
                 </div>

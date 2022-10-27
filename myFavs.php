@@ -55,10 +55,10 @@
 
                 <div id="left_div_general_container">
 
-                <div class="downArrowContainer"><img src="img/downArrow.png" alt=""></div>
+                    <div class="downArrowContainer"><img src="img/downArrow.png" alt=""></div>
 
                     <?php
-                        setFavProducts();
+                        setUserFavourites();
                         $my_link->close();
                     ?>
 

@@ -1,5 +1,40 @@
 <?php
 
+
+/*
+
+
+Code documentation:
+
+The methods is ordered by categories and the categories separed by blocks:
+1. User methods
+2. Products methods
+3. Other methods
+
+
+Category 1 have the blocks in the next order:
+1. validateCredentials()
+2. getUserData() and it methods: getAge(), getSex() and getCountry()
+3. updateUserPersonalInfo()
+4. getUserFavourites()
+5. setUserFavourites()
+
+
+Category 2 have the blocks in the next order:
+1. searchProducts()
+2. setRecomended()
+3. setAds()
+4. setProducts()
+5. boughtProduct()
+
+
+Category 2 have the blocks in the next order:
+1. getErrorCode()
+
+
+*/
+
+
 //This validate if user crendentials is OK, this used in important windows how Home, account etc
 function validateCredentials() {
     require('connection.php');
@@ -12,261 +47,6 @@ function validateCredentials() {
     } else {
         return true;
     }
-}
-
-
-/* ------------------------------------------------------------------------------------------------- */
-
-//Get a error code in it parameters an define what's the error, later return the error message
-function getErrorCode($error_code) {
-    switch($error_code) {
-
-        case 0:
-            $message = 'Error al conectar con la base de datos';
-            $message_two = "";
-        break;
-        
-        case 1:
-            $message = 'Error al obtener informacion con la base de datos';
-            $message_two = "";
-        break;
-
-        case 2:
-            $message = 'El usuario ya existe, por lo cual no se puede volver a crear';
-            $message_two = "";
-        break;
-
-        case 3:
-            $message = 'El usuario';
-            $message_two = 'existe, revise que haya digitado bien sus datos';
-        break;
-
-        case 4:
-            $message = 'Sesión no iniciada';
-            $message_two = "";
-        break;
-
-        case 5:
-            $message = 'No se pudo convertir el codigo de producto';
-            $message_two = "";
-        break;
-
-        case 6:
-            $message = 'El producto ya se añadio a favoritos';
-            $message_two = "";
-        break;
-
-        case 7:
-            $message = 'El producto no se pudo eliminar de favoritos';
-            $message_two = "";
-        break;
-
-        default:
-            $message = 'Error desconocido, por favor contacte al servicio tecnico';
-            $message_two = "";
-        break;
-    }
-
-    $messages[] = ['m1' => $message, 'm2' => $message_two];
-    return $messages;
-}
-
-/* ------------------------------------------------------------------------------------------------- */
-
-//this function search coincidences in product table and print that in screen
-function searchProducts() {
-    require('connection.php');
-    $product = $_GET['search'];
-                
-    $my_query = $my_link->query("SELECT * FROM product WHERE product_name LIKE '%".$product."%';");
-    if(!$my_query) {
-        header('Location: error.php?cod=1');
-    } else {
-        $total_results = $my_query->num_rows;
-        echo '
-            <div class="total_products_container">
-                <p id="totalSlots">Numero de resultados: ' . $total_results . '</p>
-            </div>';
-        while($result = $my_query->fetch_array()) {
-            $product_name = strtoupper($result['product_name']);
-            $description = $result['description'];
-            $product_condition = strtoupper($result['product_condition']);
-            $price = $result['price'];
-            $available_units = $result['available_units'];
-            $sold = $result['sold'];
-            $seller = strtoupper($result['seller']);
-            $warranty = $result['warranty'];
-            $favourites = $result['favourites'];
-            echo '<div class="product_container" id="productContainer">
-            
-            <div class="img_container">
-                <img src="../img/products/box.png" alt="product image">
-            </div>
-
-            <div class="info_and_interaction_container">
-
-                <div class="info_container">
-                    <div class="name_info_container">
-                        <p>' . $product_name . '</p>
-                    </div>
-                    <div class="condition_info_container">
-                        <p>' . $product_condition . '</p>
-                    </div>
-                    <div class="description_info_container">
-                        <p>' . $description . '</p>
-                    </div>
-                </div>
-
-                <div class="interaction_container">
-
-                    <div class="AyS_container">
-                        <p class="interaction_p">Disponibles: ' . $available_units . '</p>
-                        <p class="interaction_p_right">Vendido: ' . $sold . '</p>
-                    </div>
-
-                    <div class="price_container">
-                        <p class="price">$' . number_format($price,2,',','.') . '</p>
-                    </div>
-
-                    <div class="buttons_container">
-                        <button class="buy_button">Comprar</button>
-                        <button class="fav_button">Favoritos</button>
-                    </div>
-
-                    <div class="seller_container">
-                        <p class="seller">' . $seller . '</p>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-    ';
-        }
-    }
-}
-
-/* ------------------------------------------------------------------------------------------------- */
-
-//This do a query to get user favourites using his/her user id and product id
-function getUserFavourites() {
-    require('connection.php');
-    session_start(); 
-
-    if(isset($_GET['id'])) {
-        $usr_id = $_SESSION['id'];
-        $product_id = $_GET['id'];
-        
-        $my_query = $my_link->query("SELECT id FROM favourite WHERE user_id = '".$usr_id."' AND product_id = '".$product_id."';");
-
-        if(!$my_query) {
-            header("Location: error.php?cod=1");
-        } else {
-            if($my_query->num_rows > 0) {
-                $my_query = $my_link->query("DELETE FROM favourite WHERE user_id = '".$usr_id."' AND product_id = '".$product_id."';");
-
-                if(!$my_query) {
-                    header("Location: phpLogics/error.php?cod=7");
-                } else {
-                    echo '<h6 class="favourite_process_state">Favorito eliminado correctamente</h6>';
-                }
-            }
-        }
-    }
-}
-
-
-/* ------------------------------------------------------------------------------------------------- */
-
-//TO DOCUMENT LATER******
-function boughtProduct() {
-    require('connection.php');
-
-    if(isset($_GET['favourites'])) {
-        $my_query = $my_link->query("SELECT * FROM favourite WHERE user_id = '".$usr_id."' AND product_id = '".$product_id."';");
-    
-        if($my_query->num_rows > 0) {
-            header("Location: error.php?cod=6");
-        } else {
-            $my_query = $my_link->query("INSERT INTO favourite(user_id, product_id) VALUES ('".$usr_id."', '".$product_id."');");
-    
-            if(!$my_query) {
-                header("Location: error.php?cod=1");
-            } else {
-                header("Location: ../productView.php?id=$product_id");
-            }
-        }
-    }
-    
-    if(isset($_POST['variant']) && isset($_POST['sent_to']) && isset($_POST['address']) && isset($_POST['quantity']) && isset($_POST['city'])) {
-        echo $_POST['variant'].$_POST['sent_to'].$_POST['address'].$_POST['quantity'].$_POST['city'];
-    }
-}
-
-/* ------------------------------------------------------------------------------------------------- */
-
-//This method do account update operations to account.php using accountInfoUpdater.php 
-function updateUserPersonalInfo() {
-    require('connection.php');
-    $usr_id = $_SESSION['id'];
-
-    $my_query = $my_link->query("SELECT * FROM my_user WHERE id = '".$usr_id."';");
-    $result = $my_query->fetch_assoc();
-
-    // echo 'Nombre asignado';
-    if(isset($_POST['name'])) {
-        $ln = strtolower($_POST['name']);
-
-        if(strlen($ln) > 0) {
-            $my_link->query("UPDATE my_user SET name = '".$ln."' WHERE id = '".$usr_id."';");
-        }
-    }
-
-    // echo 'Apellido asignado';
-    if(isset($_POST['last_name'])) {
-        $ln = strtolower($_POST['last_name']);
-
-        if(strlen($ln) > 0) {
-            $my_link->query("UPDATE my_user SET last_name = '".$ln."' WHERE id = '".$usr_id."';");
-        }
-    }
-
-    // echo 'Sexo asignado';
-    if(isset($_POST['birthday'])) {
-        $ln = $_POST['birthday'];
-
-        if(strlen($ln) > 0) {
-            $my_link->query("UPDATE my_user SET birthday = '".$ln."' WHERE id = '".$usr_id."';");
-        }
-    }
-
-    // echo 'Sexo asignado';
-    if(isset($_POST['sex'])) {
-        $ln = $_POST['sex'];
-
-        if(strlen($ln) > 0) {
-            $my_link->query("UPDATE my_user SET sex = '".$ln."' WHERE id = '".$usr_id."';");
-        }
-    }
-
-    // echo 'Pais asignado';
-    if(isset($_POST['country'])) {
-        $ln = $_POST['country'];
-
-        if(strlen($ln) > 0) {
-             $my_link->query("UPDATE my_user SET country = '".$_POST['country']."' WHERE id = '".$usr_id."';");
-        }
-    }
-
-    // echo 'Email asignado';
-    if(isset($_POST['email'])) {
-        $ln = strtolower($_POST['email']);
-
-        if(strlen($ln) > 0) {
-            $my_link->query("UPDATE my_user SET email = '".$ln."' WHERE id = '".$usr_id."';");
-        }
-    }   
 }
 
 
@@ -419,107 +199,109 @@ function getCountry($usr_country) {
     return $usr_country;
 }
 
-/* ------------------------------------------------------------------------------------------------- */ 
 
-//Index and home page PHP methods to show Recomended products, Ads and Products
+/* ------------------------------------------------------------------------------------------------- */
 
-    //Method to print recomended products in Index an Home page
-    function setRecomended() {
-        require('connection.php');
-        $my_query = $my_link->query("SELECT * FROM product WHERE exposed = 1;");
+//This method do account update operations to account.php using accountInfoUpdater.php 
+function updateUserPersonalInfo() {
+    require('connection.php');
+    $usr_id = $_SESSION['id'];
+
+    $my_query = $my_link->query("SELECT * FROM my_user WHERE id = '".$usr_id."';");
+    $result = $my_query->fetch_assoc();
+
+    // echo 'Nombre asignado';
+    if(isset($_POST['name'])) {
+        $ln = strtolower($_POST['name']);
+
+        if(strlen($ln) > 0) {
+            $my_link->query("UPDATE my_user SET name = '".$ln."' WHERE id = '".$usr_id."';");
+        }
+    }
+
+    // echo 'Apellido asignado';
+    if(isset($_POST['last_name'])) {
+        $ln = strtolower($_POST['last_name']);
+
+        if(strlen($ln) > 0) {
+            $my_link->query("UPDATE my_user SET last_name = '".$ln."' WHERE id = '".$usr_id."';");
+        }
+    }
+
+    // echo 'Sexo asignado';
+    if(isset($_POST['birthday'])) {
+        $ln = $_POST['birthday'];
+
+        if(strlen($ln) > 0) {
+            $my_link->query("UPDATE my_user SET birthday = '".$ln."' WHERE id = '".$usr_id."';");
+        }
+    }
+
+    // echo 'Sexo asignado';
+    if(isset($_POST['sex'])) {
+        $ln = $_POST['sex'];
+
+        if(strlen($ln) > 0) {
+            $my_link->query("UPDATE my_user SET sex = '".$ln."' WHERE id = '".$usr_id."';");
+        }
+    }
+
+    // echo 'Pais asignado';
+    if(isset($_POST['country'])) {
+        $ln = $_POST['country'];
+
+        if(strlen($ln) > 0) {
+             $my_link->query("UPDATE my_user SET country = '".$_POST['country']."' WHERE id = '".$usr_id."';");
+        }
+    }
+
+    // echo 'Email asignado';
+    if(isset($_POST['email'])) {
+        $ln = strtolower($_POST['email']);
+
+        if(strlen($ln) > 0) {
+            $my_link->query("UPDATE my_user SET email = '".$ln."' WHERE id = '".$usr_id."';");
+        }
+    }   
+    $my_link->close();
+}
+
+
+/* ------------------------------------------------------------------------------------------------- */
+
+//This do a query to get user favourites using his/her user id and product id
+function getUserFavourites() {
+    require('connection.php');
+    session_start(); 
+
+    if(isset($_GET['id'])) {
+        $usr_id = $_SESSION['id'];
+        $product_id = $_GET['id'];
+        
+        $my_query = $my_link->query("SELECT id FROM favourite WHERE user_id = '".$usr_id."' AND product_id = '".$product_id."';");
 
         if(!$my_query) {
             header("Location: error.php?cod=1");
         } else {
-            $i = 1;
-            while($result = $my_query->fetch_array()) {
-                $product_id = $result['id'];
-                $product_name = $result['product_name'];
-                $description = $result['description'];
-                $contact_info = $result['product_condition'];
-                $operation = 0;
+            if($my_query->num_rows > 0) {
+                $my_query = $my_link->query("DELETE FROM favourite WHERE user_id = '".$usr_id."' AND product_id = '".$product_id."';");
 
-                echo '<div class="recomended_Square">
-                        <img src="img/products/box.png" alt="" onclick="showAd('.$i.', '.$operation.', '.$product_id.')">
-                        <p class="sponsor_title" id="recomendedTitle'.$i.'">'.$product_name.'</p>
-                        <p class="sponsor_description" id="recomendedDescription'.$i.'">'.$description.'</p>
-                        <p class="sponsor_contact_info" id="recomendedContactInfo'.$i.'">'.$contact_info.'</p>
-                        </div>';
-                $i++;
+                if(!$my_query) {
+                    header("Location: phpLogics/error.php?cod=7");
+                } else {
+                    echo '<h6 class="favourite_process_state">Favorito eliminado correctamente</h6>';
+                }
             }
         }
     }
-
-    //Method to print paid ads in Index an Home page
-    function setAds() {
-        require('connection.php');
-        $my_query = $my_link->query("SELECT * FROM ad WHERE active = 1;");
-
-        if(!$my_query) {
-            header("Location: error.php?cod=1");
-        } else {
-            $i = 1;
-            while($result = $my_query->fetch_array()) {
-                $title = $result['title'];
-                $description = $result['description'];
-                $contact_info = $result['contact_info'];
-                $redirect_to = $result['redirect_to'];
-                $operation = 1;
-
-                echo '<div class="ad_Square">
-                        <img src="img/products/box.png" alt="" onclick="showAd('.$i.', '.$operation.',`'.$redirect_to.'`)">
-                        <p class="sponsor_title" id="sponsorTitle'.$i.'">'.$title.'</p>
-                        <p class="sponsor_description" id="sponsorDescription'.$i.'">'.$description.'</p>
-                        <p class="sponsor_contact_info" id="sponsorContactInfo'.$i.'">'.$contact_info.'</p>
-                        </div>';
-                $i++;
-            }
-        }
-    }
-
-    //Method to print products in Index an Home page
-    function setProducts() {
-        require('connection.php');
-        $my_query = $my_link->query("SELECT * FROM product ORDER BY sold DESC LIMIT 50;");
-
-        if(!$my_query) {
-            header("Location: error.php?cod=1");
-        } else {
-            while($result = $my_query->fetch_array()) {
-                $id = $result['id'];
-                $product_name = strtoupper($result['product_name']);
-                $product_condition = strtoupper($result['product_condition']);
-                $price = $result['price'];
-
-                echo '<div class="product">
-
-                <div class="product_image_container">
-                    <img src="img/products/box.png" alt="imagen de prueba">
-                </div>
-        
-                <div class="product_price_title">
-                <p class="product_price">$' . number_format($price,2,',','.') . '</p>
-                    <p class="product_name">' . $product_name . '</p>
-                </div>
-        
-                <div class="product_see_button">
-                    <a href="productView.php?id='.$id.'">Ver</a>
-                </div>
-        
-                </div>';
-            }
-        }
-    }
-
-
-/* ------------------------------------------------------------------------------------------------- */ 
-
+    $my_link->close();
+}
 
 
 /* ------------------------------------------------------------------------------------------------- */ 
 
 //This function get the products the user liked and show that in myFavs.php page
-function setFavProducts() {
+function setUserFavourites() {
     require('connection.php');
     $usr_id = $_SESSION['id'];
 
@@ -560,7 +342,283 @@ function setFavProducts() {
             }
         }
     }
+    $my_link->close();
 }
 
+
+/* ------------------------------------------------------------------------------------------------- */
+
+
+
+
+/* ------------------------------------------------------------------------------------------------- */
+
+
+//this function search coincidences in product table and print that in screen
+function searchProducts() {
+    require('connection.php');
+    $product = $_GET['search'];
+                
+    $my_query = $my_link->query("SELECT * FROM product WHERE product_name LIKE '%".$product."%';");
+    if(!$my_query) {
+        header('Location: error.php?cod=1');
+    } else {
+        $total_results = $my_query->num_rows;
+        echo '
+            <div class="total_products_container">
+                <p id="totalSlots">Numero de resultados: ' . $total_results . '</p>
+            </div>';
+        while($result = $my_query->fetch_array()) {
+            $product_name = strtoupper($result['product_name']);
+            $description = $result['description'];
+            $product_condition = strtoupper($result['product_condition']);
+            $price = $result['price'];
+            $available_units = $result['available_units'];
+            $sold = $result['sold'];
+            $seller = strtoupper($result['seller']);
+            $warranty = $result['warranty'];
+            $favourites = $result['favourites'];
+            echo '<div class="product_container" id="productContainer">
+            
+            <div class="img_container">
+                <img src="../img/products/box.png" alt="product image">
+            </div>
+
+            <div class="info_and_interaction_container">
+
+                <div class="info_container">
+                    <div class="name_info_container">
+                        <p>' . $product_name . '</p>
+                    </div>
+                    <div class="condition_info_container">
+                        <p>' . $product_condition . '</p>
+                    </div>
+                    <div class="description_info_container">
+                        <p>' . $description . '</p>
+                    </div>
+                </div>
+
+                <div class="interaction_container">
+
+                    <div class="AyS_container">
+                        <p class="interaction_p">Disponibles: ' . $available_units . '</p>
+                        <p class="interaction_p_right">Vendido: ' . $sold . '</p>
+                    </div>
+
+                    <div class="price_container">
+                        <p class="price">$' . number_format($price,2,',','.') . '</p>
+                    </div>
+
+                    <div class="buttons_container">
+                        <button class="buy_button">Comprar</button>
+                        <button class="fav_button">Favoritos</button>
+                    </div>
+
+                    <div class="seller_container">
+                        <p class="seller">' . $seller . '</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    ';
+        }
+    }
+    $my_link->close();
+}
+
+
+/* ------------------------------------------------------------------------------------------------- */
+
+//Index and home page PHP methods to show Recomended products, Ads and Products
+
+//Method to print recomended products in Index an Home page
+function setRecomended() {
+    require('connection.php');
+    $my_query = $my_link->query("SELECT * FROM product WHERE exposed = 1;");
+    
+    if(!$my_query) {
+        header("Location: error.php?cod=1");
+    } else {
+        $i = 1;
+        while($result = $my_query->fetch_array()) {
+            $product_id = $result['id'];
+            $product_name = $result['product_name'];
+            $description = $result['description'];
+            $contact_info = $result['product_condition'];
+            $operation = 0;
+            
+            echo '<div class="recomended_Square">
+                    <img src="img/products/box.png" alt="" onclick="showAd('.$i.', '.$operation.', '.$product_id.')">
+                    <p class="sponsor_title" id="recomendedTitle'.$i.'">'.$product_name.'</p>
+                    <p class="sponsor_description" id="recomendedDescription'.$i.'">'.$description.'</p>
+                    <p class="sponsor_contact_info" id="recomendedContactInfo'.$i.'">'.$contact_info.'</p>
+                    </div>';
+            $i++;
+        }
+    }
+    $my_link->close();
+}
+
+
+/* ------------------------------------------------------------------------------------------------- */
+
+//Method to print paid ads in Index an Home page
+function setAds() {
+    require('connection.php');
+    $my_query = $my_link->query("SELECT * FROM ad WHERE active = 1;");
+
+    if(!$my_query) {
+        header("Location: error.php?cod=1");
+    } else {
+        $i = 1;
+        while($result = $my_query->fetch_array()) {
+            $title = $result['title'];
+            $description = $result['description'];
+            $contact_info = $result['contact_info'];
+            $redirect_to = $result['redirect_to'];
+            $operation = 1;
+
+            echo '<div class="ad_Square">
+                    <img src="img/products/box.png" alt="" onclick="showAd('.$i.', '.$operation.',`'.$redirect_to.'`)">
+                    <p class="sponsor_title" id="sponsorTitle'.$i.'">'.$title.'</p>
+                    <p class="sponsor_description" id="sponsorDescription'.$i.'">'.$description.'</p>
+                    <p class="sponsor_contact_info" id="sponsorContactInfo'.$i.'">'.$contact_info.'</p>
+                    </div>';
+            $i++;
+        }
+    }
+    $my_link->close();
+}
+
+
+/* ------------------------------------------------------------------------------------------------- */
+    
+//Method to print products in Index an Home page
+function setProducts() {
+    require('connection.php');
+    $my_query = $my_link->query("SELECT * FROM product ORDER BY sold DESC LIMIT 50;");
+    if(!$my_query) {
+        header("Location: error.php?cod=1");
+    } else {
+        while($result = $my_query->fetch_array()) {
+            $id = $result['id'];
+            $product_name = strtoupper($result['product_name']);
+            $product_condition = strtoupper($result['product_condition']);
+            $price = $result['price'];
+            
+            echo '<div class="product">
+            <div class="product_image_container">
+                <img src="img/products/box.png" alt="imagen de prueba">
+            </div>
+    
+            <div class="product_price_title">
+            <p class="product_price">$' . number_format($price,2,',','.') . '</p>
+                <p class="product_name">' . $product_name . '</p>
+            </div>
+    
+            <div class="product_see_button">
+                <a href="productView.php?id='.$id.'">Ver</a>
+            </div>
+    
+            </div>';
+        }
+    }
+    $my_link->close();
+}
+
+
+/* ------------------------------------------------------------------------------------------------- */
+
+//TO DOCUMENT LATER******
+function boughtProduct() {
+    require('connection.php');
+
+    if(isset($_GET['favourites'])) {
+        $my_query = $my_link->query("SELECT * FROM favourite WHERE user_id = '".$usr_id."' AND product_id = '".$product_id."';");
+    
+        if($my_query->num_rows > 0) {
+            header("Location: error.php?cod=6");
+        } else {
+            $my_query = $my_link->query("INSERT INTO favourite(user_id, product_id) VALUES ('".$usr_id."', '".$product_id."');");
+    
+            if(!$my_query) {
+                header("Location: error.php?cod=1");
+            } else {
+                header("Location: ../productView.php?id=$product_id");
+            }
+        }
+    }
+    
+    if(isset($_POST['variant']) && isset($_POST['sent_to']) && isset($_POST['address']) && isset($_POST['quantity']) && isset($_POST['city'])) {
+        echo $_POST['variant'].$_POST['sent_to'].$_POST['address'].$_POST['quantity'].$_POST['city'];
+    }
+    $my_link->close();
+}
+
+
+/* ------------------------------------------------------------------------------------------------- */
+
+
+
+
+/* ------------------------------------------------------------------------------------------------- */
+
+
+//Get a error code in it parameters an define what's the error, later return the error message
+function getErrorCode($error_code) {
+    switch($error_code) {
+
+        case 0:
+            $message = 'Error al conectar con la base de datos';
+            $message_two = "";
+        break;
+        
+        case 1:
+            $message = 'Error al obtener informacion con la base de datos';
+            $message_two = "";
+        break;
+
+        case 2:
+            $message = 'El usuario ya existe, por lo cual no se puede volver a crear';
+            $message_two = "";
+        break;
+
+        case 3:
+            $message = 'El usuario';
+            $message_two = 'existe, revise que haya digitado bien sus datos';
+        break;
+
+        case 4:
+            $message = 'Sesión no iniciada';
+            $message_two = "";
+        break;
+
+        case 5:
+            $message = 'No se pudo convertir el codigo de producto';
+            $message_two = "";
+        break;
+
+        case 6:
+            $message = 'El producto ya se añadio a favoritos';
+            $message_two = "";
+        break;
+
+        case 7:
+            $message = 'El producto no se pudo eliminar de favoritos';
+            $message_two = "";
+        break;
+
+        default:
+            $message = 'Error desconocido, por favor contacte al servicio tecnico';
+            $message_two = "";
+        break;
+    }
+
+    $messages[] = ['m1' => $message, 'm2' => $message_two];
+    return $messages;
+}
 
 ?>

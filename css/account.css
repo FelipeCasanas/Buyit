@@ -1,8 +1,12 @@
 @media (min-width: 880px) {
 
+    .preferences_checkbox {
+        display: none;
+    }
+
     /* This is easy, this is the body tag */
     body {
-        height: 1100px;
+        height: 1050px;
         width: 100%;
         margin: 0;
     }
@@ -16,6 +20,133 @@
         width: 10px;
         border-radius: 0 20px 0 20px;
         background-color: #0c78f2;
+    }
+
+    .pop-up_background {
+        display: flex;
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(0, 0, 0, .8);
+        z-index: 1000;
+    }
+
+    .pop-up_background_no_display {
+        display: none;
+    }
+
+    .pop-up_background h2,
+    .pop-up_background h2,
+    .pop-up_background h2,
+    .pop-up h2 {
+        position: absolute;
+        color: #ffffff;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        top: 85px;
+    }
+
+    .create_user_pop-up {
+        display: inline-flex;
+        height: 80%;
+        width: 40%;
+        align-items: center;
+        justify-content: center;
+        border-radius: 15px;
+        background-color: #0c78f2;
+    }
+
+    .delete_user_pop-up {
+        display: flex;
+        height: 80%;
+        width: 20%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        border-radius: 15px;
+        background-color: #0c78f2;
+    }
+
+    .update_user_pop-up {
+        display: flex;
+        height: 80%;
+        width: 40%;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        border-radius: 15px;
+        background-color: #0c78f2;
+    }
+
+    .admin_user_pop-up {
+        display: flex;
+        height: 60%;
+        width: 20%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        border-radius: 15px;
+        background-color: #0c78f2;
+    }
+
+    .pop-up_input_left_container {
+        display: flex;
+        height: 90%;
+        width: 50%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        /* background-color: #ff7b00; */
+    }
+
+    .pop-up_input_right_container {
+        display: flex;
+        height: 90%;
+        width: 50%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        /* background-color: #ff7b00; */
+    }
+
+    .pop-up_input {
+        height: 30px;
+        width: 70%;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        border: none;
+        border-radius: 15px;
+        text-align: center;
+    }
+
+    .pop-up-button {
+        height: 30px;
+        width: 70%;
+        color: #000000;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        border: none;
+        border-radius: 15px;
+        background-color: #ffffff;
+        transition: color, background-color .6s;
+    }
+
+    .pop-up-button:hover {
+        height: 30px;
+        width: 70%;
+        color: #ffffff;
+        border: none;
+        border-radius: 15px;
+        background-color: #2d2d2d;
+        transition: .5s;
+    }
+
+    #goBack {
+        text-align: center;
+        padding: 7px;
+        font-size: 14px;
+        box-sizing: border-box;
     }
 
     /* ------------------------------------------------------------------------ */
@@ -40,30 +171,37 @@
         left: 30px;
     }
 
+    /* This is the login button */
     .return_button {
         position: relative;
         height: 60%;
-        width: 10%;
+        width: 12%;
         text-decoration: none;
         border-radius: 25px;
         background-color: #2d2d2d;
-        top: 20%;
-        right: 15px;
+        top: 20px;
+        right: 10px;
         float: right;
-        transition: 0.5s;
+        overflow: hidden;
     }
 
-    .return_button:hover {
-        position: relative;
-        height: 60%;
-        width: 10%;
-        border-radius: 25px;
+    .return_button::after {
+        position: absolute;
+        content: "";
+        height: 60px;
+        width: 250px;
         background-color: #b43434;
-        float: right;
-        right: 25px;
-        transition: 0.5s;
+        top: -3px;
+        left: -240px;
+        clip-path: polygon(0 0, 80% 0, 100% 100%, 0 100%);
+        transition: 0.7s;
     }
 
+    .return_button:hover::after {
+        left: 0px;
+    }
+
+    /* This is the text of the login button */
     .return_button p {
         position: relative;
         color: #ffffff;
@@ -71,34 +209,45 @@
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         text-align: center;
         bottom: 6px;
+        z-index: 500;
     }
 
     /* ------------------------------------------------------------------------ */
 
     .main_container {
+        display: flex;
         height: 700px;
         width: 90%;
-        margin: 65px auto;
+        margin: 45px auto;
+        align-items: center;
+        justify-content: space-between;
     }
 
     .left_container {
+        display: inline-flex;
         height: 100%;
         width: 35%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
         border: 3px solid #0c78f2;
         border-radius: 25px;
         box-sizing: border-box;
-        background-color: #2a2a2a;
-        float: left;
+        background-color: #2d2d2d;
     }
 
     .right_container {
+        display: inline-flex;
         height: 100%;
         width: 60%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
         border: 3px solid #0c78f2;
         border-radius: 25px;
         box-sizing: border-box;
-        background-color: #2a2a2a;
-        float: right;
+        background-color: #2d2d2d;
     }
 
     .user_photo_container {
@@ -107,7 +256,7 @@
         border: 3px solid #0c78f2;
         border-radius: 50%;
         margin: 30px auto;
-        background-color: #2a2a2a;
+        background-color: #2d2d2d;
     }
 
     .user_photo {
@@ -117,188 +266,338 @@
     }
 
     .personal_info_container {
+        display: flex;
         height: 55%;
         width: 85%;
-        margin: 0 auto;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
         padding: 10px;
         border-radius: 28px 10px 10px 28px;
         background-color: #0c78f2;
-        overflow-x: hidden;
-        overflow-y: scroll;
         box-sizing: border-box;
     }
 
     .personal_info_container::-webkit-scrollbar {
+        width: 10px;
         border-radius: 0 15px 15px 0;
         background-color: #0c78f2;
     }
 
     .personal_info_container::-webkit-scrollbar-thumb {
+        width: 10px;
         border-radius: 10px 10px 10px 10px;
         background-color: #ffffff;
     }
 
     .personal_data {
-        position: relative;
-        height: 18%;
+        height: 15%;
         width: 90%;
         border-radius: 15px;
-        background-color: #2a2a2a;
-        left: 7%;
-        bottom: 2%;
+        padding: 3px;
+        background-color: #2d2d2d;
         box-sizing: border-box;
     }
 
     .personal_data p {
-        position: relative;
+        display: flex;
         color: #ffffff;
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        top: 35%;
-        left: 5%;
+        align-items: center;
+        justify-content: center;
     }
 
     /* ------------------------------------------------------------------------ */
 
-    .friends_list {
+    .favourite_stores,
+    .admin_window {
         height: 30%;
         width: 90%;
         margin: 42px auto;
-        border-radius: 25px 15px 15px 25px;
-        padding: 1px;
+        border-radius: 25px 5px 5px 25px;
+        padding: 15px;
         box-sizing: border-box;
         background-color: #0c78f2;
         overflow-y: scroll;
     }
 
-    .friends_list::-webkit-scrollbar {
-        width: 15px;
+    .favourite_stores::-webkit-scrollbar,
+    .admin_window::-webkit-scrollbar {
+        width: 7px;
         border-radius: 0 25px 25px 0;
         background-color: #0c78f2;
     }
 
-    .friends_list::-webkit-scrollbar-thumb {
+    .favourite_stores::-webkit-scrollbar-thumb,
+    .admin_window::-webkit-scrollbar-thumb {
+        width: 7px;
         border-radius: 15px 15px 15px 15px;
         background-color: #ffffff;
     }
 
-    .friends_list_title {
+    .favourite_stores {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 30px;
+        flex-wrap: wrap;
+    }
+
+    .favourite_store_card {
+        display: flex;
+        height: 100%;
+        width: 140px;
+        cursor: pointer;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-radius: 15px;
+        background-color: #2d2d2d;
+    }
+
+    .favourite_store_img {
+        height: 80%;
+        width: 80%;
+        margin-top: 10px;
+        border-radius: 15px;
+    }
+
+    .favourite_store_paragrapf {
+        color: #ffffff;
+        margin: 5px;
+    }
+
+    .admin_window {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .admin_product_zone {
+        display: flex;
+        height: 100%;
+        width: 30%;
         color: #ffffff;
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         text-align: center;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        /* background-color: #b43434; */
+    }
+
+    .admin_product_button {
+        height: 17%;
+        width: 85%;
+        border: none;
+        border-radius: 15px;
+        background-color: #ffffff;
+        transition: .6s;
+    }
+
+    .admin_product_button:hover {
+        height: 17%;
+        width: 85%;
+        color: #ffffff;
+        border: none;
+        border-radius: 15px;
+        background-color: #2d2d2d;
+        transition: .3s;
+    }
+
+    .admin_user_zone {
+        height: 100%;
+        width: 75%;
+        /* background-color: #34b47f; */
+    }
+
+    .admin_user_actions {
+        display: inline-flex;
+        height: 100%;
+        width: 100%;
+        justify-content: space-around;
+        /* background-color: #b434a9; */
+    }
+
+    .admin_user_button {
+        display: flex;
+        height: 100%;
+        width: 22%;
+        cursor: pointer;
+        align-items: center;
+        justify-content: center;
+        border: 0;
+        border-radius: 15px;
+        transition: .6s;
+    }
+
+    .admin_user_button:hover {
+        display: flex;
+        height: 100%;
+        width: 22%;
+        color: #ffffff;
+        align-items: center;
+        justify-content: center;
+        border: 0;
+        border-radius: 15px;
+        transition: .3s;
+    }
+
+    .admin_user_button img {
+        height: 50%;
+        width: 100%;
+    }
+
+    #createUserButton {
+        background-color: #00ff00;
+    }
+
+    #deleteUserButton {
+        background-color: #ff0000;
+    }
+
+    #updateUserButton {
+        background-color: #0000ff;
+    }
+
+    #setAdminUserButton {
+        background-color: #ff7b00;
     }
 
     .update_user_data {
+        display: flex;
         height: 55%;
         width: 90%;
-        margin: 0 auto;
+        align-items: center;
+        justify-content: space-between;
     }
 
     .personal_info_updater {
-        position: relative;
+        display: flex;
         height: 90%;
         width: 48%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
         border-radius: 25px;
         background-color: #0c78f2;
-        top: 5%;
-        float: left;
+    }
+
+    .buttons_container {
+        display: flex;
+        height: 15%;
+        width: 100%;
+        align-items: center;
+        justify-content: space-around;
+        /* background-color: #b43434; */
+    }
+
+    .left_button,
+    .right_button {
+        height: 60%;
+        width: 45%;
+        color: #000000;
+        font-size: 1.2vw;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        border: none;
+        border-radius: 25px;
+        background-color: #ffffff;
+    }
+
+    .left_button:hover,
+    .right_button:hover {
+        height: 60%;
+        width: 45%;
+        color: #ffffff;
+        font-size: 1.2vw;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        border: none;
+        border-radius: 25px;
+        background-color: #2d2d2d;
     }
 
     .my_web_preferences {
-        position: relative;
+        display: flex;
         height: 90%;
         width: 48%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
         border-radius: 25px;
         background-color: #0c78f2;
-        bottom: 4.5%;
-        float: right;
+    }
+
+    .preferences_item {
+        display: flex;
+        height: 12%;
+        width: 80%;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: 15px;
+        padding: 5px;
+        background-color: #2d2d2d;
+        box-sizing: border-box;
+    }
+
+    .preferences_item label {
+        color: #ffffff;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     }
 
     .info_places {
-        height: 10%;
+        display: flex;
+        height: 12%;
         width: 95%;
+        align-items: center;
+        justify-content: space-between;
         border-radius: 20px;
-        margin: 14px auto;
+        padding: 4px 15px;
         background-color: #2a2a2a;
+        box-sizing: border-box;
     }
 
     .info_places label {
-        position: relative;
         color: #ffffff;
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        top: 8px;
-        left: 15px;
     }
 
-    .info_places input, .info_places select {
-        position: relative;
-        height: 50%;
+    .info_places input,
+    .info_places select {
+        height: 65%;
         width: 50%;
         text-align: center;
         border: none;
         border-radius: 20px;
         background-color: #ffffff;
-        top: 22%;
-        right: 15px;
-        float: right;
     }
 
-    .left_button {
-        position: relative;
-        height: 9%;
-        width: 15%;
-        color: #000000;
-        font-size: 1.2vw;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        margin-left: 12%;
-        border: none;
-        border-radius: 25px;
-        background-color: #ffffff;
-        top: 323px;
-        right: 55%;
-        z-index: 6000;
-    }
-
-    .left_button:hover {
-        position: relative;
-        display: inline-block;
-        height: 9%;
-        width: 15%;
-        color: #ffffff;
-        font-size: 1.2vw;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        margin-left: 12%;
-        border: none;
-        border-radius: 25px;
-        background-color: #000000;
-    }
-
-    .right_button {
-        position: relative;
+    .preferences_button {
+        display: flex;
         height: 10%;
         width: 30%;
         color: #000000;
         font-size: 1.2vw;
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        margin-left: 12%;
+        align-items: center;
+        justify-content: center;
         border: none;
         border-radius: 25px;
         background-color: #ffffff;
-        right: 10%;
-        float: right;
     }
 
-    .right_button:hover {
-        position: relative;
-        display: inline-block;
+    .preferences_button:hover {
+        display: flex;
         height: 10%;
         width: 30%;
         color: #ffffff;
         font-size: 1.2vw;
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        margin-left: 12%;
         border: none;
         border-radius: 25px;
-        background-color: #000000;
+        background-color: #2d2d2d;
     }
 
     /* ------------------------------------------------------------------------ */
@@ -327,7 +626,8 @@
     }
 
     /* Footer text properties */
-    .footer_text_container p, .footer_text_container p a {
+    .footer_text_container p,
+    .footer_text_container p a {
         position: relative;
         display: inline-block;
         color: #ffffff;
@@ -339,7 +639,8 @@
     }
 
     /* this generate a color change of footer text */
-    .footer_text_container p:hover, .footer_text_container p a:hover {
+    .footer_text_container p:hover,
+    .footer_text_container p a:hover {
         position: relative;
         display: inline-block;
         color: #0c78f2;
@@ -390,6 +691,10 @@
 }
 
 @media (max-width: 425px) {
+
+    .preferences_checkbox {
+        display: none;
+    }
 
     /* This is easy, this is the body label */
     body {
@@ -616,7 +921,8 @@
     }
 
     /* Footer text properties */
-    .footer_text_container p, .footer_text_container p a {
+    .footer_text_container p,
+    .footer_text_container p a {
         position: relative;
         color: #ffffff;
         font-size: 7vmin;
@@ -626,7 +932,8 @@
     }
 
     /* this generate a color change of footer text */
-    .footer_text_container p:hover, .footer_text_container p a:hover {
+    .footer_text_container p:hover,
+    .footer_text_container p a:hover {
         position: relative;
         color: #0c78f2;
         font-size: 7vmin;
@@ -640,7 +947,7 @@
         position: relative;
         color: #0c78f2;
         font-size: 4vmin;
-        font-family: cursive;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         text-align: center;
         bottom: 5%;
     }

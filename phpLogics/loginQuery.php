@@ -1,5 +1,6 @@
 <?php
     require('connection.php');
+    require('methods.php');
 
     if(isset($_POST['email']) && isset($_POST['password'])) {
         $email = strtolower($_POST['email']);
@@ -21,6 +22,7 @@
                 $_SESSION['name'] = strtoupper($usr_info['name']);
                 $_SESSION['last_name'] = strtoupper($usr_info['last_name']);
                 $_SESSION['sex'] = $usr_info['sex'];
+                getUserPreferences();
                 header("Location: ../home.php");
             }
         }

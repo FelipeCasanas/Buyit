@@ -5,7 +5,7 @@
 
     if($isLogged == true) {
         updateUserPersonalInfo();
-        echo "Actualizado correctamente";
+        header('Location: ../account.php');
         $my_link->close();
     }
 ?>

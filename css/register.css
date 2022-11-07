@@ -46,30 +46,37 @@
     left: 30px;
   }
 
+  /* This is the login button */
   .return_button {
     position: relative;
     height: 60%;
-    width: 10%;
+    width: 12%;
     text-decoration: none;
     border-radius: 25px;
     background-color: #2d2d2d;
-    top: 20%;
-    right: 15px;
+    top: 20px;
+    right: 10px;
     float: right;
-    transition: 0.5s;
+    overflow: hidden;
   }
 
-  .return_button:hover {
-    position: relative;
-    height: 60%;
-    width: 10%;
-    border-radius: 25px;
+  .return_button::after {
+    position: absolute;
+    content: "";
+    height: 60px;
+    width: 250px;
     background-color: #b43434;
-    float: right;
-    right: 25px;
-    transition: 0.5s;
+    top: -3px;
+    left: -240px;
+    clip-path: polygon(0 0, 80% 0, 100% 100%, 0 100%);
+    transition: 0.7s;
   }
 
+  .return_button:hover::after {
+    left: 0px;
+  }
+
+  /* This is the text of the login button */
   .return_button p {
     position: relative;
     color: #ffffff;
@@ -77,6 +84,7 @@
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-align: center;
     bottom: 6px;
+    z-index: 500;
   }
 
   /* ------------------------------------------------------------------------ */
@@ -235,7 +243,8 @@
     right: 3.5%;
   }
 
-  .left_input_div p, .right_input_div p {
+  .left_input_div p,
+  .right_input_div p {
     margin: 0;
     color: #ffffff;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -246,7 +255,8 @@
     color: #000000;
   }
 
-  .left_input_div input, .right_input_div input {
+  .left_input_div input,
+  .right_input_div input {
     position: relative;
     height: 35%;
     width: 80%;
@@ -265,7 +275,8 @@
     /* background-color: #ddda25; */
   }
 
-  .go_back_button, .register_button {
+  .go_back_button,
+  .register_button {
     height: 80%;
     width: 35%;
     color: #000000;
@@ -276,7 +287,8 @@
     background-color: #0c78f2;
   }
 
-  .go_back_button:hover, .register_button:hover {
+  .go_back_button:hover,
+  .register_button:hover {
     height: 80%;
     width: 35%;
     color: #ffffff;
@@ -327,7 +339,8 @@
   }
 
   /* Footer text properties */
-  .footer_text_container p, .footer_text_container p a {
+  .footer_text_container p,
+  .footer_text_container p a {
     position: relative;
     display: inline-block;
     color: #ffffff;
@@ -338,7 +351,8 @@
   }
 
   /* this generate a color change of footer text */
-  .footer_text_container p:hover, .footer_text_container p a:hover {
+  .footer_text_container p:hover,
+  .footer_text_container p a:hover {
     position: relative;
     display: inline-block;
     color: #0c78f2;
@@ -598,7 +612,8 @@
     box-sizing: border-box;
   }
 
-  .left_input_div p, .right_input_div p {
+  .left_input_div p,
+  .right_input_div p {
     position: relative;
     margin: 0;
     color: #ffffff;
@@ -610,7 +625,8 @@
     color: #000000;
   }
 
-  .left_input_div input, .right_input_div input {
+  .left_input_div input,
+  .right_input_div input {
     position: relative;
     height: 45%;
     width: 80%;
@@ -631,7 +647,8 @@
     /* background-color: #ddda25; */
   }
 
-  .go_back_button, .register_button {
+  .go_back_button,
+  .register_button {
     height: 40%;
     width: 100%;
     color: #ffffff;
@@ -646,7 +663,8 @@
     color: #000000;
   }
 
-  .go_back_button:hover, .register_button:hover {
+  .go_back_button:hover,
+  .register_button:hover {
     height: 40%;
     width: 100%;
     color: #ffffff;
@@ -694,7 +712,8 @@
   }
 
   /* Footer text properties */
-  .footer_text_container p, .footer_text_container p a {
+  .footer_text_container p,
+  .footer_text_container p a {
     position: relative;
     color: #ffffff;
     font-size: 7vmin;
@@ -704,7 +723,8 @@
   }
 
   /* this generate a color change of footer text */
-  .footer_text_container p:hover, .footer_text_container p a:hover {
+  .footer_text_container p:hover,
+  .footer_text_container p a:hover {
     position: relative;
     color: #0c78f2;
     font-size: 7vmin;

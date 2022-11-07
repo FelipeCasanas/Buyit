@@ -40,37 +40,45 @@ body::-webkit-scrollbar-thumb {
     left: 30px;
 }
 
+/* This is the login button */
 .return_button {
     position: relative;
     height: 60%;
-    width: 10%;
+    width: 12%;
     text-decoration: none;
     border-radius: 25px;
     background-color: #2d2d2d;
-    top: 20%;
-    right: 15px;
+    top: 20px;
+    right: 10px;
     float: right;
-    transition: 0.5s;
+    overflow: hidden;
 }
 
-.return_button:hover {
-    position: relative;
-    height: 60%;
-    width: 10%;
-    border-radius: 25px;
+.return_button::after {
+    position: absolute;
+    content: "";
+    height: 60px;
+    width: 250px;
     background-color: #b43434;
-    float: right;
-    right: 25px;
-    transition: 0.5s;
+    top: -3px;
+    left: -240px;
+    clip-path: polygon(0 0, 80% 0, 100% 100%, 0 100%);
+    transition: 0.7s;
 }
 
+.return_button:hover::after {
+    left: 0px;
+}
+
+/* This is the text of the login button */
 .return_button p {
     position: relative;
     color: #ffffff;
     font-size: 1.2em;
-    font-family: 'Lucida Sans';
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-align: center;
     bottom: 6px;
+    z-index: 500;
 }
 
 /* ------------------------------------------------------------------------ */
@@ -94,11 +102,15 @@ body::-webkit-scrollbar-thumb {
     top: 1%;
 }
 
-.main h2, .main strong {
+.main h2,
+.main strong {
     text-align: center;
 }
 
-.block1, .block2, .block3, .block4 {
+.block1,
+.block2,
+.block3,
+.block4 {
     height: 300px;
     width: 90%;
     margin: 55px auto;
@@ -161,7 +173,8 @@ footer {
 }
 
 /* Footer text properties */
-.footer_text_container p, .footer_text_container p a {
+.footer_text_container p,
+.footer_text_container p a {
     position: relative;
     display: inline-block;
     color: #ffffff;
@@ -173,7 +186,8 @@ footer {
 }
 
 /* this generate a color change of footer text */
-.footer_text_container p:hover, .footer_text_container p a:hover {
+.footer_text_container p:hover,
+.footer_text_container p a:hover {
     position: relative;
     display: inline-block;
     color: #0c78f2;

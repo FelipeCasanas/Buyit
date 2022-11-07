@@ -230,43 +230,43 @@
   }
 
   /* This is the login button */
-  .header_background form a {
+  .login_button {
     position: relative;
     height: 100%;
     width: 15%;
-    border: none;
+    text-decoration: none;
     border-radius: 25px;
     background-color: #2d2d2d;
     right: 10px;
     float: right;
+    overflow: hidden;
+  }
+
+  .login_button::after {
+    position: absolute;
+    content: "";
+    height: 60px;
+    width: 250px;
+    background-color: #b43434;
+    top: -3px;
+    left: -240px;
+    clip-path: polygon(0 0, 80% 0, 100% 100%, 0 100%);
     transition: 0.7s;
   }
 
-  /* This is the same login button when you pass your mouse top change his color */
-  .header_background form a:hover {
-    position: relative;
-    height: 100%;
-    width: 15%;
-    border: none;
-    border-radius: 25px;
-    background-color: #b43434;
-    float: right;
-    right: -5px;
-    transition: 0.7s;
+  .login_button:hover::after {
+    left: 0px;
   }
 
   /* This is the text of the login button */
-  .header_background form a p {
+  .login_button p {
     position: relative;
     color: #ffffff;
     font-size: 1.2em;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-align: center;
     bottom: 3px;
-  }
-
-  form a {
-    text-decoration: none;
+    z-index: 500;
   }
 
   /* ------------------------------------------------------------------------ */
@@ -438,11 +438,11 @@
   .recomended_group {
     position: relative;
     display: flex;
-    height: 84%;
+    height: 80%;
     width: 98%;
     margin: 0 auto;
     /* background-color: #e41f1f; */
-    bottom: 12%;
+    bottom: 10%;
     overflow-x: auto;
     overflow-y: hidden;
   }
@@ -462,21 +462,21 @@
   }
 
   .recomended_Square {
-    height: 99%;
-    line-height: 0px;
+    position: relative;
+    height: 85%;
     min-width: 195px;
     margin: 0 0.5%;
     border-radius: 15px;
     background-color: #0c78f2;
-    transition: 0.2s;
+    top: 5%;
+    transition: 0.5s;
   }
 
   .recomended_Square:hover {
-    height: 97%;
-    line-height: 0px;
     margin: 0 0.5%;
     border-radius: 15px;
     background-color: #0c78f2;
+    transform: scale(1.05, 1.05);
     transition: 0.2s;
   }
 
@@ -532,25 +532,22 @@
   }
 
   .ad_Square {
-    position: relative;
     display: inline-block;
     height: 45%;
     width: 30%;
     margin: 4px 1%;
     border-radius: 15px;
     background-color: #0c78f2;
-    transition: 0.8s;
+    transition: 0.6s;
   }
 
   .ad_Square:hover {
-    position: relative;
     display: inline-block;
-    height: 47%;
-    width: 32%;
-    margin: 5px 0.5%;
+    margin: 4px 1%;
     border-radius: 15px;
     background-color: #0c78f2;
-    transition: 0.8s;
+    transform: scale(1.05, 1.05);
+    transition: 0.2s;
   }
 
   .ad_Square img {
@@ -632,12 +629,11 @@
   }
 
   .product_image_container:hover {
-    height: 51%;
-    width: 65%;
     margin: 0 auto;
     margin-top: 4%;
     border-radius: 15px;
-    transition: 0.6s;
+    transform: scale(1.05, 1.05);
+    transition: 0.2s;
   }
 
   .product_image_container img {
@@ -679,21 +675,6 @@
     position: relative;
     height: 100%;
     width: 100%;
-    color: #ffffff;
-    font-size: 18px;
-    text-decoration: none;
-    border: none;
-    padding: 10px 30%;
-    border-radius: 15px;
-    background-color: #2d2d2d;
-    transition: 0.6s;
-    bottom: 30%;
-  }
-
-  .product_see_button a:hover {
-    position: relative;
-    height: 100%;
-    width: 100%;
     color: #0c78f2;
     font-size: 18px;
     text-decoration: none;
@@ -701,8 +682,23 @@
     padding: 10px 30%;
     border-radius: 15px;
     background-color: #ffffff;
-    transition: 0.6s;
     bottom: 30%;
+    transition: 1s;
+  }
+
+  .product_see_button a:hover {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    color: #ffffff;
+    font-size: 18px;
+    text-decoration: none;
+    border: none;
+    padding: 10px 30%;
+    border-radius: 15px;
+    background-color: #2d2d2d;
+    bottom: 30%;
+    transition: 0.3s;
   }
 
   /* ------------------------------------------------------------------------ */
@@ -790,7 +786,7 @@
     position: relative;
     color: #0c78f2;
     font-size: 4vmin;
-    font-family: cursive;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-align: center;
     top: 15%;
   }

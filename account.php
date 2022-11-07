@@ -4,26 +4,7 @@
     $isLogged = validateCredentials();
  
     if($isLogged == true) {
-        $usr_id = $_SESSION['id'];
-        $my_query = $my_link->query("SELECT * FROM my_user WHERE id = '".$usr_id."';");
-
-        if(!$my_query) {
-            header('Location: phpLogics/error.php?cod=1');
-        } else {
-            $result = $my_query->fetch_assoc();
-            $usr_name = strtoupper($result['name']);
-            $usr_last_name = strtoupper($result['last_name']);
-            $birthDate = $result['birthday'];
-            $age = getAge($birthDate);
-            $usr_sex = $result['sex'];
-            $usr_country = $result['country'];
-            $usr_email = $result['email'];
-
-            $personalInfo = getUserData($birthDate, $usr_sex, $usr_country);
-            $age = $personalInfo[0]['age'];
-            $usr_sex = $personalInfo[0]['sex'];
-            $usr_country = $personalInfo[0]['country'];
-        }
+        $fullData = getAllUserData();
     }
 
     $my_link->close();
@@ -60,30 +41,34 @@
 
     <div class="main_container">
         <div class="left_container">
-            <div class="user_photo_container"><img class="user_photo" src="img/Profile.jpeg" alt="User photo"></div>
+            <div class="user_photo_container"><img class="user_photo" src="img/ProfileIconWhite.png" alt="User photo">
+            </div>
             <div class="personal_info_container">
                 <div class="personal_data">
-                    <p id="nameParagraph">Nombre: <?php echo $usr_name . ' ' . $usr_last_name; ?> </p>
+                    <p id="nameParagraph">Nombre:
+                        <?php echo $fullData[0]['user_name'] . ' ' . $fullData[0]['user_last_name']; ?> </p>
                 </div>
                 <div class="personal_data">
-                    <p id="yearsOldParagraph">Edad: <?php echo $age; ?> </p>
+                    <p id="yearsOldParagraph">Edad: <?php echo $fullData[0]['age']; ?> </p>
                 </div>
                 <div class="personal_data">
-                    <p id="sexParagraph">Sexo: <?php echo $usr_sex; ?> </p>
+                    <p id="sexParagraph">Sexo: <?php echo $fullData[0]['user_sex']; ?> </p>
                 </div>
                 <div class="personal_data">
-                    <p id="countryParagraph">Pais: <?php echo $usr_country; ?> </p>
+                    <p id="countryParagraph">Pais: <?php echo $fullData[0]['user_country']; ?> </p>
                 </div>
                 <div class="personal_data">
-                    <p id="emailParagraph">Correo: <?php echo $usr_email; ?> </p>
+                    <p id="emailParagraph">Correo: <?php echo $fullData[0]['user_email']; ?> </p>
                 </div>
             </div>
         </div>
 
         <div class="right_container">
-            <div class="friends_list">
-                <h2 class="friends_list_title">Mis amigos</h2>
-            </div>
+
+            <?php
+                require('phpLogics/connection.php');
+                setUserRole();
+            ?>
             <div class="update_user_data">
 
 
@@ -225,24 +210,67 @@
                         <input type="text" name="email" id="emailInput">
                     </div>
 
-                    <button class="right_button" onclick="">Establecer</button>
+                    <div class="buttons_container">
+                        <button class="left_button" onClick="clearFields()">Limpiar</button>
+                        <button class="right_button" onclick="">Establecer</button>
+                    </div>
                 </form>
 
-                <button class="left_button" onClick="clearFields()">Limpiar</button>
+                <form class="my_web_preferences" action="phpLogics/accountPreferences.php" method="get">
 
-                <div class="my_web_preferences">
-                    <div>
-                        <div>
-                            <p>Modo oscuro: </p>
-                        </div>
+                    <?php
+                        require('phpLogics/connection.php');
+                        $my_query = $my_link->query("SELECT * FROM user_preferences WHERE id = '".$_SESSION['id']."';");
+
+                        if(!$my_query) {
+                        header("Location: error.php?cod=1");
+                        } else {
+                        $result = $my_query->fetch_array();
+                            $dark_mode = $result['dark_mode'];
+                            $language = $result['language'];
+                            $recomendations = $result['recomendations'];
+                        }
+                    ?>
+
+                    <div class="preferences_item">
+                        <label for="darkModeCheckbox">MODO OSCURO</label>
+                        <?php 
+                            if($dark_mode == "1") {
+                                echo '<input type="checkbox" checked="" name="dark_mode" id="darkModeCheckbox">';
+                            } else {
+                                echo '<input type="checkbox" name="dark_mode" id="darkModeCheckbox">';
+                            }
+                        ?>
                     </div>
 
-                    <div>
-                        <form action="account.php" method="get">
-                            <input type="checkbox" name="dark_mode" id="">
-                        </form>
+                    <div class="preferences_item">
+                        <label for="languageCheckbox">LENGUAJE</label>
+                        <?php 
+                            if($language == "1") {
+                                echo '<input type="checkbox" checked="" name="language" id="languageCheckbox">';
+                            } else {
+                                echo '<input type="checkbox" name="language" id="languageCheckbox">';
+                            }
+                        ?>
                     </div>
-                </div>
+
+                    <div class="preferences_item">
+                        <label for="receiveRecomendationsCheckbox">RECOMENDACIONES</label>
+                        <?php 
+                            if($recomendations == '1') {
+                                echo '<input type="checkbox" checked="" name="receive_recomendations"
+                                id="receiveRecomendationsCheckbox">';
+                            } else {
+                                echo '<input type="checkbox" name="receive_recomendations"
+                                id="receiveRecomendationsCheckbox">';
+                            }
+                        ?>
+
+                    </div>
+
+                    <button class="preferences_button">Actualizar</button>
+                </form>
+
             </div>
         </div>
     </div>

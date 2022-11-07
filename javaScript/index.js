@@ -23,7 +23,7 @@ const changeColor = () => {
     productsText.classList.toggle('dark_mode_text');
 }
 
-const showAd = (tileNumber, operation, redirectTo) => {
+const showPopUp = (tileNumber, operation, redirectTo) => {
     let title, description, contactInfo;
 
     if (operation == 0) {

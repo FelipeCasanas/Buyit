@@ -14,10 +14,15 @@ The methods is ordered by categories and the categories separed by blocks:
 
 Category 1 have the blocks in the next order:
 1. validateCredentials()
-2. getUserData() and it methods: getAge(), getSex() and getCountry()
-3. updateUserPersonalInfo()
-4. getUserFavourites()
-5. setUserFavourites()
+2. getBasicUserData() and it methods: getAge(), getSex() and getCountry()
+3. getAllUserData()
+4. updateUserPersonalInfo()
+5. createUserFavourites()
+6. setUserFavourites()
+7. createUserPreferences()
+8. getUserPreferences()
+9. setUserPreferences()
+10. setUserRole()
 
 
 Category 2 have the blocks in the next order:
@@ -57,7 +62,7 @@ function validateCredentials() {
 /*this is called from account.php and when this execute do a call the other three methods. getAge, getSex, getCountry; 
 later this save the results in a array "personalInfo" and return that
 */
-function getUserData($birthDate, $usr_sex, $usr_country) {
+function getBasicUserData($birthDate, $usr_sex, $usr_country) {
     $age = getAge($birthDate);
     $usr_sex = getSex($usr_sex);
     $usr_country = getCountry($usr_country);
@@ -197,6 +202,42 @@ function getCountry($usr_country) {
     }
 
     return $usr_country;
+}
+
+function getAllUserData() {
+    require('connection.php');
+    $usr_id = $_SESSION['id'];
+        $get_all_user_info_query = $my_link->query("SELECT * FROM my_user WHERE id = '".$usr_id."';");
+
+        if(!$get_all_user_info_query) {
+            header('Location: phpLogics/error.php?cod=1');
+        } else {
+            $result = $get_all_user_info_query->fetch_assoc();
+            $usr_name = strtoupper($result['name']);
+            $usr_last_name = strtoupper($result['last_name']);
+            $birthDate = $result['birthday'];
+            $age = getAge($birthDate);
+            $usr_sex = $result['sex'];
+            $usr_country = $result['country'];
+            $usr_email = $result['email'];
+
+            $personalInfo = getBasicUserData($birthDate, $usr_sex, $usr_country);
+            $age = $personalInfo[0]['age'];
+            $usr_sex = $personalInfo[0]['sex'];
+            $usr_country = $personalInfo[0]['country'];  
+            
+            $fullData[] = [
+                'user_name' => $usr_name,
+                'user_last_name' => $usr_last_name,
+                'birthDate' => $birthDate,
+                'age' => $age,
+                'user_sex' => $usr_sex,
+                'user_country' => $usr_country,
+                'user_email' => $usr_email
+            ];
+
+            return $fullData;
+        }
 }
 
 
@@ -348,6 +389,100 @@ function setUserFavourites() {
 
 /* ------------------------------------------------------------------------------------------------- */
 
+function createUserPreferences() {
+    require('connection.php');
+    $my_link->query("INSERT INTO `user_preferences`(`id`, `admin`, `dark_mode`, `language`, `recomendations`) VALUES ('".$_SESSION['id']."', '0', '0', '0', '0');");
+    header("Location: ../home.php");
+}
+
+function getUserPreferences() {
+    require('connection.php');
+    $my_query = $my_link->query("SELECT * FROM user_preferences WHERE id = '".$_SESSION['id']."';");
+
+    if(!$my_query) {
+        header("Location: error.php?cod=1");
+    } else {
+        $result = $my_query->fetch_array();
+        echo "
+        <div class=preferences_checkbox>
+            <p id=darkModeCheckboxStatus>'".$result['dark_mode']."'</p>
+            <p id=languageCheckboxStatus>'".$result['language']."'</p>
+            <p id=recomendationsCheckboxStatus>'".$result['recomendations']."'</p>
+        </div>
+        ";
+    }
+}
+
+function setUserPreferences() {
+    require('connection.php');
+
+    if(isset($_POST['dark_mode'])) {
+        $my_query = $my_link->query("SELECT dark_mode FROM user_preferences WHERE id = '".$_SESSION['id']."';");
+        $result = $my_query->fetch_array();
+
+        if($result['dark_mode'] == '1') {
+            $my_query = $my_link->query("UPDATE user_preferences SET dark_mode = 0 WHERE id = '".$_SESSION['id']."';");
+        } else {
+            $my_query = $my_link->query("UPDATE user_preferences SET dark_mode = 1 WHERE id = '".$_SESSION['id']."';");
+        }
+    }
+
+    if(isset($_POST['language'])) {
+        $my_query = $my_link->query("UPDATE user_preferences SET language = 1 WHERE id = '".$_SESSION['id']."';");
+    }
+
+    if(isset($_POST['receive_recomendations'])) {
+        $my_query = $my_link->query("UPDATE user_preferences SET receive_recomendations = 1 WHERE id = '".$_SESSION['id']."';");
+    }
+}
+
+
+/* ------------------------------------------------------------------------------------------------- */
+
+function setUserRole() {
+    require('connection.php');
+    $usr_id = $_SESSION['id'];
+    $user_role_query = $my_link->query("SELECT `admin` FROM `user_preferences` WHERE id = '".$usr_id."';");
+
+    if(!$user_role_query) {
+        header('Location: phpLogics/error.php?cod=1');
+    } else {
+        $user_role_result = $user_role_query->fetch_array();
+        if($user_role_result['admin'] == '1') {
+            echo '
+            <div class="admin_window">
+                <div class="admin_product_zone">
+                    <p>ACCIONES DE PRODUCTO</p>
+                    <button class="admin_product_button" id="">AÑADIR</button>
+                    <button class="admin_product_button" id="">ELIMINAR</button>
+                    <button class="admin_product_button" id="">EDITAR</button>
+                </div>
+                <div class="admin_user_zone">
+                    <div class="admin_user_actions">
+                        <button class="admin_user_button" id="createUserButton"><img src="img/createUser.png"
+                            alt=""></button>
+                        <button class="admin_user_button" id="deleteUserButton"><img src="img/deleteUser.png"
+                            alt=""></button>
+                        <button class="admin_user_button" id="updateUserButton"><img src="img/editUser.png"
+                            alt=""></button>
+                        <button class="admin_user_button" id="setAdminUserButton"><img src="img/assignAdmin.png"
+                            alt=""></button>
+                    </div>
+                </div>
+            </div>';
+        } else {
+            echo '
+            <div class="favourite_stores">
+                <div class="favourite_store_card">
+                    <img class="favourite_store_img" src="img/luxuryMall.jpg" alt="">
+                    <p class="favourite_store_paragrapf">Marca</p>
+                </div>
+            </div>';
+        }
+    }
+}
+
+/* ------------------------------------------------------------------------------------------------- */
 
 
 
@@ -451,7 +586,7 @@ function setRecomended() {
             $operation = 0;
             
             echo '<div class="recomended_Square">
-                    <img src="img/products/box.png" alt="" onclick="showAd('.$i.', '.$operation.', '.$product_id.')">
+                    <img src="img/products/box.png" alt="" onclick="showPopUp('.$i.', '.$operation.', '.$product_id.')">
                     <p class="sponsor_title" id="recomendedTitle'.$i.'">'.$product_name.'</p>
                     <p class="sponsor_description" id="recomendedDescription'.$i.'">'.$description.'</p>
                     <p class="sponsor_contact_info" id="recomendedContactInfo'.$i.'">'.$contact_info.'</p>
@@ -482,7 +617,7 @@ function setAds() {
             $operation = 1;
 
             echo '<div class="ad_Square">
-                    <img src="img/products/box.png" alt="" onclick="showAd('.$i.', '.$operation.',`'.$redirect_to.'`)">
+                    <img src="img/products/box.png" alt="" onclick="showPopUp('.$i.', '.$operation.',`'.$redirect_to.'`)">
                     <p class="sponsor_title" id="sponsorTitle'.$i.'">'.$title.'</p>
                     <p class="sponsor_description" id="sponsorDescription'.$i.'">'.$description.'</p>
                     <p class="sponsor_contact_info" id="sponsorContactInfo'.$i.'">'.$contact_info.'</p>

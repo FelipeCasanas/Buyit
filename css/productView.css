@@ -1,8 +1,22 @@
+:root {
+    --primary-color: #0c78f2;
+    --secondary-color: #2d2d2d;
+    --tertiary-color: #ffffff;
+
+    --font-primary-color: #ffffff;
+    --font-secondary-color: #000000;
+    --font-tertiary-color: #0c78f2;
+
+    --border: 3px solid #0c78f2;
+
+    --primary-font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
 @media (min-width: 880px) {
 
     .favourite_process_state {
         height: 30px;
-        color: #ffffff;
+        color: var(--font-primary-color);
         font-size: 24px;
         text-align: center;
         margin: 0;
@@ -21,13 +35,13 @@
 
     body::-webkit-scrollbar {
         width: 10px;
-        background-color: #2d2d2d;
+        background-color: var(--secondary-color);
     }
 
     body::-webkit-scrollbar-thumb {
         width: 10px;
         border-radius: 0 20px 0 20px;
-        background-color: #0c78f2;
+        background-color: var(--primary-color);
     }
 
     /* ------------------------------------------------------------------------ */
@@ -37,7 +51,7 @@
         position: relative;
         height: 80px;
         width: 100%;
-        background-color: #0c78f2;
+        background-color: var(--primary-color);
     }
 
     /* Title of my pretty web */
@@ -45,7 +59,7 @@
         position: relative;
         display: inline-block;
         width: 40%;
-        color: #ffffff;
+        color: var(--font-primary-color);
         font-size: 65px;
         font-family: Impact;
         margin: 0;
@@ -59,7 +73,7 @@
         width: 12%;
         text-decoration: none;
         border-radius: 25px;
-        background-color: #2d2d2d;
+        background-color: var(--secondary-color);
         top: 20px;
         right: 10px;
         float: right;
@@ -85,9 +99,9 @@
     /* This is the text of the login button */
     .return_button p {
         position: relative;
-        color: #ffffff;
+        color: var(--font-primary-color);
         font-size: 1.2em;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-family: var(--primary-font-family);
         text-align: center;
         bottom: 6px;
         z-index: 500;
@@ -118,7 +132,7 @@
         width: 35%;
         margin-left: 7.7%;
         border-radius: 15px;
-        background-color: #0c78f2;
+        background-color: var(--primary-color);
         box-sizing: border-box;
         z-index: 4000;
     }
@@ -135,26 +149,26 @@
         display: inline-block;
         height: 60%;
         width: 80%;
-        border: 2px solid #0c78f2;
+        border: var(--border);
         border-radius: 15px;
-        background-color: #2d2d2d;
+        background-color: var(--secondary-color);
         box-sizing: border-box;
     }
 
     .product_condition {
         height: 60%;
         width: 15%;
-        border: 2px solid #0c78f2;
+        border: var(--border);
         border-radius: 15px;
-        background-color: #2d2d2d;
+        background-color: var(--secondary-color);
         box-sizing: border-box;
         float: right;
     }
 
     .product_name p {
         position: relative;
-        color: #ffffff;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        color: var(--font-primary-color);
+        font-family: var(--primary-font-family);
         text-align: left;
         margin: 0;
         top: 5px;
@@ -163,8 +177,8 @@
 
     .product_condition p {
         position: relative;
-        color: #ffffff;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        color: var(--font-primary-color);
+        font-family: var(--primary-font-family);
         text-align: center;
         margin: 0;
         top: 5px;
@@ -176,15 +190,15 @@
         display: block;
         height: 89%;
         width: 100%;
-        border: 2px solid #0c78f2;
+        border: var(--border);
         border-radius: 15px;
-        background-color: #2d2d2d;
+        background-color: var(--secondary-color);
         box-sizing: border-box;
     }
 
     .seller_container {
-        color: #ffffff;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        color: var(--font-primary-color);
+        font-family: var(--primary-font-family);
         text-align: center;
         margin: 20px 0;
         /* background-color: #d61212; */
@@ -219,8 +233,8 @@
 
     .availability,
     .solds {
-        color: #ffffff;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        color: var(--font-primary-color);
+        font-family: var(--primary-font-family);
         text-align: center;
         margin: 10px 0;
         /* background-color: #12d695; */
@@ -230,16 +244,16 @@
         color: #23d612;
         text-align: center;
         font-size: 50px;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-family: var(--primary-font-family);
         margin: 25px 0;
         /* background-color: #b43434; */
     }
 
     .category_container {
         position: relative;
-        color: #2d2d2d;
+        color: var(--font-secondary-color);
         font-size: 25px;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-family: var(--primary-font-family);
         text-align: center;
         margin: 10px 0;
         /* background-color: #12d695; */
@@ -268,14 +282,14 @@
         width: 80%;
         margin: 15px auto;
         border-radius: 15px;
-        background-color: #0c78f2;
+        background-color: var(--primary-color);
     }
 
     .row p {
         position: relative;
         margin: 0;
-        color: #ffffff;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        color: var(--font-primary-color);
+        font-family: var(--primary-font-family);
         font-size: 22px;
         text-align: center;
         top: 25%;
@@ -285,7 +299,7 @@
         position: relative;
         height: 20%;
         width: 50%;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-family: var(--primary-font-family);
         text-align: center;
         border: none;
         border-radius: 15px;
@@ -298,7 +312,7 @@
         position: relative;
         height: 20%;
         width: 50%;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-family: var(--primary-font-family);
         text-align: center;
         border: none;
         border-radius: 15px;
@@ -310,13 +324,13 @@
         position: relative;
         height: 35%;
         width: 60%;
-        color: #ffffff;
+        color: var(--font-primary-color);
         font-size: 16px;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-family: var(--primary-font-family);
         margin-top: 8px;
         border: none;
         border-radius: 15px;
-        background-color: #2d2d2d;
+        background-color: var(--secondary-color);
         top: 5%;
         left: 20%;
     }
@@ -325,9 +339,9 @@
         position: relative;
         height: 35%;
         width: 60%;
-        color: #ffffff;
+        color: var(--font-primary-color);
         font-size: 16px;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-family: var(--primary-font-family);
         margin-top: 8px;
         border: none;
         border-radius: 15px;
@@ -349,24 +363,24 @@
         position: relative;
         height: 100%;
         width: 100%;
-        color: #ffffff;
+        color: var(--font-primary-color);
         font-size: 16px;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-family: var(--primary-font-family);
         border: none;
         border-radius: 15px;
-        background-color: #2d2d2d;
+        background-color: var(--secondary-color);
     }
 
     .favourites_button:hover {
         position: relative;
         height: 100%;
         width: 100%;
-        color: #2d2d2d;
+        color: var(--font-secondary-color);
         font-size: 16px;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-family: var(--primary-font-family);
         border: none;
         border-radius: 15px;
-        background-color: #ffffff;
+        background-color: var(--tertiary-color);
     }
 
     /* ------------------------------------------------------------------------ */
@@ -383,9 +397,9 @@
     .description_container {
         height: 40%;
         width: 55%;
-        border: 2px solid #0c78f2;
+        border: var(--border);
         border-radius: 15px;
-        background-color: #2d2d2d;
+        background-color: var(--secondary-color);
         box-sizing: border-box;
     }
 
@@ -393,9 +407,9 @@
         height: 56%;
         width: 55%;
         margin-top: 50px;
-        border: 2px solid #0c78f2;
+        border: var(--border);
         border-radius: 15px;
-        background-color: #2d2d2d;
+        background-color: var(--secondary-color);
         box-sizing: border-box;
     }
 
@@ -405,9 +419,9 @@
         position: relative;
         height: 90%;
         width: 90%;
-        color: #ffffff;
+        color: var(--font-primary-color);
         font-size: 25px;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-family: var(--primary-font-family);
         text-align: justify;
         padding: 10px;
         /* background-color: rgb(89, 24, 209); */
@@ -420,13 +434,13 @@
     .description::-webkit-scrollbar {
         width: 10px;
         border-radius: 15px;
-        background-color: #3b3b3b;
+        background-color: var(--secondary-color);
     }
 
     .description::-webkit-scrollbar-thumb {
         width: 10px;
         border-radius: 25px;
-        background-color: #ffffff;
+        background-color: var(--tertiary-color);
     }
 
 }
@@ -440,7 +454,7 @@
 
     .favourite_process_state {
         height: 30px;
-        color: #ffffff;
+        color: var(--font-primary-color);
         font-size: 24px;
         text-align: center;
         margin: 0;
@@ -464,14 +478,14 @@
         position: relative;
         height: 70px;
         width: 100%;
-        background-color: #0c78f2;
+        background-color: var(--primary-color);
         z-index: 200;
     }
 
     /* Title of my pretty web */
     .header_background h1 {
         position: relative;
-        color: #ffffff;
+        color: var(--font-primary-color);
         font-size: 3.2em;
         font-family: Impact;
         text-align: center;
@@ -486,20 +500,20 @@
     .return_button p {
         height: 35%;
         width: 100%;
-        color: #ffffff;
+        color: var(--font-primary-color);
         font-size: 1.2em;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-family: var(--primary-font-family);
         text-align: center;
         margin: 0;
-        background-color: #2d2d2d;
+        background-color: var(--secondary-color);
     }
 
     .return_button p:hover {
         height: 35%;
         width: 100%;
-        color: #ffffff;
+        color: var(--font-primary-color);
         font-size: 1.2em;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-family: var(--primary-font-family);
         text-align: center;
         margin: 0;
         background-color: #074994;
@@ -511,7 +525,7 @@
     .general_container {
         height: 45%;
         width: 85%;
-        color: #ffffff;
+        color: var(--font-primary-color);
         text-align: center;
         margin: 0 auto;
         margin-top: 3%;
@@ -523,7 +537,7 @@
         height: 52%;
         margin: 55px 0;
         border-radius: 15px;
-        background-color: #2d2d2d;
+        background-color: var(--secondary-color);
         box-sizing: border-box;
         top: 48%;
     }
@@ -533,7 +547,7 @@
         height: 42%;
         margin: 55px 0;
         border-radius: 15px;
-        background-color: #0c78f2;
+        background-color: var(--primary-color);
         box-sizing: border-box;
         bottom: 58%;
     }
@@ -562,8 +576,8 @@
 
     .product_name p {
         position: relative;
-        color: #ffffff;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        color: var(--font-primary-color);
+        font-family: var(--primary-font-family);
         text-align: left;
         margin: 0;
         top: 5px;
@@ -573,7 +587,7 @@
     .product_condition p {
         position: relative;
         color: #00ff00;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-family: var(--primary-font-family);
         text-align: center;
         margin: 0;
         top: 5px;
@@ -595,13 +609,13 @@
         display: inline-block;
         height: 35px;
         width: 60%;
-        color: #ffffff;
+        color: var(--font-primary-color);
         font-size: 16px;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-family: var(--primary-font-family);
         margin: 8px;
         border: none;
         border-radius: 15px;
-        background-color: #0c78f2;
+        background-color: var(--primary-color);
         bottom: 5px;
     }
 
@@ -610,9 +624,9 @@
         display: inline-block;
         height: 35px;
         width: 60%;
-        color: #ffffff;
+        color: var(--font-primary-color);
         font-size: 16px;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-family: var(--primary-font-family);
         margin: 8px;
         border: none;
         border-radius: 15px;
@@ -624,31 +638,31 @@
         position: relative;
         height: 100%;
         width: 100%;
-        color: #ffffff;
+        color: var(--font-primary-color);
         font-size: 16px;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-family: var(--primary-font-family);
         border: none;
         border-radius: 15px;
-        background-color: #0c78f2;
+        background-color: var(--primary-color);
     }
 
     .favourites_button:hover {
         position: relative;
         height: 100%;
         width: 100%;
-        color: #2d2d2d;
+        color: var(--font-secondary-color);
         font-size: 16px;
         border: none;
         border-radius: 15px;
-        background-color: #ffffff;
+        background-color: var(--tertiary-color);
     }
 
     /* ------------------------------------------------------------------------ */
 
     .seller_container {
         position: relative;
-        color: #ffffff;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        color: var(--font-primary-color);
+        font-family: var(--primary-font-family);
         text-align: center;
         margin: 20px 0;
         /* background-color: #d61212; */
@@ -673,8 +687,8 @@
     .availability,
     .solds {
         display: inline-block;
-        color: #ffffff;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        color: var(--font-primary-color);
+        font-family: var(--primary-font-family);
         text-align: center;
         margin: 10px 5%;
         /* background-color: #12d695; */
@@ -683,7 +697,7 @@
     .price {
         color: #23d612;
         font-size: 50px;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-family: var(--primary-font-family);
         text-align: center;
         margin: 15px 0;
         /* background-color: #b43434; */
@@ -691,9 +705,9 @@
 
     .category_container {
         position: relative;
-        color: #2d2d2d;
+        color: var(--font-secondary-color);
         font-size: 25px;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-family: var(--primary-font-family);
         text-align: center;
         margin: 10px 0;
         /* background-color: #12d695; */
@@ -709,8 +723,8 @@
 
     .row p {
         position: relative;
-        color: #ffffff;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        color: var(--font-primary-color);
+        font-family: var(--primary-font-family);
         font-size: 22px;
         text-align: center;
         margin: 0;
@@ -720,7 +734,7 @@
         position: relative;
         height: 20px;
         width: 70%;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-family: var(--primary-font-family);
         text-align: center;
         border: none;
         border-radius: 15px;
@@ -731,7 +745,7 @@
         position: relative;
         height: 20px;
         width: 70%;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-family: var(--primary-font-family);
         text-align: center;
         border: none;
         border-radius: 15px;
@@ -753,21 +767,21 @@
 
     .description_container {
         height: 40%;
-        color: #ffffff;
+        color: var(--font-primary-color);
         text-align: justify;
-        border: 2px solid #0c78f2;
+        border: var(--border);
         border-radius: 15px;
-        background-color: #2d2d2d;
+        background-color: var(--secondary-color);
         box-sizing: border-box;
     }
 
     .reviews_container {
         height: 50%;
-        color: #ffffff;
+        color: var(--font-primary-color);
         margin-top: 60px;
-        border: 2px solid #0c78f2;
+        border: var(--border);
         border-radius: 15px;
-        background-color: #2d2d2d;
+        background-color: var(--secondary-color);
         box-sizing: border-box;
     }
 
@@ -777,9 +791,9 @@
         position: relative;
         height: 90%;
         width: 90%;
-        color: #ffffff;
+        color: var(--font-primary-color);
         font-size: 20px;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-family: var(--primary-font-family);
         text-align: justify;
         padding: 10px;
         /* background-color: rgb(89, 24, 209); */

@@ -24,6 +24,11 @@
 
 <body>
 
+    <div class="pop-up_background_no_display" id="createUserPopUp"></div>
+    <div class="pop-up_background_no_display" id="deleteUserPopUp"></div>
+    <div class="pop-up_background_no_display" id="updateUserPopUp"></div>
+    <div class="pop-up_background_no_display" id="adminUserPopUp"></div>
+
     <!-- Header -->
     <header>
 

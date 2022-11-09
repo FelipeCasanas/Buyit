@@ -1,4 +1,16 @@
-/* ------------------------------------------------------------------------ */
+:root {
+    --primary-color: #0c78f2;
+    --secondary-color: #2d2d2d;
+    --tertiary-color: #ffffff;
+
+    --font-primary-color: #ffffff;
+    --font-secondary-color: #000000;
+    --font-tertiary-color: #0c78f2;
+
+    --border: 3px solid #0c78f2;
+
+    --primary-font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
 
 /* This is easy, this is the body label */
 body {
@@ -9,13 +21,13 @@ body {
 
 body::-webkit-scrollbar {
     width: 10px;
-    background-color: #2d2d2d;
+    background-color: var(--secondary-color);
 }
 
 body::-webkit-scrollbar-thumb {
     width: 10px;
     border-radius: 0 20px 0 20px;
-    background-color: #0c78f2;
+    background-color: var(--primary-color);
 }
 
 /* ------------------------------------------------------------------------ */
@@ -25,7 +37,7 @@ body::-webkit-scrollbar-thumb {
     position: relative;
     height: 80px;
     width: 100%;
-    background-color: #0c78f2;
+    background-color: var(--primary-color);
 }
 
 /* Title of my pretty web */
@@ -33,7 +45,7 @@ body::-webkit-scrollbar-thumb {
     position: relative;
     display: inline-block;
     width: 40%;
-    color: #ffffff;
+    color: var(--font-primary-color);
     font-size: 65px;
     font-family: Impact;
     margin: 0;
@@ -47,7 +59,7 @@ body::-webkit-scrollbar-thumb {
     width: 12%;
     text-decoration: none;
     border-radius: 25px;
-    background-color: #2d2d2d;
+    background-color: var(--secondary-color);
     top: 20px;
     right: 10px;
     float: right;
@@ -73,9 +85,9 @@ body::-webkit-scrollbar-thumb {
 /* This is the text of the login button */
 .return_button p {
     position: relative;
-    color: #ffffff;
+    color: var(--font-primary-color);
     font-size: 1.2em;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: var(--primary-font-family);
     text-align: center;
     bottom: 6px;
     z-index: 500;
@@ -86,16 +98,16 @@ body::-webkit-scrollbar-thumb {
 .main {
     height: 77%;
     width: 90%;
-    color: #ffffff;
+    color: var(--font-primary-color);
     text-align: justify;
     margin: 5% auto;
     border-radius: 40px;
-    background-color: #2a2a2a;
+    background-color: var(--secondary-color);
 }
 
 .main h1 {
     position: relative;
-    color: #0c78f2;
+    color: var(--font-tertiary-color);
     font-size: 7vmin;
     font-family: Impact;
     text-align: center;
@@ -115,7 +127,7 @@ body::-webkit-scrollbar-thumb {
     width: 90%;
     margin: 55px auto;
     border-radius: 40px;
-    background-color: #1964b9;
+    background-color: var(--primary-color);
 }
 
 section div h2 {
@@ -140,7 +152,7 @@ section div h2 {
 
 .text_container::-webkit-scrollbar-thumb {
     border-radius: 20px;
-    background-color: #ffffff;
+    background-color: var(--tertiary-color);
 }
 
 .text_container p {
@@ -155,11 +167,11 @@ footer {
     display: block;
     height: 12%;
     width: 100%;
-    color: #ffffff;
+    color: var(--font-primary-color);
     font-size: 2.5em;
     font-family: Impact;
     margin: 0 auto;
-    background-color: #2a2a2a;
+    background-color: var(--secondary-color);
 }
 
 
@@ -177,9 +189,9 @@ footer {
 .footer_text_container p a {
     position: relative;
     display: inline-block;
-    color: #ffffff;
+    color: var(--font-primary-color);
     font-size: 5vmin;
-    font-family: 'Gill Sans';
+    font-family: var(--primary-font-family);
     text-decoration: none;
     transition: 0.7s;
     overflow: hidden;
@@ -190,9 +202,9 @@ footer {
 .footer_text_container p a:hover {
     position: relative;
     display: inline-block;
-    color: #0c78f2;
+    color: var(--font-tertiary-color);
     font-size: 5vmin;
-    font-family: 'Gill Sans';
+    font-family: var(--primary-font-family);
     text-decoration: none;
     bottom: 10%;
     transition: 0.8s;
@@ -230,8 +242,8 @@ footer {
 /* Copyright label */
 .copyright {
     position: relative;
-    color: #0c78f2;
+    color: var(--font-tertiary-color);
     font-size: 4vmin;
-    font-family: cursive;
+    font-family: var(--primary-font-family);
     text-align: center;
 }

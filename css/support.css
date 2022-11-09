@@ -1,4 +1,16 @@
-/* ------------------------------------------------------------------------ */
+:root {
+    --primary-color: #0c78f2;
+    --secondary-color: #2d2d2d;
+    --tertiary-color: #ffffff;
+
+    --font-primary-color: #ffffff;
+    --font-secondary-color: #000000;
+    --font-tertiary-color: #0c78f2;
+
+    --border: 3px solid #0c78f2;
+
+    --primary-font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
 
 /* This is easy, this is the body label */
 body {
@@ -9,13 +21,13 @@ body {
 
 body::-webkit-scrollbar {
     width: 10px;
-    background-color: #2d2d2d;
+    background-color: var(--secondary-color);
 }
 
 body::-webkit-scrollbar-thumb {
     width: 10px;
     border-radius: 0 20px 0 20px;
-    background-color: #0c78f2;
+    background-color: var(--primary-color);
 }
 
 /* ------------------------------------------------------------------------ */
@@ -25,7 +37,7 @@ body::-webkit-scrollbar-thumb {
     position: relative;
     height: 80px;
     width: 100%;
-    background-color: #0c78f2;
+    background-color: var(--primary-color);
 }
 
 /* Title of my pretty web */
@@ -33,7 +45,7 @@ body::-webkit-scrollbar-thumb {
     position: relative;
     display: inline-block;
     width: 40%;
-    color: #ffffff;
+    color: var(--font-primary-color);
     font-size: 65px;
     font-family: Impact;
     margin: 0;
@@ -47,7 +59,7 @@ body::-webkit-scrollbar-thumb {
     width: 12%;
     text-decoration: none;
     border-radius: 25px;
-    background-color: #2d2d2d;
+    background-color: var(--secondary-color);
     top: 20px;
     right: 10px;
     float: right;
@@ -73,9 +85,9 @@ body::-webkit-scrollbar-thumb {
 /* This is the text of the login button */
 .return_button p {
     position: relative;
-    color: #ffffff;
+    color: var(--font-primary-color);
     font-size: 1.2em;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: var(--primary-font-family);
     text-align: center;
     bottom: 6px;
     z-index: 500;
@@ -89,14 +101,14 @@ body::-webkit-scrollbar-thumb {
     width: 80%;
     margin: 50px auto;
     border-radius: 25px;
-    background-color: #2a2a2a;
+    background-color: var(--secondary-color);
 }
 
 .h2_options {
     position: relative;
-    color: #0c78f2;
+    color: var(--font-tertiary-color);
     font-size: 3.5vmin;
-    font-family: 'Franklin Gothic Medium';
+    font-family: var(--primary-font-family);
     text-align: center;
     top: 20px;
 }
@@ -119,7 +131,7 @@ body::-webkit-scrollbar-thumb {
     margin-left: 4%;
     border-radius: 15px;
     border: none;
-    background-color: #0c78f2;
+    background-color: var(--primary-color);
     top: 12%;
     float: left;
     transition: 0.4s;
@@ -146,7 +158,7 @@ body::-webkit-scrollbar-thumb {
     margin-left: 4%;
     border-radius: 15px;
     border: 5px solid #000000;
-    background-color: #2a2a2a;
+    background-color: var(--secondary-color);
     top: 12%;
     float: left;
 }
@@ -154,9 +166,9 @@ body::-webkit-scrollbar-thumb {
 .option1 p,
 .option2 p,
 .option3 p {
-    color: #ffffff;
+    color: var(--font-primary-color);
     font-size: 5vmin;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: var(--primary-font-family);
     margin: 0;
 }
 
@@ -168,7 +180,7 @@ body::-webkit-scrollbar-thumb {
     width: 80%;
     margin: 20px auto;
     border-radius: 25px;
-    background-color: #2a2a2a;
+    background-color: var(--secondary-color);
 }
 
 .general_form_container {
@@ -176,7 +188,7 @@ body::-webkit-scrollbar-thumb {
     height: 80%;
     width: 80%;
     border-radius: 25px;
-    background-color: #0c78f2;
+    background-color: var(--primary-color);
     top: 10%;
     left: 10%;
 }
@@ -195,7 +207,7 @@ body::-webkit-scrollbar-thumb {
     height: 10%;
     width: 60%;
     font-size: 20px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: var(--primary-font-family);
     text-align: center;
     margin-top: 65px;
     border: none;
@@ -217,14 +229,14 @@ body::-webkit-scrollbar-thumb {
     display: inline-block;
     height: 25px;
     width: 25px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: var(--primary-font-family);
     margin: 7px;
 }
 
 .terms_conditions_container p {
     position: relative;
     display: inline-block;
-    color: #ffffff;
+    color: var(--font-primary-color);
     font-size: 2.2vmin;
     margin: 0;
     left: 19%;
@@ -259,12 +271,12 @@ body::-webkit-scrollbar-thumb {
     position: relative;
     height: 60%;
     width: 45%;
-    color: #ffffff;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: var(--font-primary-color);
+    font-family: var(--primary-font-family);
     margin-left: 3%;
     border: none;
     border-radius: 20px;
-    background-color: #2d2d2d;
+    background-color: var(--secondary-color);
     bottom: 415px;
     transition: 0.3s;
 }
@@ -273,7 +285,7 @@ body::-webkit-scrollbar-thumb {
     position: relative;
     height: 60%;
     width: 45%;
-    color: #ffffff;
+    color: var(--font-primary-color);
     margin-left: 3%;
     border: none;
     border-radius: 20px;
@@ -286,11 +298,11 @@ body::-webkit-scrollbar-thumb {
     position: relative;
     height: 60%;
     width: 45%;
-    color: #ffffff;
+    color: var(--font-secondary-color);
     margin-left: 3%;
     border: none;
     border-radius: 20px;
-    background-color: #144883;
+    background-color: var(--tertiary-color);
     bottom: 415px;
     transition: 0.1s;
 }
@@ -303,11 +315,11 @@ footer {
     display: block;
     height: 18%;
     width: 100%;
-    color: #ffffff;
+    color: var(--font-primary-color);
     font-size: 2.5em;
     font-family: Impact;
     margin: 0 auto;
-    background-color: #2a2a2a;
+    background-color: var(--secondary-color);
     top: 22px;
 }
 
@@ -326,9 +338,9 @@ footer {
 .footer_text_container p a {
     position: relative;
     display: inline-block;
-    color: #ffffff;
+    color: var(--font-primary-color);
     font-size: 5vmin;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: var(--primary-font-family);
     text-decoration: none;
     transition: 0.7s;
     overflow: hidden;
@@ -339,9 +351,9 @@ footer {
 .footer_text_container p a:hover {
     position: relative;
     display: inline-block;
-    color: #0c78f2;
+    color: var(--font-tertiary-color);
     font-size: 5vmin;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: var(--primary-font-family);
     text-decoration: none;
     bottom: 10%;
     transition: 0.8s;
@@ -379,8 +391,8 @@ footer {
 /* Copyright label */
 .copyright {
     position: relative;
-    color: #0c78f2;
+    color: var(--font-tertiary-color);
     font-size: 4vmin;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: var(--primary-font-family);
     text-align: center;
 }

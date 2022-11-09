@@ -1,3 +1,18 @@
+:root {
+    --primary-color: #0c78f2;
+    --secondary-color: #2d2d2d;
+    --tertiary-color: #ffffff;
+
+    --font-primary-color: #ffffff;
+    --font-secondary-color: #000000;
+    --font-tertiary-color: #0c78f2;
+
+    --border: 3px solid #0c78f2;
+    --white-border: 2px solid #ffffff;
+
+    --primary-font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
 @media (min-width: 880px) {
 
     body {
@@ -10,7 +25,7 @@
     h1 {
         position: relative;
         width: 20%;
-        color: #ffffff;
+        color: var(--font-primary-color);
         font-size: 4.62em;
         font-family: Impact;
         text-align: left;
@@ -21,7 +36,7 @@
     .error_container {
         position: absolute;
         width: 60%;
-        border: 2px solid #ffffff;
+        border: var(--white-border);
         border-radius: 70px;
         background-color: #1099bb;
         top: 43%;
@@ -29,9 +44,9 @@
     }
 
     .error_container p {
-        color: #ffffff;
+        color: var(--font-primary-color);
         font-size: 26px;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-family: var(--primary-font-family);
         text-align: center;
     }
 
@@ -44,7 +59,7 @@
         height: 6.5%;
         width: 20%;
         text-decoration: none;
-        border: 2px solid #ffffff;
+        border: var(--white-border);
         border-radius: 70px;
         padding: 3px;
         background-color: #1099bb;
@@ -58,7 +73,7 @@
         height: 6.5%;
         width: 20%;
         text-decoration: none;
-        border: 2px solid #ffffff;
+        border: var(--white-border);
         border-radius: 70px;
         padding: 3px;
         background-color: #727272;
@@ -69,9 +84,9 @@
 
     .go_back_button p {
         position: relative;
-        color: #ffffff;
+        color: var(--font-primary-color);
         font-size: 24px;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-family: var(--primary-font-family);
         text-align: center;
         bottom: 67%;
     }
@@ -89,7 +104,7 @@
 
     /* Title of my pretty web */
     h1 {
-        color: #ffffff;
+        color: var(--font-primary-color);
         font-size: 3.2em;
         font-family: Impact;
         text-align: center;
@@ -107,15 +122,15 @@
 
     .error_container p {
         position: relative;
-        color: #ffffff;
+        color: var(--font-primary-color);
         font-size: 26px;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-family: var(--primary-font-family);
         text-align: center;
     }
 
     span {
         color: #ff0000;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-family: var(--primary-font-family);
     }
 
     .go_back_button {
@@ -135,7 +150,7 @@
         position: relative;
         color: #000000;
         font-size: 24px;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-family: var(--primary-font-family);
         text-align: center;
         bottom: 45%;
     }

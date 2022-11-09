@@ -1,4 +1,17 @@
-/* ------------------------------------------------------------------------ */
+:root {
+  --primary-color: #0c78f2;
+  --secondary-color: #2d2d2d;
+  --tertiary-color: #ffffff;
+  --quaternary-color: #000000;
+
+  --font-primary-color: #ffffff;
+  --font-secondary-color: #000000;
+  --font-tertiary-color: #0c78f2;
+
+  --border: 3px solid #0c78f2;
+
+  --primary-font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
 
 /* This is easy, this is the body label */
 body {
@@ -9,31 +22,35 @@ body {
 
 body::-webkit-scrollbar {
   width: 10px;
-  background-color: #2d2d2d;
+  background-color: var(--secondary-color);
 }
 
 body::-webkit-scrollbar-thumb {
   width: 10px;
   border-radius: 0 20px 0 20px;
-  background-color: #0c78f2;
+  background-color: var(--primary-color);
 }
 
 /* ------------------------------------------------------------------------ */
 
-/* This is the header background, where is the title or search-bar */
-.header_background {
+.header {
   position: relative;
   height: 80px;
   width: 100%;
-  background-color: #0c78f2;
+}
+
+.header__background {
+  height: 100%;
+  width: 100%;
+  background-color: var(--primary-color);
 }
 
 /* Title of my pretty web */
-.header_background h1 {
+.header__h1 {
   position: relative;
   display: inline-block;
   width: auto;
-  color: #ffffff;
+  color: var(--font-primary-color);
   font-size: 65px;
   font-family: Impact;
   margin: 0;
@@ -41,20 +58,20 @@ body::-webkit-scrollbar-thumb {
 }
 
 /* This is the login button */
-.return_button {
+.header__button {
   position: relative;
   height: 60%;
   width: 12%;
   text-decoration: none;
   border-radius: 25px;
-  background-color: #2d2d2d;
+  background-color: var(--secondary-color);
   top: 20px;
   right: 10px;
   float: right;
   overflow: hidden;
 }
 
-.return_button::after {
+.header__button::after {
   position: absolute;
   content: "";
   height: 60px;
@@ -66,16 +83,16 @@ body::-webkit-scrollbar-thumb {
   transition: 0.7s;
 }
 
-.return_button:hover::after {
+.header__button:hover::after {
   left: 0px;
 }
 
 /* This is the text of the login button */
-.return_button p {
+.button__text {
   position: relative;
-  color: #ffffff;
+  color: var(--font-primary-color);
   font-size: 1.2em;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: var(--primary-font-family);
   text-align: center;
   bottom: 6px;
   z-index: 500;
@@ -85,53 +102,52 @@ body::-webkit-scrollbar-thumb {
 /* ------------------------------------------------------------------------ */
 
 
-.first_img_container {
+.article__img-container {
   height: 130vh;
   width: 100%;
   margin: 0;
-  background-color: #0c78f2;
+  background-color: var(--primary-color);
 }
 
-.first_img {
+.article__img {
   height: 80%;
   width: 100%;
   background-size: cover;
   clip-path: polygon(0 15%, 100% 0, 100% 50%, 0 100%);
-  transition: 0.6s;
 }
 
-.who_we_are_container {
+.article__who-we-are-container {
   position: relative;
   height: 82vh;
   width: 100%;
-  background-color: #2d2d2d;
+  background-color: var(--secondary-color);
   bottom: 43%;
   clip-path: polygon(0 65%, 100% 0, 100% 100%, 0 100%);
 }
 
-.who_we_are {
+.article__who-we-are {
   position: relative;
   height: 40vh;
   width: 60vw;
-  color: #ffffff;
+  color: var(--font-primary-color);
   /* background-color: #b43434; */
   top: 40%;
   right: 3%;
   float: right;
 }
 
-.who_we_are h2 {
+.who-we-are__h2 {
   height: 40px;
   width: auto;
-  color: #ffffff;
+  color: var(--font-primary-color);
   font-size: 4vmin;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: var(--primary-font-family);
   text-align: center;
   border-radius: 10px;
-  background-color: #0c78f2;
+  background-color: var(--primary-color);
 }
 
-.who_we_are h2:hover {
+.who-we-are__h2:hover {
   height: 40px;
   width: auto;
   text-align: center;
@@ -139,116 +155,108 @@ body::-webkit-scrollbar-thumb {
   transition: background-color, 0.6s;
 }
 
-.who_we_are p {
+.who-we-are__p {
   height: 40px;
   width: auto;
-  color: #ffffff;
+  color: var(--font-primary-color);
   font-size: 4vmin;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: var(--primary-font-family);
   text-align: justify;
   border-radius: 10px;
 }
 
-.second_img_container {
+.article__img-container--gray {
   height: 90vh;
-  width: 100%;
-  margin: 0;
   background-color: #aab4c0;
 }
 
-.second_img {
+.article__img--second-img {
   height: 84%;
-  width: 100%;
-  background-size: cover;
   clip-path: polygon(65% 0, 100% 0, 100% 100%, 55% 100%);
-  transition: 0.6s;
 }
 
-.whats_our_mission_container {
+.article__whats-our-mission-container {
   position: relative;
   height: 70%;
   width: 50%;
   padding: 0 15px;
-  /* background-color: #2d2d2d; */
+  /* background-color: var(--secondary-color); */
   bottom: 82%;
   left: 2%;
   overflow-y: auto;
   box-sizing: border-box;
 }
 
-.whats_our_mission_container::-webkit-scrollbar {
+.article__whats-our-mission-container::-webkit-scrollbar {
   width: 5px;
   background-color: #aab4c0;
 }
 
-.whats_our_mission_container::-webkit-scrollbar-thumb {
+.article__whats-our-mission-container::-webkit-scrollbar-thumb {
   width: 5px;
   border-radius: 10px;
   background-color: #000000;
 }
 
-.whats_our_mission_h2_container {
+.article__whats-our-mission-h2-container {
   position: relative;
   height: 12%;
   width: 100%;
   /* background-color: #b43434; */
 }
 
-.whats_our_mission_h2_container h2 {
+.article__whats-our-mission-h2-container {
   height: 40px;
   width: auto;
   color: #ff7300;
   font-size: 5vmin;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: var(--primary-font-family);
   text-align: center;
 }
 
-.whats_our_mission_container p {
+.article__whats-our-mission-h2 {}
+
+.article__whats-our-mission-container-p {
   color: #000000;
   font-size: 3.5vmin;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: var(--primary-font-family);
   text-align: justify;
   letter-spacing: 2px;
 }
 
-.third_img_container {
+.article__img-container--blue {
   height: 88vh;
-  width: 100%;
-  margin: 0;
   background-color: #134074;
 }
 
-.third_img {
-  position: relative;
+.article__img--third-img {
   height: 100%;
   width: 55%;
-  background-size: cover;
   clip-path: polygon(0 0, 100% 0, 90% 50%, 100% 100%, 45% 100%, 65% 45%, 0 10%);
-  transition: 0.6s;
 }
 
-.third_img_container h2 {
+.article__img-container-h2 {
   position: relative;
   height: 40px;
   width: 30%;
   color: #fffb00;
   font-size: 5vmin;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: var(--primary-font-family);
   left: 2.5%;
   bottom: 55%;
 }
 
-.whats_our_vision_container {
+.article__whats-our-vision-container {
   position: relative;
   height: 70%;
   width: 40%;
   color: #aab4c0;
   font-size: 3.5vmin;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: var(--primary-font-family);
   text-align: justify;
   letter-spacing: 2px;
   padding: 0 15px;
-  /* background-color: #2d2d2d; */
+  /* background-color: var(--secondary-color); */
   bottom: 98%;
   right: 4%;
   float: right;
@@ -256,44 +264,34 @@ body::-webkit-scrollbar-thumb {
   box-sizing: border-box;
 }
 
-.whats_our_vision_container::-webkit-scrollbar {
+.article__whats-our-vision-container::-webkit-scrollbar {
   width: 5px;
   background-color: #2a5f9b;
 }
 
-.whats_our_vision_container::-webkit-scrollbar-thumb {
+.article__whats-our-vision-container::-webkit-scrollbar-thumb {
   width: 5px;
   border-radius: 10px;
-  background-color: #ffffff;
+  background-color: var(--tertiary-color);
 }
 
-.fourth_img_container {
-  height: 88vh;
-  width: 100%;
-  margin: 0;
-  background-color: #152436;
-}
-
-.fourth_img {
-  position: relative;
+.article__img-container--fourth-img {
   height: 100%;
   width: 55%;
-  background-size: cover;
   clip-path: polygon(45% 0, 100% 0, 80% 100%, 0 100%);
-  transition: 0.6s;
 }
 
-.whos_the_creator_container {
+.article__img-container-whos-the-creator-container {
   position: relative;
   height: 90%;
   width: 40%;
-  color: #ffffff;
+  color: var(--font-primary-color);
   font-size: 3.5vmin;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: var(--primary-font-family);
   text-align: justify;
   letter-spacing: 2px;
   padding: 0 15px;
-  /* background-color: #2d2d2d; */
+  /* background-color: var(--secondary-color); */
   bottom: 98%;
   right: 4%;
   float: right;
@@ -301,108 +299,81 @@ body::-webkit-scrollbar-thumb {
   box-sizing: border-box;
 }
 
-.whos_the_creator_container::-webkit-scrollbar {
+.article__img-container-whos-the-creator-container::-webkit-scrollbar {
   width: 5px;
   background-color: #2a5f9b;
 }
 
-.whos_the_creator_container::-webkit-scrollbar-thumb {
+.article__img-container-whos-the-creator-container::-webkit-scrollbar-thumb {
   width: 5px;
   border-radius: 10px;
-  background-color: #ffffff;
+  background-color: var(--tertiary-color);
 }
 
-.whos_the_creator_container h2 {
+.whos-the-creator-container__h2 {
   height: 40px;
   color: #aab4c0;
   font-size: 5vmin;
   text-align: center;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: var(--primary-font-family);
 }
 
-.wsycc_description_container {
+.whos-the-creator-container__description-container {
   position: relative;
   height: 65%;
-  color: #0c78f2;
+  color: var(--font-tertiary-color);
   /* background-color: #aab4c0; */
   top: 15%;
 }
 
-.degraded_img {
-  position: relative;
-  height: 120px;
-  width: 100%;
-  bottom: 630px;
-}
-
-.degraded_img img {
-  height: 100%;
-  width: 100%;
-}
-
-.sixth_img_container {
+.article__img-container--dark-gray {
   height: 88vh;
-  width: 100%;
-  margin: 0;
-  background-color: #152436;
+  background-color: var(--secondary-color);
 }
 
-.sixth_img {
-  position: relative;
-  height: 100%;
-  width: 55%;
-  background-size: cover;
-  clip-path: polygon(45% 0, 100% 0, 80% 100%, 0 100%);
-  transition: 0.6s;
+.article__img-container--black {
+  display: inline-flex;
+  height: 50vh;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: var(--quaternary-color);
 }
 
-.version_title_container {
-  position: relative;
-  height: 90%;
+.article__img-container--sixth-img {
+  height: 60%;
+  width: 300px;
+  /* clip-path: polygon(45% 0, 100% 0, 80% 100%, 0 100%); */
+}
+
+.article__img-container-version {
   width: 40%;
-  color: #ffffff;
+  color: var(--font-primary-color);
   font-size: 3.5vmin;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  text-align: justify;
-  letter-spacing: 2px;
-  padding: 0 15px;
-  /* background-color: #2d2d2d; */
-  bottom: 98%;
-  right: 4%;
-  float: right;
-  overflow-y: auto;
-  box-sizing: border-box;
-}
-
-.version_title_container h2 {
-  height: 40px;
-  color: #aab4c0;
-  font-size: 5vmin;
+  font-family: var(--primary-font-family);
   text-align: center;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  letter-spacing: 2px;
+  border-radius: 15px;
+  background-color: var(--secondary-color);
+  overflow-y: auto;
 }
 
-.version {
-  position: relative;
+.version__h2 {
   height: 65%;
-  color: #0c78f2;
+  color: var(--font-tertiary-color);
   /* background-color: #aab4c0; */
-  top: 15%;
 }
 
 /* ------------------------------------------------------------------------ */
 
 /* This is footer background and brand properties */
 footer {
-  position: relative;
   height: 15%;
   width: 100%;
-  color: #ffffff;
+  color: var(--font-primary-color);
   font-size: 2.5em;
   font-family: Impact;
   margin: 0 auto;
   background-color: #2a2a2a;
-  top: 5px;
 }
 
 
@@ -421,9 +392,9 @@ footer {
 .footer_text_container p a {
   position: relative;
   display: inline-block;
-  color: #ffffff;
+  color: var(--font-primary-color);
   font-size: 5vmin;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: var(--primary-font-family);
   text-decoration: none;
   bottom: 45%;
   transition: 0.7s;
@@ -435,9 +406,9 @@ footer {
 .footer_text_container p a:hover {
   position: relative;
   display: inline-block;
-  color: #0c78f2;
+  color: var(--font-tertiary-color);
   font-size: 5vmin;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: var(--primary-font-family);
   text-decoration: none;
   bottom: 60%;
   transition: 0.8s;
@@ -475,9 +446,9 @@ footer {
 /* Copyright label */
 .copyright {
   position: relative;
-  color: #0c78f2;
+  color: var(--font-tertiary-color);
   font-size: 4vmin;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: var(--primary-font-family);
   text-align: center;
   top: 5%;
 }

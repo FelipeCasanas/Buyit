@@ -57,9 +57,19 @@
 
             <!-- Buy it web title -->
             <h1>Buy it</h1>
-            <a href="home.php" class="return_button">
-                <p>Volver a inicio</p>
-            </a>
+            <?php
+                $usr_id = $_SESSION['id'];
+
+                if($usr_id == null) {
+                    echo '<a href="index.php" class="return_button">
+                    <p>Volver a inicio</p>
+                    </a>';
+                } else {
+                    echo '<a href="home.php" class="return_button">
+                    <p>Volver a inicio</p>
+                    </a>';
+                }
+            ?>
         </div>
 
     </header>

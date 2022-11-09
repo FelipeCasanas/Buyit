@@ -1,3 +1,17 @@
+:root {
+  --primary-color: #0c78f2;
+  --secondary-color: #2d2d2d;
+  --tertiary-color: #ffffff;
+
+  --font-primary-color: #ffffff;
+  --font-secondary-color: #000000;
+  --font-tertiary-color: #0c78f2;
+
+  --border: 2px solid #074994;
+
+  --primary-font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
 @media (min-width: 880px) {
 
   /* This is easy, this is the body label */
@@ -15,13 +29,13 @@
 
   body::-webkit-scrollbar {
     width: 10px;
-    background-color: #2d2d2d;
+    background-color: var(--secondary-color);
   }
 
   body::-webkit-scrollbar-thumb {
     width: 10px;
     border-radius: 0 20px 0 20px;
-    background-color: #0c78f2;
+    background-color: var(--primary-color);
   }
 
   /* ------------------------------------------------------------------------ */
@@ -31,7 +45,7 @@
     position: relative;
     height: 80px;
     width: 100%;
-    background-color: #0c78f2;
+    background-color: var(--primary-color);
   }
 
   /* Title of my pretty web */
@@ -39,7 +53,7 @@
     position: relative;
     display: inline-block;
     width: 40%;
-    color: #ffffff;
+    color: var(--font-primary-color);
     font-size: 65px;
     font-family: Impact;
     margin: 0;
@@ -53,7 +67,7 @@
     width: 12%;
     text-decoration: none;
     border-radius: 25px;
-    background-color: #2d2d2d;
+    background-color: var(--secondary-color);
     top: 20px;
     right: 10px;
     float: right;
@@ -79,9 +93,9 @@
   /* This is the text of the login button */
   .return_button p {
     position: relative;
-    color: #ffffff;
+    color: var(--font-primary-color);
     font-size: 1.2em;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: var(--primary-font-family);
     text-align: center;
     bottom: 6px;
     z-index: 500;
@@ -114,9 +128,9 @@
     position: relative;
     height: 80%;
     width: 60px;
-    border: 3px solid #0c78f2;
+    background-color: var(--primary-color);
     border-radius: 25px;
-    background-color: #2a2a2a;
+    background-color: var(--secondary-color);
     top: 10%;
     right: 20px;
     float: right;
@@ -140,7 +154,7 @@
     margin: 15px 0;
     border: none;
     border-radius: 50%;
-    background-color: #0c78f2;
+    background-color: var(--primary-color);
     left: 11%;
     transition: 0.2s;
   }
@@ -148,7 +162,7 @@
   .utilities_buttons_active {
     border: none;
     border-radius: 50%;
-    background-color: #074994;
+    background-color: var(--primary-color);
   }
 
   /* ------------------------------------------------------------------------ */
@@ -163,14 +177,14 @@
     height: 90%;
     width: 40%;
     border-radius: 50%;
-    background-color: #2a2a2a;
+    background-color: var(--secondary-color);
     box-sizing: border-box;
     top: 5%;
     left: 30%;
   }
 
   .dark_user_icon_background {
-    background-color: #ffffff;
+    background-color: var(--tertiary-color);
   }
 
   .user_icon_head {
@@ -178,7 +192,7 @@
     height: 40%;
     width: 40%;
     border-radius: 50%;
-    background-color: #ffffff;
+    background-color: var(--tertiary-color);
     top: 7%;
     left: 30%;
   }
@@ -192,7 +206,7 @@
     height: 40%;
     width: 50%;
     border-radius: 10% 10% 45% 45%;
-    background-color: #ffffff;
+    background-color: var(--tertiary-color);
     top: 12%;
     left: 25%;
   }
@@ -220,10 +234,10 @@
     height: 35%;
     width: 45%;
     margin: 20px 0;
-    border: 2px solid #074994;
+    border: var(--border);
     border-radius: 15px;
     padding: 10px;
-    background-color: #0c78f2;
+    background-color: var(--primary-color);
     box-sizing: border-box;
     float: left;
     left: 3.5%;
@@ -234,10 +248,10 @@
     height: 35%;
     width: 45%;
     margin: 20px 0;
-    border: 2px solid #074994;
+    border: var(--border);
     border-radius: 15px;
     padding: 10px;
-    background-color: #0c78f2;
+    background-color: var(--primary-color);
     box-sizing: border-box;
     float: right;
     right: 3.5%;
@@ -246,13 +260,13 @@
   .left_input_div p,
   .right_input_div p {
     margin: 0;
-    color: #ffffff;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: var(--font-primary-color);
+    font-family: var(--primary-font-family);
     text-align: center;
   }
 
   .dark_input_label {
-    color: #000000;
+    color: var(--font-secondary-color);
   }
 
   .left_input_div input,
@@ -260,12 +274,12 @@
     position: relative;
     height: 35%;
     width: 80%;
-    color: #ffffff;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: var(--font-primary-color);
+    font-family: var(--primary-font-family);
     text-align: center;
     border: none;
     border-radius: 15px;
-    background-color: #2a2a2a;
+    background-color: var(--secondary-color);
     top: 20%;
     left: 10%;
   }
@@ -279,21 +293,21 @@
   .register_button {
     height: 80%;
     width: 35%;
-    color: #000000;
+    color: var(--font-secondary-color);
     font-size: 20px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    border: 2px solid #074994;
+    font-family: var(--primary-font-family);
+    border: var(--border);
     border-radius: 25px;
-    background-color: #0c78f2;
+    background-color: var(--primary-color);
   }
 
   .go_back_button:hover,
   .register_button:hover {
     height: 80%;
     width: 35%;
-    color: #ffffff;
+    color: var(--font-primary-color);
     font-size: 20px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: var(--primary-font-family);
     border: none;
     border-radius: 25px;
     background-color: #074994;
@@ -321,9 +335,9 @@
     display: block;
     height: 200px;
     width: 100%;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: var(--primary-font-family);
     margin: 0 auto;
-    background-color: #2a2a2a;
+    background-color: var(--secondary-color);
   }
 
   /* Footer text container */
@@ -343,9 +357,9 @@
   .footer_text_container p a {
     position: relative;
     display: inline-block;
-    color: #ffffff;
+    color: var(--font-primary-color);
     font-size: 60px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: var(--primary-font-family);
     text-decoration: none;
     margin: 0 10px;
   }
@@ -357,7 +371,7 @@
     display: inline-block;
     color: #0c78f2;
     font-size: 60px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: var(--primary-font-family);
     text-decoration: none;
     bottom: 20%;
     transition: 0.6s;
@@ -404,7 +418,7 @@
     height: 1200px;
     width: 100%;
     margin: 0;
-    background-color: #e6e6e6;
+    background-color: var(--tertiary-color);
   }
 
   .dark_mode {
@@ -417,7 +431,7 @@
   .header_background {
     position: relative;
     height: 70px;
-    background-color: #0c78f2;
+    background-color: var(--primary-color);
   }
 
   /* This is the header background, where is the title or search-bar */
@@ -425,14 +439,14 @@
     position: relative;
     height: 70px;
     width: 100%;
-    background-color: #0c78f2;
+    background-color: var(--primary-color);
     z-index: 200;
   }
 
   /* Title of my pretty web */
   .buyit_title {
     position: relative;
-    color: #ffffff;
+    color: var(--font-primary-color);
     font-size: 3.2em;
     font-family: Impact;
     text-align: center;
@@ -447,20 +461,20 @@
   .return_button p {
     height: 35%;
     width: 100%;
-    color: #ffffff;
+    color: var(--font-primary-color);
     font-size: 1.2em;
     font-family: 'Lucida Sans';
     text-align: center;
     margin: 0;
-    background-color: #2d2d2d;
+    background-color: var(--secondary-color);
   }
 
   .return_button p:hover {
     height: 35%;
     width: 100%;
-    color: #ffffff;
+    color: var(--font-primary-color);
     font-size: 1.2em;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: var(--primary-font-family);
     text-align: center;
     margin: 0;
     background-color: #b43434;
@@ -487,9 +501,9 @@
     height: 70%;
     width: 97%;
     margin: 0 auto;
-    border: 2px solid #0c78f2;
+    background-color: var(--primary-color);
     border-radius: 15px;
-    background-color: #2a2a2a;
+    background-color: var(--secondary-color);
     top: 15%;
   }
 
@@ -505,11 +519,11 @@
   .utilities_buttons_active {
     height: 60%;
     width: 14%;
-    color: #ffffff;
+    color: var(--font-primary-color);
     margin: 10px 1.32%;
     border: none;
     border-radius: 15px;
-    background-color: #074994;
+    background-color: var(--primary-color);
     float: left;
   }
 
@@ -537,14 +551,14 @@
     height: 90%;
     width: 70%;
     border-radius: 50%;
-    background-color: #2a2a2a;
+    background-color: var(--secondary-color);
     box-sizing: border-box;
     top: 5%;
     left: 15%;
   }
 
   .dark_user_icon_background {
-    background-color: #ffffff;
+    background-color: var(--tertiary-color);
   }
 
   .user_icon_head {
@@ -552,7 +566,7 @@
     height: 40%;
     width: 40%;
     border-radius: 50%;
-    background-color: #ffffff;
+    background-color: var(--tertiary-color);
     top: 7%;
     left: 30%;
   }
@@ -566,7 +580,7 @@
     height: 40%;
     width: 50%;
     border-radius: 10% 10% 45% 45%;
-    background-color: #ffffff;
+    background-color: var(--tertiary-color);
     top: 12%;
     left: 25%;
   }
@@ -594,10 +608,10 @@
     height: 20%;
     width: 90%;
     margin: 0 auto;
-    border: 2px solid #074994;
+    border: var(--border);
     border-radius: 15px;
     padding: 10px;
-    background-color: #0c78f2;
+    background-color: var(--primary-color);
     box-sizing: border-box;
   }
 
@@ -605,10 +619,10 @@
     height: 20%;
     width: 90%;
     margin: 22px auto;
-    border: 2px solid #074994;
+    border: var(--border);
     border-radius: 15px;
     padding: 10px;
-    background-color: #0c78f2;
+    background-color: var(--primary-color);
     box-sizing: border-box;
   }
 
@@ -616,13 +630,13 @@
   .right_input_div p {
     position: relative;
     margin: 0;
-    color: #ffffff;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: var(--font-primary-color);
+    font-family: var(--primary-font-family);
     text-align: center;
   }
 
   .dark_input_label {
-    color: #000000;
+    color: var(--font-secondary-color);
   }
 
   .left_input_div input,
@@ -630,12 +644,12 @@
     position: relative;
     height: 45%;
     width: 80%;
-    color: #ffffff;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: var(--font-primary-color);
+    font-family: var(--primary-font-family);
     text-align: center;
     border: none;
     border-radius: 15px;
-    background-color: #2a2a2a;
+    background-color: var(--secondary-color);
     top: 20%;
     left: 10%;
   }
@@ -651,26 +665,26 @@
   .register_button {
     height: 40%;
     width: 100%;
-    color: #ffffff;
+    color: var(--font-primary-color);
     font-size: 20px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    border: 2px solid #074994;
+    font-family: var(--primary-font-family);
+    border: var(--border);
     border-radius: 25px;
-    background-color: #0c78f2;
+    background-color: var(--primary-color);
   }
 
   .dark_mode_button_text {
-    color: #000000;
+    color: var(--font-secondary-color);
   }
 
   .go_back_button:hover,
   .register_button:hover {
     height: 40%;
     width: 100%;
-    color: #ffffff;
+    color: var(--font-primary-color);
     font-size: 20px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    border: 2px solid #0c78f2;
+    font-family: var(--primary-font-family);
+    background-color: var(--primary-color);
     border-radius: 25px;
     background-color: #074994;
   }
@@ -692,11 +706,11 @@
     position: relative;
     height: 270px;
     width: 100%;
-    color: #ffffff;
+    color: var(--font-primary-color);
     font-size: 2.5em;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: var(--primary-font-family);
     margin: 0 auto;
-    background-color: #2a2a2a;
+    background-color: var(--secondary-color);
   }
 
 
@@ -715,9 +729,9 @@
   .footer_text_container p,
   .footer_text_container p a {
     position: relative;
-    color: #ffffff;
+    color: var(--font-primary-color);
     font-size: 7vmin;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: var(--primary-font-family);
     text-decoration: none;
     top: 5%;
   }
@@ -738,7 +752,7 @@
     position: relative;
     color: #0c78f2;
     font-size: 4vmin;
-    font-family: cursive;
+    font-family: var(--primary-font-family);
     text-align: center;
     bottom: 55%;
     z-index: 4000;

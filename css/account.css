@@ -1,3 +1,14 @@
+:root {
+    --primary-color: #0c78f2;
+    --secondary-color: #2d2d2d;
+
+    --font-primary-color: #ffffff;
+    --font-secondary-color: #000000;
+    --font-tertiary-color: #0c78f2;
+
+    --primary-font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
 @media (min-width: 880px) {
 
     .preferences_checkbox {
@@ -13,13 +24,13 @@
 
     body::-webkit-scrollbar {
         width: 10px;
-        background-color: #2d2d2d;
+        background-color: var(--secondary-color);
     }
 
     body::-webkit-scrollbar-thumb {
         width: 10px;
         border-radius: 0 20px 0 20px;
-        background-color: #0c78f2;
+        background-color: var(--primary-color);
     }
 
     .pop-up_background {
@@ -42,8 +53,8 @@
     .pop-up_background h2,
     .pop-up h2 {
         position: absolute;
-        color: #ffffff;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        color: var(--font-primary-color);
+        font-family: var(--primary-font-family);
         top: 85px;
     }
 
@@ -54,7 +65,7 @@
         align-items: center;
         justify-content: center;
         border-radius: 15px;
-        background-color: #0c78f2;
+        background-color: var(--primary-color);
     }
 
     .delete_user_pop-up {
@@ -66,7 +77,7 @@
         justify-content: center;
         gap: 20px;
         border-radius: 15px;
-        background-color: #0c78f2;
+        background-color: var(--primary-color);
     }
 
     .update_user_pop-up {
@@ -77,7 +88,7 @@
         justify-content: center;
         gap: 20px;
         border-radius: 15px;
-        background-color: #0c78f2;
+        background-color: var(--primary-color);
     }
 
     .admin_user_pop-up {
@@ -89,7 +100,7 @@
         justify-content: center;
         gap: 20px;
         border-radius: 15px;
-        background-color: #0c78f2;
+        background-color: var(--primary-color);
     }
 
     .pop-up_input_left_container {
@@ -115,7 +126,7 @@
     .pop-up_input {
         height: 30px;
         width: 70%;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-family: var(--primary-font-family);
         border: none;
         border-radius: 15px;
         text-align: center;
@@ -125,7 +136,7 @@
         height: 30px;
         width: 70%;
         color: #000000;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-family: var(--primary-font-family);
         border: none;
         border-radius: 15px;
         background-color: #ffffff;
@@ -135,10 +146,10 @@
     .pop-up-button:hover {
         height: 30px;
         width: 70%;
-        color: #ffffff;
+        color: var(--font-primary-color);
         border: none;
         border-radius: 15px;
-        background-color: #2d2d2d;
+        background-color: var(--secondary-color);
         transition: .5s;
     }
 
@@ -156,7 +167,7 @@
         position: relative;
         height: 80px;
         width: 100%;
-        background-color: #0c78f2;
+        background-color: var(--primary-color);
     }
 
     /* Title of my pretty web */
@@ -164,7 +175,7 @@
         position: relative;
         display: inline-block;
         width: 40%;
-        color: #ffffff;
+        color: var(--font-primary-color);
         font-size: 65px;
         font-family: Impact;
         margin: 0;
@@ -178,7 +189,7 @@
         width: 12%;
         text-decoration: none;
         border-radius: 25px;
-        background-color: #2d2d2d;
+        background-color: var(--secondary-color);
         top: 20px;
         right: 10px;
         float: right;
@@ -204,9 +215,9 @@
     /* This is the text of the login button */
     .return_button p {
         position: relative;
-        color: #ffffff;
+        color: var(--font-primary-color);
         font-size: 1.2em;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-family: var(--primary-font-family);
         text-align: center;
         bottom: 6px;
         z-index: 500;
@@ -231,10 +242,10 @@
         align-items: center;
         justify-content: center;
         flex-wrap: wrap;
-        border: 3px solid #0c78f2;
+        background-color: var(--primary-color);
         border-radius: 25px;
         box-sizing: border-box;
-        background-color: #2d2d2d;
+        background-color: var(--secondary-color);
     }
 
     .right_container {
@@ -244,19 +255,19 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        border: 3px solid #0c78f2;
+        background-color: var(--primary-color);
         border-radius: 25px;
         box-sizing: border-box;
-        background-color: #2d2d2d;
+        background-color: var(--secondary-color);
     }
 
     .user_photo_container {
         height: 30%;
         width: 50%;
-        border: 3px solid #0c78f2;
+        background-color: var(--primary-color);
         border-radius: 50%;
         margin: 30px auto;
-        background-color: #2d2d2d;
+        background-color: var(--secondary-color);
     }
 
     .user_photo {
@@ -275,14 +286,14 @@
         gap: 15px;
         padding: 10px;
         border-radius: 28px 10px 10px 28px;
-        background-color: #0c78f2;
+        background-color: var(--primary-color);
         box-sizing: border-box;
     }
 
     .personal_info_container::-webkit-scrollbar {
         width: 10px;
         border-radius: 0 15px 15px 0;
-        background-color: #0c78f2;
+        background-color: var(--primary-color);
     }
 
     .personal_info_container::-webkit-scrollbar-thumb {
@@ -296,14 +307,14 @@
         width: 90%;
         border-radius: 15px;
         padding: 3px;
-        background-color: #2d2d2d;
+        background-color: var(--secondary-color);
         box-sizing: border-box;
     }
 
     .personal_data p {
         display: flex;
-        color: #ffffff;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        color: var(--font-primary-color);
+        font-family: var(--primary-font-family);
         align-items: center;
         justify-content: center;
     }
@@ -318,7 +329,7 @@
         border-radius: 25px 5px 5px 25px;
         padding: 15px;
         box-sizing: border-box;
-        background-color: #0c78f2;
+        background-color: var(--primary-color);
         overflow-y: scroll;
     }
 
@@ -326,7 +337,7 @@
     .admin_window::-webkit-scrollbar {
         width: 7px;
         border-radius: 0 25px 25px 0;
-        background-color: #0c78f2;
+        background-color: var(--primary-color);
     }
 
     .favourite_stores::-webkit-scrollbar-thumb,
@@ -353,7 +364,7 @@
         align-items: center;
         justify-content: center;
         border-radius: 15px;
-        background-color: #2d2d2d;
+        background-color: var(--secondary-color);
     }
 
     .favourite_store_img {
@@ -364,7 +375,7 @@
     }
 
     .favourite_store_paragrapf {
-        color: #ffffff;
+        color: var(--font-primary-color);
         margin: 5px;
     }
 
@@ -379,8 +390,8 @@
         display: flex;
         height: 100%;
         width: 30%;
-        color: #ffffff;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        color: var(--font-primary-color);
+        font-family: var(--primary-font-family);
         text-align: center;
         flex-direction: column;
         align-items: center;
@@ -403,7 +414,7 @@
         color: #ffffff;
         border: none;
         border-radius: 15px;
-        background-color: #2d2d2d;
+        background-color: var(--secondary-color);
         transition: .3s;
     }
 
@@ -437,7 +448,7 @@
         display: flex;
         height: 100%;
         width: 22%;
-        color: #ffffff;
+        color: var(--font-primary-color);
         align-items: center;
         justify-content: center;
         border: 0;
@@ -482,7 +493,7 @@
         align-items: center;
         justify-content: space-evenly;
         border-radius: 25px;
-        background-color: #0c78f2;
+        background-color: var(--primary-color);
     }
 
     .buttons_container {
@@ -500,7 +511,7 @@
         width: 45%;
         color: #000000;
         font-size: 1.2vw;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-family: var(--primary-font-family);
         border: none;
         border-radius: 25px;
         background-color: #ffffff;
@@ -510,12 +521,12 @@
     .right_button:hover {
         height: 60%;
         width: 45%;
-        color: #ffffff;
+        color: var(--font-primary-color);
         font-size: 1.2vw;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-family: var(--primary-font-family);
         border: none;
         border-radius: 25px;
-        background-color: #2d2d2d;
+        background-color: var(--secondary-color);
     }
 
     .my_web_preferences {
@@ -527,7 +538,7 @@
         justify-content: center;
         gap: 20px;
         border-radius: 25px;
-        background-color: #0c78f2;
+        background-color: var(--primary-color);
     }
 
     .preferences_item {
@@ -538,13 +549,13 @@
         justify-content: space-between;
         border-radius: 15px;
         padding: 5px;
-        background-color: #2d2d2d;
+        background-color: var(--secondary-color);
         box-sizing: border-box;
     }
 
     .preferences_item label {
-        color: #ffffff;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        color: var(--font-primary-color);
+        font-family: var(--primary-font-family);
     }
 
     .info_places {
@@ -555,13 +566,13 @@
         justify-content: space-between;
         border-radius: 20px;
         padding: 4px 15px;
-        background-color: #2a2a2a;
+        background-color: var(--secondary-color);
         box-sizing: border-box;
     }
 
     .info_places label {
-        color: #ffffff;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        color: var(--font-primary-color);
+        font-family: var(--primary-font-family);
     }
 
     .info_places input,
@@ -580,7 +591,7 @@
         width: 30%;
         color: #000000;
         font-size: 1.2vw;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-family: var(--primary-font-family);
         align-items: center;
         justify-content: center;
         border: none;
@@ -594,10 +605,10 @@
         width: 30%;
         color: #ffffff;
         font-size: 1.2vw;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-family: var(--primary-font-family);
         border: none;
         border-radius: 25px;
-        background-color: #2d2d2d;
+        background-color: var(--secondary-color);
     }
 
     /* ------------------------------------------------------------------------ */
@@ -608,11 +619,11 @@
         display: block;
         height: 18%;
         width: 100%;
-        color: #ffffff;
+        color: var(--font-primary-color);
         font-size: 2.5em;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-family: var(--primary-font-family);
         margin: 0 auto;
-        background-color: #2a2a2a;
+        background-color: var(--secondary-color);
     }
 
 
@@ -630,9 +641,9 @@
     .footer_text_container p a {
         position: relative;
         display: inline-block;
-        color: #ffffff;
+        color: var(--font-primary-color);
         font-size: 5vmin;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-family: var(--primary-font-family);
         text-decoration: none;
         transition: 0.7s;
         overflow: hidden;
@@ -643,9 +654,9 @@
     .footer_text_container p a:hover {
         position: relative;
         display: inline-block;
-        color: #0c78f2;
+        color: var(--font-tertiary-color);
         font-size: 5vmin;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-family: var(--primary-font-family);
         text-decoration: none;
         bottom: 10%;
         transition: 0.8s;
@@ -685,7 +696,7 @@
         position: relative;
         color: #0c78f2;
         font-size: 4vmin;
-        font-family: cursive;
+        font-family: var(--primary-font-family);
         text-align: center;
     }
 }
@@ -718,7 +729,7 @@
     /* Title of my pretty web */
     .header_background h1 {
         position: relative;
-        color: #ffffff;
+        color: var(--font-primary-color);
         font-size: 3.2em;
         font-family: Impact;
         text-align: center;
@@ -733,20 +744,20 @@
     .return_button p {
         height: 35%;
         width: 100%;
-        color: #ffffff;
+        color: var(--font-primary-color);
         font-size: 1.2em;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-family: var(--primary-font-family);
         text-align: center;
         margin: 0;
-        background-color: #2d2d2d;
+        background-color: var(--secondary-color);
     }
 
     .return_button p:hover {
         height: 35%;
         width: 100%;
-        color: #ffffff;
+        color: var(--font-primary-color);
         font-size: 1.2em;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-family: var(--primary-font-family);
         text-align: center;
         margin: 0;
         background-color: #074994;
@@ -789,7 +800,7 @@
         position: relative;
         height: 45%;
         width: 80%;
-        color: #ffffff;
+        color: var(--font-primary-color);
         text-align: center;
         margin: 0 auto;
         /* background-color: steelblue; */
@@ -801,13 +812,13 @@
         width: 100%;
         margin-top: 8px;
         border-radius: 15px;
-        background-color: #2d2d2d;
+        background-color: var(--secondary-color);
         box-sizing: border-box;
     }
 
     .personal_data p {
         position: relative;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-family: var(--primary-font-family);
         margin: 0;
         top: 25%;
     }
@@ -823,12 +834,12 @@
     .personal_info_updater {
         height: 320px;
         width: 100%;
-        color: #ffffff;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        color: var(--font-primary-color);
+        font-family: var(--primary-font-family);
         text-align: center;
         margin-top: 15px;
         border-radius: 15px;
-        background-color: #2d2d2d;
+        background-color: var(--secondary-color);
         box-sizing: border-box;
     }
 
@@ -871,8 +882,8 @@
         position: relative;
         height: 30px;
         width: 45%;
-        color: #ffffff;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        color: var(--font-primary-color);
+        font-family: var(--primary-font-family);
         border: none;
         border-radius: 15px;
         background-color: #0c78f2;
@@ -885,8 +896,8 @@
         position: relative;
         height: 30px;
         width: 45%;
-        color: #ffffff;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        color: var(--font-primary-color);
+        font-family: var(--primary-font-family);
         border: none;
         border-radius: 15px;
         background-color: #0c78f2;
@@ -902,11 +913,11 @@
         position: relative;
         height: 270px;
         width: 100%;
-        color: #ffffff;
+        color: var(--font-primary-color);
         font-size: 2.5em;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-family: var(--primary-font-family);
         margin: 0 auto;
-        background-color: #2a2a2a;
+        background-color: var(--secondary-color);
         top: 4%;
     }
 
@@ -924,9 +935,9 @@
     .footer_text_container p,
     .footer_text_container p a {
         position: relative;
-        color: #ffffff;
+        color: var(--font-primary-color);
         font-size: 7vmin;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-family: var(--primary-font-family);
         text-decoration: none;
         top: 5%;
     }
@@ -947,7 +958,7 @@
         position: relative;
         color: #0c78f2;
         font-size: 4vmin;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-family: var(--primary-font-family);
         text-align: center;
         bottom: 5%;
     }

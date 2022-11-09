@@ -1,7 +1,21 @@
+:root {
+  --primary-color: #0c78f2;
+  --secondary-color: #2d2d2d;
+  --tertiary-color: #ffffff;
+
+  --font-primary-color: #ffffff;
+  --font-secondary-color: #000000;
+  --font-tertiary-color: #0c78f2;
+
+  --border: 3px solid #0c78f2;
+
+  --primary-font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
 @media (min-width: 880px) {
   .favourite_process_state {
     height: 30px;
-    color: #ffffff;
+    color: var(--font-primary-color);
     font-size: 24px;
     text-align: center;
     margin: 0;
@@ -19,13 +33,13 @@
 
   body::-webkit-scrollbar {
     width: 10px;
-    background-color: #2d2d2d;
+    background-color: var(--secondary-color);
   }
 
   body::-webkit-scrollbar-thumb {
     width: 10px;
     border-radius: 0 20px 0 20px;
-    background-color: #0c78f2;
+    background-color: var(--primary-color);
   }
 
   /* ------------------------------------------------------------------------ */
@@ -35,7 +49,7 @@
     position: relative;
     height: 80px;
     width: 100%;
-    background-color: #0c78f2;
+    background-color: var(--primary-color);
   }
 
   /* Title of my pretty web */
@@ -43,7 +57,7 @@
     position: relative;
     display: inline-block;
     width: 40%;
-    color: #ffffff;
+    color: var(--font-primary-color);
     font-size: 65px;
     font-family: Impact;
     margin: 0;
@@ -57,7 +71,7 @@
     width: 12%;
     text-decoration: none;
     border-radius: 25px;
-    background-color: #2d2d2d;
+    background-color: var(--secondary-color);
     top: 20px;
     right: 10px;
     float: right;
@@ -83,9 +97,9 @@
   /* This is the text of the login button */
   .return_button p {
     position: relative;
-    color: #ffffff;
+    color: var(--font-primary-color);
     font-size: 1.2em;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: var(--primary-font-family);
     text-align: center;
     bottom: 6px;
     z-index: 500;
@@ -98,7 +112,7 @@
     width: 90%;
     margin: 50px auto;
     border-radius: 25px;
-    background-color: #2a2a2a;
+    background-color: var(--secondary-color);
   }
 
   /* ------------------------------------------------------------------------ */
@@ -108,7 +122,7 @@
     height: 80%;
     width: 45%;
     border-radius: 25px 25px 20px 20px;
-    background-color: #0c78f2;
+    background-color: var(--primary-color);
     top: 10%;
     left: 20px;
     overflow-x: scroll;
@@ -119,14 +133,14 @@
     width: 2px;
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
-    background-color: #3b3b3b;
+    background-color: var(--secondary-color);
   }
 
   .sub_container::-webkit-scrollbar-thumb {
     width: 2px;
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
-    background-color: #0c78f2;
+    background-color: var(--primary-color);
   }
 
   .img_container {
@@ -137,7 +151,7 @@
     margin: 50px 10px;
     border: 3px solid #2a2a2a;
     border-radius: 50%;
-    background-color: #0c78f2;
+    background-color: var(--primary-color);
     bottom: 45px;
   }
 
@@ -160,7 +174,7 @@
     position: relative;
     display: inline-block;
     width: 250px;
-    color: #ffffff;
+    color: var(--font-primary-color);
     font-size: 30px;
     font-family: fantasy;
     margin: 0;
@@ -169,7 +183,7 @@
   .main_div h2 {
     position: relative;
     width: 250px;
-    color: #ffffff;
+    color: var(--font-primary-color);
     font-size: 35px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     left: 57%;
@@ -188,14 +202,14 @@
     display: inline-block;
     height: 98%;
     width: 68%;
-    border: 3px solid #0c78f2;
+    border: var(--border);
     border-radius: 25px;
-    background-color: #2a2a2a;
+    background-color: var(--secondary-color);
   }
 
   .left_div h3 {
     position: relative;
-    color: #ffffff;
+    color: var(--font-primary-color);
     font-size: 40px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     text-align: center;
@@ -216,13 +230,13 @@
   #left_div_general_container::-webkit-scrollbar {
     width: 10px;
     border-radius: 25px;
-    background-color: #3b3b3b;
+    background-color: var(--secondary-color);
   }
 
   #left_div_general_container::-webkit-scrollbar-thumb {
     width: 10px;
     border-radius: 25px;
-    background-color: #ffffff;
+    background-color: var(--tertiary-color);
   }
 
   .product {
@@ -232,7 +246,7 @@
     margin-top: 20px;
     border-radius: 25px;
     padding: 20px 0;
-    background-color: #0c78f2;
+    background-color: var(--primary-color);
   }
 
   .product_img_container {
@@ -256,7 +270,7 @@
     height: 100%;
     width: 50%;
     border-radius: 15px 15px 12px 15px;
-    background-color: #2d2d2d;
+    background-color: var(--secondary-color);
     left: 6%;
     float: left;
   }
@@ -285,27 +299,27 @@
   .description_container::-webkit-scrollbar {
     width: 10px;
     border-radius: 15px;
-    background-color: #3b3b3b;
+    background-color: var(--secondary-color);
   }
 
   .description_container::-webkit-scrollbar-thumb {
     width: 10px;
     border-radius: 25px;
-    background-color: #ffffff;
+    background-color: var(--tertiary-color);
   }
 
   .product_name {
     position: relative;
-    color: #0c78f2;
+    color: var(--font-tertiary-color);
     font-size: 20px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: var(--primary-font-family);
     top: 10px;
     left: 15px;
   }
 
   .product_description {
     position: relative;
-    color: #ffffff;
+    color: var(--font-primary-color);
     font-size: 2vmin;
     text-align: justify;
   }
@@ -315,15 +329,15 @@
     height: 100%;
     width: 20%;
     border-radius: 15px;
-    background-color: #2d2d2d;
+    background-color: var(--secondary-color);
     left: 8%;
     float: left;
   }
 
   .product_condition {
     position: relative;
-    color: #ffffff;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: var(--font-primary-color);
+    font-family: var(--primary-font-family);
     text-align: center;
     margin: 0;
     top: 5%;
@@ -332,7 +346,7 @@
   .product_price {
     position: relative;
     color: #13eb13;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: var(--primary-font-family);
     text-align: center;
     margin: 0;
     top: 20%;
@@ -343,10 +357,10 @@
     height: 20%;
     width: 60%;
     font-size: 16px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: var(--primary-font-family);
     border: none;
     border-radius: 15px;
-    background-color: #ffffff;
+    background-color: var(--tertiary-color);
     top: 40%;
     left: 20%;
     transition: 0.3s;
@@ -357,10 +371,10 @@
     height: 20%;
     width: 60%;
     font-size: 16px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: var(--primary-font-family);
     border: none;
     border-radius: 15px;
-    background-color: #0c78f2;
+    background-color: var(--primary-color);
     top: 40%;
     left: 20%;
     transition: 0.3s;
@@ -368,7 +382,7 @@
 
   .actions_container div a {
     position: relative;
-    color: #0c78f2;
+    color: var(--font-tertiary-color);
     text-decoration: none;
     top: 15%;
     left: 15%;
@@ -376,7 +390,7 @@
 
   .actions_container div a:hover {
     position: relative;
-    color: #ffffff;
+    color: var(--font-primary-color);
     text-decoration: none;
     top: 15%;
     left: 15%;
@@ -393,36 +407,36 @@
   .top_right_div {
     height: 30%;
     width: 99%;
-    border: 3px solid #0c78f2;
+    border: var(--border);
     border-radius: 25px;
-    background-color: #2a2a2a;
+    background-color: var(--secondary-color);
   }
 
   .middle_right_div {
     height: 30%;
     width: 99%;
     margin-top: 30.5px;
-    border: 3px solid #0c78f2;
+    border: var(--border);
     border-radius: 25px;
-    background-color: #2a2a2a;
+    background-color: var(--secondary-color);
   }
 
   .bottom_right_div {
     height: 30%;
     width: 99%;
     margin-top: 30.5px;
-    border: 3px solid #0c78f2;
+    border: var(--border);
     border-radius: 25px;
-    background-color: #2a2a2a;
+    background-color: var(--secondary-color);
   }
 
   /* ------------------------------------------------------------------------ */
 
   .top_right_div p {
     position: relative;
-    color: #ffffff;
+    color: var(--font-primary-color);
     font-size: 20px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: var(--primary-font-family);
     text-align: center;
     top: 10%;
   }
@@ -440,7 +454,7 @@
     height: 14%;
     width: 80%;
     font-size: 20px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: var(--primary-font-family);
     text-align: center;
     border: none;
     border-radius: 10px;
@@ -453,36 +467,36 @@
   #clear_button {
     height: 100%;
     width: 40%;
-    color: #0c78f2;
+    color: var(--font-tertiary-color);
     font-size: 20px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: var(--primary-font-family);
     border: none;
     border-radius: 15px;
-    background-color: #ffffff;
+    background-color: var(--tertiary-color);
     float: left;
   }
 
   #search_button {
     height: 100%;
     width: 40%;
-    color: #0c78f2;
+    color: var(--font-tertiary-color);
     font-size: 20px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: var(--primary-font-family);
     border: none;
     border-radius: 15px;
-    background-color: #ffffff;
+    background-color: var(--tertiary-color);
     float: right;
   }
 
   #clear_button:hover {
     height: 100%;
     width: 40%;
-    color: #ffffff;
+    color: var(--font-primary-color);
     font-size: 20px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: var(--primary-font-family);
     border: none;
     border-radius: 15px;
-    background-color: #0c78f2;
+    background-color: var(--primary-color);
     float: left;
     transition: 0.3s;
   }
@@ -490,12 +504,12 @@
   #search_button:hover {
     height: 100%;
     width: 40%;
-    color: #ffffff;
+    color: var(--font-primary-color);
     font-size: 20px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: var(--primary-font-family);
     border: none;
     border-radius: 15px;
-    background-color: #0c78f2;
+    background-color: var(--primary-color);
     float: right;
     transition: 0.3s;
   }
@@ -503,9 +517,9 @@
   #clear_button:active {
     height: 100%;
     width: 40%;
-    color: #ffffff;
+    color: var(--font-primary-color);
     font-size: 20px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: var(--primary-font-family);
     border: none;
     border-radius: 15px;
     background-color: #144883;
@@ -515,9 +529,9 @@
   #search_button:active {
     height: 100%;
     width: 40%;
-    color: #ffffff;
+    color: var(--font-primary-color);
     font-size: 20px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: var(--primary-font-family);
     border: none;
     border-radius: 15px;
     background-color: #144883;
@@ -528,9 +542,9 @@
 
   .middle_right_div p {
     position: relative;
-    color: #ffffff;
+    color: var(--font-primary-color);
     font-size: 20px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: var(--primary-font-family);
     text-align: center;
     top: 10%;
   }
@@ -549,9 +563,9 @@
     height: 20%;
     width: 80%;
     margin: 0 auto;
-    border: 3px solid #0c78f2;
+    border: var(--border);
     border-radius: 15px;
-    background-color: #0c78f2;
+    background-color: var(--primary-color);
     top: 60px;
   }
 
@@ -567,7 +581,8 @@
   #warranty_label {
     position: relative;
     display: inline-block;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: var(--font-secondary-color);
+    font-family: var(--primary-font-family);
     top: 28%;
     right: 5%;
   }
@@ -580,11 +595,11 @@
     display: block;
     height: 15%;
     width: 100%;
-    color: #ffffff;
+    color: var(--font-primary-color);
     font-size: 2.5em;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: var(--primary-font-family);
     margin: 100px auto;
-    background-color: #2a2a2a;
+    background-color: var(--secondary-color);
   }
 
 
@@ -602,9 +617,9 @@
   .footer_text_container p a {
     position: relative;
     display: inline-block;
-    color: #ffffff;
+    color: var(--font-primary-color);
     font-size: 5vmin;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: var(--primary-font-family);
     text-decoration: none;
     transition: 0.7s;
     overflow: hidden;
@@ -615,9 +630,9 @@
   .footer_text_container p a:hover {
     position: relative;
     display: inline-block;
-    color: #0c78f2;
+    color: var(--font-tertiary-color);
     font-size: 5vmin;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: var(--primary-font-family);
     text-decoration: none;
     bottom: 10%;
     transition: 0.8s;
@@ -655,9 +670,9 @@
   /* Copyright label */
   .copyright {
     position: relative;
-    color: #0c78f2;
+    color: var(--font-tertiary-color);
     font-size: 4vmin;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: var(--primary-font-family);
     text-align: center;
   }
 }
@@ -670,8 +685,8 @@
 
   .favourite_process_state {
     height: 30px;
-    color: #ffffff;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: var(--font-primary-color);
+    font-family: var(--primary-font-family);
     font-size: 24px;
     text-align: center;
     margin: 0;
@@ -695,14 +710,14 @@
     position: relative;
     height: 70px;
     width: 100%;
-    background-color: #0c78f2;
+    background-color: var(--primary-color);
     z-index: 200;
   }
 
   /* Title of my pretty web */
   .header_background h1 {
     position: relative;
-    color: #ffffff;
+    color: var(--font-primary-color);
     font-size: 3.2em;
     font-family: Impact;
     text-align: center;
@@ -717,20 +732,20 @@
   .return_button p {
     height: 35%;
     width: 100%;
-    color: #ffffff;
+    color: var(--font-primary-color);
     font-size: 1.2em;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: var(--primary-font-family);
     text-align: center;
     margin: 0;
-    background-color: #2d2d2d;
+    background-color: var(--secondary-color);
   }
 
   .return_button p:hover {
     height: 35%;
     width: 100%;
-    color: #ffffff;
+    color: var(--font-primary-color);
     font-size: 1.2em;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: var(--primary-font-family);
     text-align: center;
     margin: 0;
     background-color: #074994;
@@ -750,7 +765,7 @@
     width: 90%;
     margin: 0 auto;
     border-radius: 15px;
-    background-color: #0c78f2;
+    background-color: var(--primary-color);
   }
 
   .img_container {
@@ -772,8 +787,8 @@
     position: relative;
     height: 30%;
     width: 45%;
-    color: #ffffff;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: var(--font-primary-color);
+    font-family: var(--primary-font-family);
     /* background-color: #2d2d2d; */
     top: 38%;
     left: 27px;
@@ -788,7 +803,7 @@
 
   /* Texto de favoritos */
   .main_div h2 {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: var(--primary-font-family);
     text-align: center;
   }
 
@@ -808,19 +823,19 @@
   }
 
   .top_right_div {
-    color: #ffffff;
+    color: var(--font-primary-color);
     text-align: center;
     height: 100px;
     width: 80%;
     margin: 0 auto;
     border-radius: 15px;
-    background-color: #0c78f2;
+    background-color: var(--primary-color);
 
   }
 
   .top_right_div p {
     position: relative;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: var(--primary-font-family);
     margin: 5px auto;
     top: 10px;
   }
@@ -836,28 +851,28 @@
   #clear_button {
     height: 25px;
     width: 30%;
-    color: #ffffff;
+    color: var(--font-primary-color);
     border-radius: 15px;
-    background-color: #2d2d2d;
+    background-color: var(--secondary-color);
   }
 
   #search_button {
     height: 25px;
     width: 30%;
-    color: #ffffff;
+    color: var(--font-primary-color);
     border-radius: 15px;
-    background-color: #2d2d2d;
+    background-color: var(--secondary-color);
   }
 
   .middle_right_div {
-    color: #ffffff;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: var(--font-primary-color);
+    font-family: var(--primary-font-family);
     text-align: center;
     height: 80px;
     width: 80%;
     margin: 20px auto;
     border-radius: 15px;
-    background-color: #0c78f2;
+    background-color: var(--primary-color);
   }
 
   .middle_right_div p {
@@ -901,7 +916,7 @@
     width: 80%;
     margin: 20px auto;
     border-radius: 15px;
-    background-color: #0c78f2;
+    background-color: var(--primary-color);
   }
 
   /* ------------------------------------------------------------------------ */
@@ -940,7 +955,7 @@
     margin: 0 auto;
     margin-bottom: 20px;
     border-radius: 15px;
-    background-color: #2d2d2d;
+    background-color: var(--secondary-color);
   }
 
   /* ------------------------------------------------------------------------ */
@@ -964,7 +979,7 @@
     position: relative;
     height: 45%;
     width: 95%;
-    color: #ffffff;
+    color: var(--font-primary-color);
     text-align: center;
     margin: 0 auto;
     /* background-color: turquoise; */
@@ -972,7 +987,7 @@
   }
 
   .product_info_container p {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: var(--primary-font-family);
     margin: 0;
   }
 
@@ -984,8 +999,8 @@
   }
 
   .product_name_container a {
-    color: #0c78f2;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: var(--font-tertiary-color);
+    font-family: var(--primary-font-family);
     text-align: center;
   }
 
@@ -995,7 +1010,7 @@
     text-align: justify;
     border-radius: 15px;
     padding: 12px;
-    background-color: #0c78f2;
+    background-color: var(--primary-color);
     box-sizing: border-box;
     overflow-y: scroll;
   }
@@ -1012,8 +1027,8 @@
 
   .product_condition {
     position: relative;
-    color: #ffffff;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: var(--font-primary-color);
+    font-family: var(--primary-font-family);
     text-align: left;
     margin: 0;
     top: 33%;
@@ -1023,7 +1038,7 @@
   .product_price {
     position: relative;
     color: #13eb13;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: var(--primary-font-family);
     text-align: center;
     margin: 0;
     bottom: 25%;
@@ -1036,10 +1051,10 @@
     height: 80%;
     width: 80px;
     font-size: 16px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: var(--primary-font-family);
     border: none;
     border-radius: 15px;
-    background-color: #ffffff;
+    background-color: var(--tertiary-color);
     bottom: 40%;
     right: 5px;
     float: right;
@@ -1051,10 +1066,10 @@
     height: 20%;
     width: 60%;
     font-size: 16px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: var(--primary-font-family);
     border: none;
     border-radius: 15px;
-    background-color: #0c78f2;
+    background-color: var(--primary-color);
     top: 40%;
     left: 20%;
     transition: 0.3s;
@@ -1062,7 +1077,7 @@
 
   .actions_container div a {
     position: relative;
-    color: #0c78f2;
+    color: var(--font-tertiary-color);
     text-decoration: none;
     top: 15%;
     left: 15%;
@@ -1070,7 +1085,7 @@
 
   .actions_container div a:hover {
     position: relative;
-    color: #ffffff;
+    color: var(--font-primary-color);
     text-decoration: none;
     top: 15%;
     left: 15%;
@@ -1082,11 +1097,11 @@
   footer {
     height: 270px;
     width: 100%;
-    color: #ffffff;
+    color: var(--font-primary-color);
     font-size: 2.5em;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: var(--primary-font-family);
     margin: 0 auto;
-    background-color: #2a2a2a;
+    background-color: var(--secondary-color);
   }
 
 
@@ -1103,9 +1118,9 @@
   .footer_text_container p,
   .footer_text_container p a {
     position: relative;
-    color: #ffffff;
+    color: var(--font-primary-color);
     font-size: 7vmin;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: var(--primary-font-family);
     text-decoration: none;
     top: 5%;
   }
@@ -1114,9 +1129,9 @@
   .footer_text_container p:hover,
   .footer_text_container p a:hover {
     position: relative;
-    color: #0c78f2;
+    color: var(--font-tertiary-color);
     font-size: 7vmin;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: var(--primary-font-family);
     text-decoration: none;
     top: 5%;
   }
@@ -1124,9 +1139,9 @@
   /* Copyright label */
   .copyright {
     position: relative;
-    color: #0c78f2;
+    color: var(--font-tertiary-color);
     font-size: 4vmin;
-    font-family: cursive;
+    font-family: var(--primary-font-family);
     text-align: center;
     bottom: 5%;
   }

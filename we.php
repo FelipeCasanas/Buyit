@@ -13,29 +13,26 @@
 <body>
 
     <!-- Header -->
-    <header>
-
+    <header class="header">
         <!-- Header background -->
-        <div class="header_background">
-
+        <div class="header__background">
             <!-- Buy it web title -->
-            <h1>Buy it</h1>
-            <a href="index.php" class="return_button">
-                <p>Volver a inicio</p>
+            <h1 class="header__h1">Buy it</h1>
+            <a class="header__button button" href="index.php">
+                <p class="button__text">Volver a inicio</p>
             </a>
         </div>
-
     </header>
 
-    <article class="container">
+    <article class="article">
+        <div class="article__img-container">
+            <img class="article__img" src="img/Macbook.jpg" alt="Macbook image">
 
-        <div class="first_img_container">
-            <img class="first_img" src="img/Macbook.jpg" alt="Macbook image">
-
-            <div class="who_we_are_container">
-                <div class="who_we_are">
-                    <h2>¿Quienes somos?</h2>
-                    <p>Casañas Electronics INC, Una empresa la cual comenzo realizando importaciones de productos de
+            <div class="article__who-we-are-container">
+                <div class="article__who-we-are who-we-are">
+                    <h2 class="who-we-are__h2">¿Quienes somos?</h2>
+                    <p class="who-we-are__p">Casañas Electronics INC, Una empresa la cual comenzo realizando
+                        importaciones de productos de
                         consumo
                         electronicos. Tras llegar la pandemia y dificultar las operaciones se llego a la decision de
                         detenerlas. <br>
@@ -45,15 +42,16 @@
             </div>
         </div>
 
-        <div class="second_img_container">
-            <img class="second_img" src="img/huawei-watch.jpg" alt="Huawei smartwatch image">
+        <div class="article__img-container article__img-container--gray">
+            <img class="article__img article__img--second-img" src="img/huawei-watch.jpg" alt="Huawei smartwatch image">
 
-            <div class="whats_our_mission_container">
-                <div class="whats_our_mission_h2_container">
-                    <h2>¿Cual es nuestra mision?</h2>
+            <div class="article__whats-our-mission-container">
+                <div class="article__whats-our-mission-h2-container">
+                    <h2 class="article__whats-our-mission-h2">¿Cual es nuestra mision?</h2>
                 </div>
 
-                <p>Nuestra mision desde que comenzo la pandemia se vio frustrada, asi que tiempo despues decidimos
+                <p class="article__whats-our-mission-container-p">Nuestra mision desde que comenzo la pandemia se vio
+                    frustrada, asi que tiempo despues decidimos
                     re-inventarnos y optar por un tipo de negocio digital, pasamos de ser importadores a ayudar a las
                     personas a
                     vender sus productos, ya sean nuevos o usados. <br><br>En el transcurso del tiempo iremos añadiendo
@@ -65,13 +63,13 @@
             </div>
         </div>
 
-        <div class="third_img_container">
-            <img class="third_img" src="img/luxuryMall.jpg" alt="Luxury mall image">
+        <div class="article__img-container article__img-container--blue">
+            <img class="article__img article__img--third-img" src="img/luxuryMall.jpg" alt="Luxury mall image">
 
-            <h2>¿Cual es nuestra vision?</h2>
+            <h2 class="article__img-container-h2">¿Cual es nuestra vision?</h2>
 
-            <div class="whats_our_vision_container">
-                <p>
+            <div class="article__whats-our-vision-container">
+                <p class="article__whats-our-vision-container-p">
                     Nuestras pretenciones a futuro son crecer la cantidad de usuarios de nuestra plataforma y por
                     consiguiente
                     hacernos un competidor digno ante los grandes sitios de compras en linea que dominan el mercado. A
@@ -85,13 +83,13 @@
             </div>
         </div>
 
-        <div class="fourth_img_container">
-            <img class="fourth_img" src="img/business-man.jpg" alt="Macbook image">
+        <div class="article__img-container article__img-container--dark-gray">
+            <img class="article__img-container--fourth-img" src="img/business-man.jpg" alt="Macbook image">
 
-            <div class="whos_the_creator_container">
-                <h2>¿Quien es el creador de esta plataforma?</h2>
+            <div class="article__img-container-whos-the-creator-container whos-the-creator-container">
+                <h2 class="whos-the-creator-container__h2">¿Quien es el creador de esta plataforma?</h2>
 
-                <div class="wsycc_description_container">
+                <div class="whos-the-creator-container__description-container">
                     <p>Felipe Casañas Castro es el creador de Buy it, nacio el 17 de marzo de 2004 en Buga, valle del
                         cauca,
                         Colombia. Desde muy joven se intereso por los negocios y la tecnologia lo cual fue desarrollando
@@ -107,11 +105,10 @@
             </div>
         </div>
 
-        <div class="degraded_img">
-            <img src="img/degraded.jpg" alt="">
-        </div>
 
-        <div class="window_six">
+
+
+        <div class="article__img-container article__img-container--fith">
             <h2>¿Como me puedo contactar con ustedes ?</h2>
             <p>
                 Puedes contactarnos por medio del enlace que encontraras en el pie de pagina que se llama "Soporte",
@@ -119,18 +116,19 @@
             </p>
         </div>
 
-        <div class="sixth_img_container">
-            <img class="sixth_img" src="img/business-man.jpg" alt="Macbook image">
 
-            <div class="version_title_container">
-                <h2>Ultima version de la plataforma:</h2>
 
-                <p class="version">
+        <div class="article__img-container article__img-container--black">
+            <img class="article__img-container--sixth-img" src="img/settings-icon.png" alt="Macbook image">
+
+            <div class="article__img-container-version version">
+                <h2 class="version__h2">Ultima version de la plataforma:</h2>
+
+                <p class="version__p">
                     Version: 1.2.0
                 </p>
             </div>
         </div>
-
     </article>
 
     <!-- Footer -->

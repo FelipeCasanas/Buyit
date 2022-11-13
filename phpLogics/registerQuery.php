@@ -24,7 +24,7 @@
                 $_SESSION['name'] = strtoupper($result['name']);
                 $_SESSION['last_name'] = strtoupper($result['last_name']);
                 $_SESSION['sex'] = $result['sex'];
-                createUserPreferences();
+                createUserPreferences($result['id']);
             }
         }
     }

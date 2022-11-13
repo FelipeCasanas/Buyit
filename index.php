@@ -44,18 +44,18 @@
     </div>
 
     <!-- Header -->
-    <header>
+    <header class="header">
 
         <!-- Header background -->
-        <div class="header_background">
+        <div class="header__div">
 
             <!-- Buy it web title -->
-            <h1>Buy it</h1>
+            <h1 class="header__h1">Buy it</h1>
 
             <!-- SearchBar & LoginButton -->
-            <form action="phpLogics/productQuery.php" method="get" class="search_form">
-                <input class="search" id="searchBar" type="search" name="search" placeholder="Busca aqui"
-                    list="options">
+            <form class="header__form form" action="phpLogics/productQuery.php" method="get" class="search_form">
+                <input class="form__input" class="search" id="searchBar" type="search" name="search"
+                    placeholder="Busca aqui" list="options">
                 <datalist id="options">
                     <option value="computador">Computador</option>
                     <option value="celular">Celular</option>
@@ -65,8 +65,8 @@
                     <option value="camion">Camion</option>
                 </datalist>
 
-                <a href="login.php" class="login_button">
-                    <p>Ingresar</p>
+                <a class="form__button" href="login.php">
+                    <p class="form__button-p">Ingresar</p>
                 </a>
 
             </form>
@@ -74,37 +74,37 @@
         </div>
 
         <!-- Navegation bar -->
-        <nav class="nav_background">
+        <nav class="nav">
 
-            <div>
+            <div class="nav__div">
 
-                <ul class="list">
+                <ul class="nav__list list">
 
-                    <li>
+                    <li class="nav__li list">
                         <!-- Categories -->
-                        <p class="categories">
-                            <a href="">Categorias</a>
+                        <p class="list__p">
+                            <a class="list__a" href="">Categorias</a>
                         </p>
                     </li>
 
-                    <li>
+                    <li class="nav__li list">
                         <!-- but sold products -->
-                        <p class="my_favs">
-                            <a href="myFavs.php">Mis favoritos</a>
+                        <p class="list__p">
+                            <a class="list__a" href="myFavs.php">Mis favoritos</a>
                         </p>
                     </li>
 
-                    <li>
+                    <li class="nav__li list">
                         <!-- my favorites items -->
-                        <p class="help">
-                            <a href="support.php">Ayuda</a>
+                        <p class="list__p">
+                            <a class="list__a" href="support.php">Ayuda</a>
                         </p>
                     </li>
 
-                    <li>
+                    <li class="nav__li list">
                         <!-- Help button -->
-                        <p class="account">
-                            <a href="account.php">Cuenta</a>
+                        <p class="list__p">
+                            <a class="list__a" href="account.php">Cuenta</a>
                         </p>
                     </li>
 
@@ -122,20 +122,20 @@
     <!-- **************************************************************************** -->
 
     <!-- All content container (Recomended, ads, products) -->
-    <div class="body_container">
+    <div class="main">
 
         <!-- Recomendations and ads container -->
-        <div class="recomendations_and_ads_container" id="recomendationsAndAdsContainer">
+        <div class="main__recomended-ads-div" id="recomendationsAndAdsContainer">
 
             <!-- Recomendations div -->
-            <div class="recomended">
+            <div class="main__recomended recomended">
 
                 <!-- Recomendations text background -->
-                <div class="recomended_text_background">
-                    <p id="recomended_text">Recomendado</p>
+                <div class="recomended__recomended-text-background">
+                    <p class="main__p" id="recomended_text">Recomendado</p>
                 </div>
 
-                <div class="recomended_group">
+                <div class="recomended__group">
                     <?php
                         setRecomended();
                     ?>
@@ -143,14 +143,14 @@
             </div>
 
             <!-- Ads div -->
-            <div class="ads">
+            <div class="main__ads">
 
                 <!-- Ads text background -->
-                <div class="ads_text_background">
+                <div class="main__ads-text-background">
                     <p id="ads_textt">Anuncios</p>
                 </div>
 
-                <div class="ads_group">
+                <div class="ads__group">
                     <?php
                         setAds();
                     ?>
@@ -163,11 +163,11 @@
         <div class="products">
 
             <!-- Products text background -->
-            <div class="products_text_background">
-                <p class="products_text" id="productsText">Productos</p>
+            <div class="products__text-background">
+                <p class="products__text" id="productsText">Productos</p>
             </div>
 
-            <div class="product_list">
+            <div class="products__list">
 
                 <?php
                     setProducts();

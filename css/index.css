@@ -195,7 +195,7 @@
   /* ------------------------------------------------------------------------ */
 
   /* This is the header background, where is the title or search-bar */
-  .header_background {
+  .header__div {
     position: fixed;
     height: 90px;
     width: 100%;
@@ -204,7 +204,7 @@
   }
 
   /* Title of my pretty web */
-  .header_background h1 {
+  .header__h1 {
     position: relative;
     color: var(--font-primary-color);
     font-size: 4.62em;
@@ -216,7 +216,7 @@
 
   /* ------------------------------------------------------------------------ */
 
-  form {
+  .header__form {
     position: relative;
     height: 60%;
     right: 40px;
@@ -225,7 +225,7 @@
   }
 
   /* This is the search-bar properties, here u can search ur fucking porn :) */
-  .search {
+  .form__input {
     position: relative;
     display: inline-block;
     height: 100%;
@@ -241,7 +241,7 @@
   }
 
   /* This is the login button */
-  .login_button {
+  .form__button {
     position: relative;
     height: 100%;
     width: 15%;
@@ -253,7 +253,7 @@
     overflow: hidden;
   }
 
-  .login_button::after {
+  .form__button::after {
     position: absolute;
     content: "";
     height: 60px;
@@ -265,12 +265,12 @@
     transition: 0.7s;
   }
 
-  .login_button:hover::after {
+  .form__button:hover::after {
     left: 0px;
   }
 
   /* This is the text of the login button */
-  .login_button p {
+  .form__button-p {
     position: relative;
     color: var(--font-primary-color);
     font-size: 1.2em;
@@ -283,7 +283,7 @@
   /* ------------------------------------------------------------------------ */
 
   /* Background color of the nav-bar */
-  .nav_background {
+  .nav {
     position: fixed;
     height: 67px;
     width: 100%;
@@ -293,7 +293,7 @@
   }
 
   /* This is the options list container, i use it to center text */
-  .nav_background div {
+  .nav__div {
     position: relative;
     height: 60%;
     width: 100%;
@@ -303,13 +303,13 @@
     /* background-color: #b43434; */
   }
 
-  .list {
+  .nav__list {
     margin: 0;
     padding: 0;
   }
 
   /* From here i set other parameters how inline-block */
-  .list li {
+  .nav__li {
     position: relative;
     display: inline-block;
     margin-left: 5%;
@@ -319,8 +319,8 @@
   }
 
   /* Here´s font properties */
-  .list,
-  .list li p a {
+  .nav__list,
+  .list__a {
     position: relative;
     color: var(--font-primary-color);
     font-size: 4vmin;
@@ -331,8 +331,8 @@
   }
 
   /* Here´s font properties when mouse it top */
-  .list,
-  .list li p a:hover {
+  .nav__list,
+  .list__a:hover {
     position: relative;
     color: #929292;
     font-size: 4vmin;
@@ -396,7 +396,7 @@
 
 
   /* This is the mother container of all content in the body */
-  .body_container {
+  .main {
     position: relative;
     height: 87%;
     width: 95%;
@@ -410,13 +410,13 @@
   }
 
   /* Text properties of body container */
-  .body_container p {
+  .main__p {
     position: relative;
     top: 15%;
   }
 
   /*  */
-  .recomendations_and_ads_container {
+  .main__recomended-ads-div {
     position: relative;
     height: 65vh;
     width: 100%;
@@ -425,7 +425,7 @@
   }
 
   /* Recomendations to do our buyers happy :) */
-  .recomended {
+  .main__recomended {
     position: relative;
     height: 90%;
     width: 48%;
@@ -436,7 +436,7 @@
   }
 
   /* Background of recomendations site */
-  .recomended_text_background {
+  .recomended__recomended-text-background {
     position: relative;
     height: 15%;
     width: 100%;
@@ -446,7 +446,7 @@
     bottom: 15%;
   }
 
-  .recomended_group {
+  .recomended__group {
     position: relative;
     display: flex;
     height: 80%;
@@ -458,21 +458,21 @@
     overflow-y: hidden;
   }
 
-  .recomended_group::-webkit-scrollbar {
+  .recomended__group::-webkit-scrollbar {
     height: 10px;
     width: 50%;
     border-radius: 15px;
     background-color: var(--secondary-color);
   }
 
-  .recomended_group::-webkit-scrollbar-thumb {
+  .recomended__group::-webkit-scrollbar-thumb {
     height: 10px;
     width: 50%;
     border-radius: 15px;
     background-color: #ffffff;
   }
 
-  .recomended_Square {
+  .main__recomended-square {
     position: relative;
     height: 85%;
     min-width: 195px;
@@ -483,7 +483,7 @@
     transition: 0.5s;
   }
 
-  .recomended_Square:hover {
+  .main__recomended-square:hover {
     margin: 0 0.5%;
     border-radius: 15px;
     background-color: var(--primary-color);
@@ -491,14 +491,14 @@
     transition: 0.2s;
   }
 
-  .recomended_Square img {
+  .recomended-square__img {
     height: 100%;
     width: 100%;
     border-radius: 15px;
   }
 
   /* My favorite site, money site :) */
-  .ads {
+  .main__ads {
     position: relative;
     height: 90%;
     width: 48%;
@@ -509,7 +509,7 @@
   }
 
   /* Background of my favorite site, money site :) */
-  .ads_text_background {
+  .main__ads-text-background {
     position: relative;
     height: 15%;
     width: 100%;
@@ -519,7 +519,7 @@
     bottom: 15%;
   }
 
-  .ads_group {
+  .ads__group {
     position: relative;
     height: 80%;
     /* background-color: #ffffff; */
@@ -528,21 +528,21 @@
     overflow-y: scroll;
   }
 
-  .ads_group::-webkit-scrollbar {
+  .ads__group::-webkit-scrollbar {
     height: 10px;
     width: 50%;
     border-radius: 15px;
     background-color: var(--secondary-color);
   }
 
-  .ads_group::-webkit-scrollbar-thumb {
+  .ads__group::-webkit-scrollbar-thumb {
     height: 10px;
     width: 50%;
     border-radius: 15px;
     background-color: #ffffff;
   }
 
-  .ad_Square {
+  .main__ad-square {
     display: inline-block;
     height: 45%;
     width: 30%;
@@ -552,7 +552,7 @@
     transition: 0.6s;
   }
 
-  .ad_Square:hover {
+  .main__ad-square:hover {
     display: inline-block;
     margin: 4px 1%;
     border-radius: 15px;
@@ -561,21 +561,21 @@
     transition: 0.2s;
   }
 
-  .ad_Square img {
+  .ad-square__img {
     height: 100%;
     width: 100%;
     border-radius: 15px;
   }
 
-  .sponsor_title {
+  .ad-square__sponsor-title {
     display: none;
   }
 
-  .sponsor_description {
+  .ad-square__sponsor-description {
     display: none;
   }
 
-  .sponsor_contact_info {
+  .ad-square__sponsor-contact-info {
     display: none;
   }
 
@@ -590,7 +590,7 @@
   }
 
   /* Background of the products text  */
-  .products_text_background {
+  .products__text-background {
     position: relative;
     width: 100%;
     border-top-left-radius: 25px;
@@ -599,7 +599,7 @@
   }
 
 
-  .product_list {
+  .products__list {
     height: 85%;
     width: 95%;
     margin: 0 auto;
@@ -609,13 +609,13 @@
     overflow-y: scroll;
   }
 
-  .product_list::-webkit-scrollbar {
+  .products__list::-webkit-scrollbar {
     width: 10px;
     border-radius: 25px;
     background-color: #3b3b3b;
   }
 
-  .product_list::-webkit-scrollbar-thumb {
+  .products__list::-webkit-scrollbar-thumb {
     width: 10px;
     border-radius: 25px;
     background-color: #ffffff;
@@ -630,7 +630,7 @@
     float: left;
   }
 
-  .product_image_container {
+  .product__image-container {
     height: 50%;
     width: 60%;
     margin: 0 auto;
@@ -639,7 +639,7 @@
     transition: 0.6s;
   }
 
-  .product_image_container:hover {
+  .product__image-container:hover {
     margin: 0 auto;
     margin-top: 4%;
     border-radius: 15px;
@@ -647,32 +647,32 @@
     transition: 0.2s;
   }
 
-  .product_image_container img {
+  .product__image {
     height: 100%;
     width: 100%;
     border-radius: 15px;
   }
 
-  .product_price_title {
+  .product__price-title {
     height: 30%;
     width: 100%;
     /* background-color: blueviolet; */
   }
 
-  .product_price {
+  .product__price {
     color: #00ff00;
     font-size: 25px;
     margin: 0;
   }
 
-  .product_name {
+  .product__name {
     color: var(--font-primary-color);
     font-size: 16px;
     margin: 0;
   }
 
 
-  .product_see_button {
+  .product__see-button {
     position: relative;
     height: 15%;
     width: 50%;
@@ -682,7 +682,7 @@
     left: 0%;
   }
 
-  .product_see_button a {
+  .product__see-button-a {
     position: relative;
     height: 100%;
     width: 100%;
@@ -697,7 +697,7 @@
     transition: 1s;
   }
 
-  .product_see_button a:hover {
+  .product__see-button-a:hover {
     position: relative;
     height: 100%;
     width: 100%;

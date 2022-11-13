@@ -5,6 +5,8 @@
  
     if($isLogged == true) {
         $fullData = getAllUserData();
+
+        $result = adminActions();
     }
 
     $my_link->close();
@@ -24,85 +26,161 @@
 
 <body>
 
-    <div class="pop-up_background_no_display" id="createUserPopUp"></div>
-    <div class="pop-up_background_no_display" id="deleteUserPopUp"></div>
-    <div class="pop-up_background_no_display" id="updateUserPopUp"></div>
-    <div class="pop-up_background_no_display" id="adminUserPopUp"></div>
+    <div class="pop-up_background_no_display" id="createUserPopUp">
+        <h2>CREAR USUARIO</h2>
+        <form class="create_user_pop-up" action="account.php?action=create" method="post">
+            <div class="pop-up_input_left_container"><input class="pop-up_input" type="number"
+                    name="user_identification" placeholder="Ingrese su identificacion"><input class="pop-up_input"
+                    type="date" name="birthday" placeholder="Ingrese su fecha de nacimiento"><input class="pop-up_input"
+                    type="number" name="phone_number" placeholder="Ingrese su celular"><input class="pop-up_input"
+                    type="text" name="address" placeholder="Ingrese su direccion"><input class="pop-up_input"
+                    type="email" name="email" placeholder="Ingrese su correo">
+                <div class="pop-up-button" id="goBack">VOLVER</div>
+            </div>
+            <div class="pop-up_input_right_container"><input class="pop-up_input" type="text" name="name"
+                    placeholder="Ingrese su nombre"><input class="pop-up_input" type="text" name="last_name"
+                    placeholder="Ingrese su apellido"><input class="pop-up_input" type="text" name="country"
+                    placeholder="Ingrese su pais" disabled=""><select class="pop-up_input" name="sex" id="">
+                    <option value="">Ingrese su sexo</option>
+                    <option value="m">Hombre</option>
+                    <option value="f">Mujer</option>
+                    <option value="nb">No binario</option>
+                </select><input class="pop-up_input" type="password" name="password"
+                    placeholder="Ingrese su contraseña"><button class="pop-up-button">CREAR</button></div>
+        </form>
+    </div>
+
+    <div class="pop-up_background_no_display" id="deleteUserPopUp">
+        <h2>ELIMINAR USUARIO</h2>
+        <form class="delete_user_pop-up" action="account.php?action=delete" method="post"><select class="pop-up_input"
+                name="search_by" id="">
+                <option value="">Buscar por:</option>
+                <option value="search_by_user_id">Identificacion</option>
+                <option value="search_by_cellphone_number">Numero celular</option>
+                <option value="search_by_email">Correo</option>
+            </select><input type="text" class="pop-up_input" name="search" placeholder="Busque aqui"><button
+                class="pop-up-button">BUSCAR</button>
+            <div class="pop-up-button" id="goBack">VOLVER</div>
+        </form>
+    </div>
+
+    <div class="pop-up_background_no_display" id="updateUserPopUp">
+        <h2>ACTUALIZAR USUARIO</h2>
+        <form class="update_user_pop-up" action="account.php?action=update" method="post">
+            <div class="pop-up_input_left_container"><input class="pop-up_input" type="number"
+                    name="user_identification" placeholder="Ingrese su identificacion"><input class="pop-up_input"
+                    type="date" name="birthday" placeholder="Ingrese su fecha de nacimiento"><input class="pop-up_input"
+                    type="number" name="phone_number" placeholder="Ingrese su celular"><input class="pop-up_input"
+                    type="text" name="address" placeholder="Ingrese su direccion"><input class="pop-up_input"
+                    type="email" name="email" placeholder="Ingrese su correo">
+                <div class="pop-up-button" id="goBack">VOLVER</div>
+            </div>
+            <div class="pop-up_input_right_container"><input class="pop-up_input" type="text" name="name"
+                    placeholder="Ingrese su nombre"><input class="pop-up_input" type="text" name="last_name"
+                    placeholder="Ingrese su apellido"><input class="pop-up_input" type="text" name="country"
+                    placeholder="Ingrese su pais" disabled=""><select class="pop-up_input" name="sex" id="">
+                    <option value="">Ingrese su sexo</option>
+                    <option value="m">Hombre</option>
+                    <option value="f">Mujer</option>
+                    <option value="nb">No binario</option>
+                </select><input class="pop-up_input" type="password" name="password"
+                    placeholder="Ingrese su contraseña"><button class="pop-up-button">CREAR</button></div>
+        </form>
+    </div>
+
+    <div class="pop-up_background_no_display" id="adminUserPopUp">
+        <h2>ESTABLECER ADMIN</h2>
+        <form class="admin_user_pop-up" action="account.php?action=setAdmin" method="post"><select class="pop-up_input"
+                name="search_by" id="">
+                <option value="">Buscar por:</option>
+                <option value="search_by_user_id">Identificacion</option>
+                <option value="search_by_cellphone_number">Numero celular</option>
+                <option value="search_by_email">Correo</option>
+            </select><input type="text" class="pop-up_input" name="search" placeholder="Busque aqui"><button
+                class="pop-up-button">BUSCAR</button>
+            <div class="pop-up-button" id="goBack">VOLVER</div>
+        </form>
+    </div>
 
     <!-- Header -->
     <header>
 
         <!-- Header background -->
         <div class="header_background">
-
-            <!-- Buy it web title -->
-            <h1>Buy it</h1>
-            <a href="home.php" class="return_button">
-                <p>Volver a inicio</p>
-            </a>
+            <!-- Header background -->
+            <div class="header__background">
+                <!-- Buy it web title -->
+                <h1 class="header__h1">Buy it</h1>
+                <a class="header__button button" href="home.php">
+                    <p class="button__text">Volver a inicio</p>
+                </a>
+            </div>
         </div>
 
     </header>
 
-    <div class="main_container">
-        <div class="left_container">
-            <div class="user_photo_container"><img class="user_photo" src="img/ProfileIconWhite.png" alt="User photo">
+    <div class="div">
+        <div class="div__left-container left-container">
+            <div class="div__user-photo-div">
+                <img class="div__user-photo" src="img/ProfileIconWhite.png" alt="User photo">
             </div>
-            <div class="personal_info_container">
-                <div class="personal_data">
-                    <p id="nameParagraph">Nombre:
+            <div class="left-container__personal-info-div">
+                <div class="left-container__personal-data">
+                    <p class="left-container__p" id="nameParagraph">Nombre:
                         <?php echo $fullData[0]['user_name'] . ' ' . $fullData[0]['user_last_name']; ?> </p>
                 </div>
-                <div class="personal_data">
-                    <p id="yearsOldParagraph">Edad: <?php echo $fullData[0]['age']; ?> </p>
+                <div class="left-container__personal-data">
+                    <p class="left-container__p" id="yearsOldParagraph">Edad: <?php echo $fullData[0]['age']; ?> </p>
                 </div>
-                <div class="personal_data">
-                    <p id="sexParagraph">Sexo: <?php echo $fullData[0]['user_sex']; ?> </p>
+                <div class="left-container__personal-data">
+                    <p class="left-container__p" id="sexParagraph">Sexo: <?php echo $fullData[0]['user_sex']; ?> </p>
                 </div>
-                <div class="personal_data">
-                    <p id="countryParagraph">Pais: <?php echo $fullData[0]['user_country']; ?> </p>
+                <div class="left-container__personal-data">
+                    <p class="left-container__p" id="countryParagraph">Pais: <?php echo $fullData[0]['user_country']; ?>
+                    </p>
                 </div>
-                <div class="personal_data">
-                    <p id="emailParagraph">Correo: <?php echo $fullData[0]['user_email']; ?> </p>
+                <div class="left-container__personal-data">
+                    <p class="left-container__p" id="emailParagraph">Correo: <?php echo $fullData[0]['user_email']; ?>
+                    </p>
                 </div>
             </div>
         </div>
 
-        <div class="right_container">
+        <div class="div__right-container">
 
             <?php
                 require('phpLogics/connection.php');
                 setUserRole();
             ?>
-            <div class="update_user_data">
+            <div class="div__update-user-data update-user-data">
 
 
-                <form class="personal_info_updater" action="phpLogics/accountInfoUpdate.php" method="post">
+                <form class="update-user-data__info-updater" action="phpLogics/accountInfoUpdate.php" method="post">
 
 
-                    <div class="info_places">
-                        <label for="name">Nombre</label>
-                        <input type="text" name="name" id="nameInput">
+                    <div class="update-user-data__info-places info-places">
+                        <label class="info-places__label" for="name">Nombre</label>
+                        <input class="info-places__input" type="text" name="name" id="nameInput">
                     </div>
-                    <div class="info_places">
-                        <label for="lastName">Apellido</label>
-                        <input type="text" name="last_name" id="lastNameInput">
+                    <div class="update-user-data__info-places info-places">
+                        <label class="info-places__label" for="lastName">Apellido</label>
+                        <input class="info-places__input" type="text" name="last_name" id="lastNameInput">
                     </div>
-                    <div class="info_places">
-                        <label for="yearsOld">Edad</label>
-                        <input type="date" name="birthday" id="yearsOldInput">
+                    <div class="update-user-data__info-places info-places">
+                        <label class="info-places__label" for="yearsOld">Edad</label>
+                        <input class="info-places__input" type="date" name="birthday" id="yearsOldInput">
                     </div>
-                    <div class="info_places">
-                        <label for="sex_selector">Sexo</label>
-                        <select name="sex" id="sexSelector">
+                    <div class="update-user-data__info-places info-places">
+                        <label class="info-places__label" for="sex_selector">Sexo</label>
+                        <select class="info-places__select" name="sex" id="sexSelector">
                             <option value="m">Hombre</option>
                             <option value="f">Mujer</option>
                             <option value="nb">No binario</option>
                         </select>
                     </div>
-                    <div class="info_places">
-                        <label for="country">Pais</label>
-                        <select name="country" class="form-control" id="countrySelect">
+                    <div class="update-user-data__info-places info-places">
+                        <label class="info-places__label" for="country">Pais</label>
+                        <select class="info-places__select" name="country" class="form-control" id="countrySelect">
                             <option value=""></option>
                             <option value="AF">Afganistan</option>
                             <option value="AL">Albania</option>
@@ -210,18 +288,19 @@
                             <option value="VN">Vietnam</option>
                         </select>
                     </div>
-                    <div class="info_places">
-                        <label for="email">Correo</label>
-                        <input type="text" name="email" id="emailInput">
+                    <div class="update-user-data__info-places info-places">
+                        <label class="info-places__label" for="email">Correo</label>
+                        <input class="info-places__input" type="text" name="email" id="emailInput">
                     </div>
 
-                    <div class="buttons_container">
-                        <button class="left_button" onClick="clearFields()">Limpiar</button>
-                        <button class="right_button" onclick="">Establecer</button>
+                    <div class="update-user-data__buttons-container buttons-container">
+                        <button class="buttons-container__left-button" onClick="clearFields()">Limpiar</button>
+                        <button class="buttons-container__right-button" onclick="">Establecer</button>
                     </div>
                 </form>
 
-                <form class="my_web_preferences" action="phpLogics/accountPreferences.php" method="get">
+                <form class="update-user-data__web-preferences web-preferences"
+                    action="phpLogics/accountPreferences.php" method="get">
 
                     <?php
                         require('phpLogics/connection.php');
@@ -237,8 +316,8 @@
                         }
                     ?>
 
-                    <div class="preferences_item">
-                        <label for="darkModeCheckbox">MODO OSCURO</label>
+                    <div class="web-preferences__preferences preferences">
+                        <label class="web-preferences__label" for="darkModeCheckbox">MODO OSCURO</label>
                         <?php 
                             if($dark_mode == "1") {
                                 echo '<input type="checkbox" checked="" name="dark_mode" id="darkModeCheckbox">';
@@ -248,19 +327,20 @@
                         ?>
                     </div>
 
-                    <div class="preferences_item">
-                        <label for="languageCheckbox">LENGUAJE</label>
+                    <div class="web-preferences__preferences preferences">
+                        <label class="web-preferences__label" for="languageCheckbox">LENGUAJE</label>
                         <?php 
-                            if($language == "1") {
-                                echo '<input type="checkbox" checked="" name="language" id="languageCheckbox">';
-                            } else {
-                                echo '<input type="checkbox" name="language" id="languageCheckbox">';
+                            if($language == "es") {
+                                echo '<select class="web-preferences__select" name="language" id=""><option value="es">Español</option><option value="en">Ingles</option></select>';
+                            } else if($language == "en") {
+                                echo '<select class="web-preferences__select" name="language" id=""><option value="en">Ingles</option><option value="es">Español</option></select>';
                             }
                         ?>
                     </div>
 
-                    <div class="preferences_item">
-                        <label for="receiveRecomendationsCheckbox">RECOMENDACIONES</label>
+                    <div class="web-preferences__preferences preferences">
+                        <label class="web-preferences__label"
+                            for="receiveRecomendationsCheckbox">RECOMENDACIONES</label>
                         <?php 
                             if($recomendations == '1') {
                                 echo '<input type="checkbox" checked="" name="receive_recomendations"
@@ -273,9 +353,8 @@
 
                     </div>
 
-                    <button class="preferences_button">Actualizar</button>
+                    <button class="web-preferences__button">Actualizar</button>
                 </form>
-
             </div>
         </div>
     </div>

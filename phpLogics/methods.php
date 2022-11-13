@@ -23,6 +23,7 @@ Category 1 have the blocks in the next order:
 8. getUserPreferences()
 9. setUserPreferences()
 10. setUserRole()
+11. adminPrivileges()
 
 
 Category 2 have the blocks in the next order:
@@ -389,9 +390,9 @@ function setUserFavourites() {
 
 /* ------------------------------------------------------------------------------------------------- */
 
-function createUserPreferences() {
+function createUserPreferences($new_user_id) {
     require('connection.php');
-    $my_link->query("INSERT INTO `user_preferences`(`id`, `admin`, `dark_mode`, `language`, `recomendations`) VALUES ('".$_SESSION['id']."', '0', '0', '0', '0');");
+    $my_link->query("INSERT INTO `user_preferences`(`id`, `admin`, `dark_mode`, `language`, `recomendations`) VALUES ('".$new_user_id."', '0', '0', 'es', '0');");
     header("Location: ../home.php");
 }
 
@@ -484,7 +485,40 @@ function setUserRole() {
 
 /* ------------------------------------------------------------------------------------------------- */
 
+function adminActions() {
+    require('connection.php');
+    
+    if(isset($_POST['action'])) {
+        if($_POST['action'] == 'create') {
+            // $create_user_query = $my_link->query("INSERT INTO `my_user`() VALUES ();");
+        }
+    } else if(isset($_POST['action'])) {
+        if($_POST['action'] == 'delete') {
+            $delete_user_preferences_query = $my_link->query("DELETE FROM `user_preferences` WHERE id = '".$_SESSION['id']."';");
+            $delete_user_query = $my_link->query("DELETE FROM `my_user` WHERE id = '".$_SESSION['id']."';");    
+        }
+        if(!$delete_user_preferences_query || !$delete_user_query) {
+            header("Location: error.php?cod=1");
+        } else {
+            return true;
+        }
+    } else if(isset($_POST['action'])) {
+        if($_POST['action'] == 'update') {
 
+        }
+    } else if(isset($_POST['action'])) {
+        if($_POST['action'] == 'setAdmin') {
+            $set_admin_query = $my_link->query("UPDATE user_preferences SET `admin` = 1 WHERE id = '".$_SESSION['id']."'");
+            if(!$set_admin_query) {
+                header("Location: error.php?cod=1");
+            } else {
+                return true;
+            }
+        }
+    } 
+}
+
+/* ------------------------------------------------------------------------------------------------- */
 
 /* ------------------------------------------------------------------------------------------------- */
 
@@ -585,11 +619,11 @@ function setRecomended() {
             $contact_info = $result['product_condition'];
             $operation = 0;
             
-            echo '<div class="recomended_Square">
-                    <img src="img/products/box.png" alt="" onclick="showPopUp('.$i.', '.$operation.', '.$product_id.')">
-                    <p class="sponsor_title" id="recomendedTitle'.$i.'">'.$product_name.'</p>
-                    <p class="sponsor_description" id="recomendedDescription'.$i.'">'.$description.'</p>
-                    <p class="sponsor_contact_info" id="recomendedContactInfo'.$i.'">'.$contact_info.'</p>
+            echo '<div class="main__recomended-square recomended-square">
+                    <img class="recomended-square__img" src="img/products/box.png" alt="" onclick="showPopUp('.$i.', '.$operation.', '.$product_id.')">
+                    <p class="recomended-square__p" class="sponsor_title" id="recomendedTitle'.$i.'">'.$product_name.'</p>
+                    <p class="recomended-square__p" class="sponsor_description" id="recomendedDescription'.$i.'">'.$description.'</p>
+                    <p class="recomended-square__p" class="sponsor_contact_info" id="recomendedContactInfo'.$i.'">'.$contact_info.'</p>
                     </div>';
             $i++;
         }
@@ -616,11 +650,11 @@ function setAds() {
             $redirect_to = $result['redirect_to'];
             $operation = 1;
 
-            echo '<div class="ad_Square">
-                    <img src="img/products/box.png" alt="" onclick="showPopUp('.$i.', '.$operation.',`'.$redirect_to.'`)">
-                    <p class="sponsor_title" id="sponsorTitle'.$i.'">'.$title.'</p>
-                    <p class="sponsor_description" id="sponsorDescription'.$i.'">'.$description.'</p>
-                    <p class="sponsor_contact_info" id="sponsorContactInfo'.$i.'">'.$contact_info.'</p>
+            echo '<div class="main__ad-square">
+                    <img class="ad-square__img" src="img/products/box.png" alt="" onclick="showPopUp('.$i.', '.$operation.',`'.$redirect_to.'`)">
+                    <p class="ad-square__sponsor-title" id="sponsorTitle'.$i.'">'.$title.'</p>
+                    <p class="ad-square__sponsor-description" id="sponsorDescription'.$i.'">'.$description.'</p>
+                    <p class="ad-square__sponsor-contact-info" id="sponsorContactInfo'.$i.'">'.$contact_info.'</p>
                     </div>';
             $i++;
         }
@@ -645,17 +679,17 @@ function setProducts() {
             $price = $result['price'];
             
             echo '<div class="product">
-            <div class="product_image_container">
-                <img src="img/products/box.png" alt="imagen de prueba">
+            <div class="product__image-container">
+                <img class="product__image" src="img/products/box.png" alt="imagen de prueba">
             </div>
     
-            <div class="product_price_title">
-            <p class="product_price">$' . number_format($price,2,',','.') . '</p>
-                <p class="product_name">' . $product_name . '</p>
+            <div class="product__price-title">
+            <p class="product__price">$' . number_format($price,2,',','.') . '</p>
+                <p class="product__name">' . $product_name . '</p>
             </div>
     
-            <div class="product_see_button">
-                <a href="productView.php?id='.$id.'">Ver</a>
+            <div class="product__see-button">
+                <a class="product__see-button-a" href="productView.php?id='.$id.'">Ver</a>
             </div>
     
             </div>';

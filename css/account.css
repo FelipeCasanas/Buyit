@@ -162,19 +162,23 @@
 
     /* ------------------------------------------------------------------------ */
 
-    /* This is the header background, where is the title or search-bar */
-    .header_background {
+    .header {
         position: relative;
         height: 80px;
+        width: 100%;
+    }
+
+    .header__background {
+        height: 100%;
         width: 100%;
         background-color: var(--primary-color);
     }
 
     /* Title of my pretty web */
-    .header_background h1 {
+    .header__h1 {
         position: relative;
         display: inline-block;
-        width: 40%;
+        width: auto;
         color: var(--font-primary-color);
         font-size: 65px;
         font-family: Impact;
@@ -183,9 +187,9 @@
     }
 
     /* This is the login button */
-    .return_button {
+    .header__button {
         position: relative;
-        height: 60%;
+        height: 50px;
         width: 12%;
         text-decoration: none;
         border-radius: 25px;
@@ -196,7 +200,7 @@
         overflow: hidden;
     }
 
-    .return_button::after {
+    .header__button::after {
         position: absolute;
         content: "";
         height: 60px;
@@ -208,12 +212,12 @@
         transition: 0.7s;
     }
 
-    .return_button:hover::after {
+    .header__button:hover::after {
         left: 0px;
     }
 
     /* This is the text of the login button */
-    .return_button p {
+    .button__text {
         position: relative;
         color: var(--font-primary-color);
         font-size: 1.2em;
@@ -225,7 +229,7 @@
 
     /* ------------------------------------------------------------------------ */
 
-    .main_container {
+    .div {
         display: flex;
         height: 700px;
         width: 90%;
@@ -234,7 +238,7 @@
         justify-content: space-between;
     }
 
-    .left_container {
+    .div__left-container {
         display: inline-flex;
         height: 100%;
         width: 35%;
@@ -248,20 +252,7 @@
         background-color: var(--secondary-color);
     }
 
-    .right_container {
-        display: inline-flex;
-        height: 100%;
-        width: 60%;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        background-color: var(--primary-color);
-        border-radius: 25px;
-        box-sizing: border-box;
-        background-color: var(--secondary-color);
-    }
-
-    .user_photo_container {
+    .div__user-photo-div {
         height: 30%;
         width: 50%;
         background-color: var(--primary-color);
@@ -270,13 +261,13 @@
         background-color: var(--secondary-color);
     }
 
-    .user_photo {
+    .div__user-photo {
         height: 100%;
         width: 100%;
         border-radius: 50%;
     }
 
-    .personal_info_container {
+    .left-container__personal-info-div {
         display: flex;
         height: 55%;
         width: 85%;
@@ -290,19 +281,19 @@
         box-sizing: border-box;
     }
 
-    .personal_info_container::-webkit-scrollbar {
+    .left-container__personal-info-div::-webkit-scrollbar {
         width: 10px;
         border-radius: 0 15px 15px 0;
         background-color: var(--primary-color);
     }
 
-    .personal_info_container::-webkit-scrollbar-thumb {
+    .left-container__personal-info-div::-webkit-scrollbar-thumb {
         width: 10px;
         border-radius: 10px 10px 10px 10px;
         background-color: #ffffff;
     }
 
-    .personal_data {
+    .left-container__personal-data {
         height: 15%;
         width: 90%;
         border-radius: 15px;
@@ -311,7 +302,7 @@
         box-sizing: border-box;
     }
 
-    .personal_data p {
+    .left-container__p {
         display: flex;
         color: var(--font-primary-color);
         font-family: var(--primary-font-family);
@@ -320,6 +311,19 @@
     }
 
     /* ------------------------------------------------------------------------ */
+
+    .div__right-container {
+        display: inline-flex;
+        height: 100%;
+        width: 60%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--primary-color);
+        border-radius: 25px;
+        box-sizing: border-box;
+        background-color: var(--secondary-color);
+    }
 
     .favourite_stores,
     .admin_window {
@@ -477,7 +481,7 @@
         background-color: #ff7b00;
     }
 
-    .update_user_data {
+    .div__update-user-data {
         display: flex;
         height: 55%;
         width: 90%;
@@ -485,7 +489,7 @@
         justify-content: space-between;
     }
 
-    .personal_info_updater {
+    .update-user-data__info-updater {
         display: flex;
         height: 90%;
         width: 48%;
@@ -496,69 +500,7 @@
         background-color: var(--primary-color);
     }
 
-    .buttons_container {
-        display: flex;
-        height: 15%;
-        width: 100%;
-        align-items: center;
-        justify-content: space-around;
-        /* background-color: #b43434; */
-    }
-
-    .left_button,
-    .right_button {
-        height: 60%;
-        width: 45%;
-        color: #000000;
-        font-size: 1.2vw;
-        font-family: var(--primary-font-family);
-        border: none;
-        border-radius: 25px;
-        background-color: #ffffff;
-    }
-
-    .left_button:hover,
-    .right_button:hover {
-        height: 60%;
-        width: 45%;
-        color: var(--font-primary-color);
-        font-size: 1.2vw;
-        font-family: var(--primary-font-family);
-        border: none;
-        border-radius: 25px;
-        background-color: var(--secondary-color);
-    }
-
-    .my_web_preferences {
-        display: flex;
-        height: 90%;
-        width: 48%;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 20px;
-        border-radius: 25px;
-        background-color: var(--primary-color);
-    }
-
-    .preferences_item {
-        display: flex;
-        height: 12%;
-        width: 80%;
-        align-items: center;
-        justify-content: space-between;
-        border-radius: 15px;
-        padding: 5px;
-        background-color: var(--secondary-color);
-        box-sizing: border-box;
-    }
-
-    .preferences_item label {
-        color: var(--font-primary-color);
-        font-family: var(--primary-font-family);
-    }
-
-    .info_places {
+    .update-user-data__info-places {
         display: flex;
         height: 12%;
         width: 95%;
@@ -570,13 +512,13 @@
         box-sizing: border-box;
     }
 
-    .info_places label {
+    .info-places__label {
         color: var(--font-primary-color);
         font-family: var(--primary-font-family);
     }
 
-    .info_places input,
-    .info_places select {
+    .info-places__input,
+    .info-places__select {
         height: 65%;
         width: 50%;
         text-align: center;
@@ -585,7 +527,78 @@
         background-color: #ffffff;
     }
 
-    .preferences_button {
+    .update-user-data__buttons-container {
+        display: flex;
+        height: 15%;
+        width: 100%;
+        align-items: center;
+        justify-content: space-around;
+        /* background-color: #b43434; */
+    }
+
+    .buttons-container__left-button,
+    .buttons-container__right-button {
+        height: 60%;
+        width: 45%;
+        color: #000000;
+        font-size: 1.2vw;
+        font-family: var(--primary-font-family);
+        border: none;
+        border-radius: 25px;
+        background-color: #ffffff;
+    }
+
+    .buttons-container__left-button:hover,
+    .buttons-container__right-button:hover {
+        height: 60%;
+        width: 45%;
+        color: var(--font-primary-color);
+        font-size: 1.2vw;
+        font-family: var(--primary-font-family);
+        border: none;
+        border-radius: 25px;
+        background-color: var(--secondary-color);
+    }
+
+    .update-user-data__web-preferences {
+        display: flex;
+        height: 90%;
+        width: 48%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        border-radius: 25px;
+        background-color: var(--primary-color);
+    }
+
+    .web-preferences__preferences {
+        display: flex;
+        height: 12%;
+        width: 80%;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: 15px;
+        padding: 5px;
+        background-color: var(--secondary-color);
+        box-sizing: border-box;
+    }
+
+    .web-preferences__label {
+        color: var(--font-primary-color);
+        font-family: var(--primary-font-family);
+    }
+
+    .web-preferences__select {
+        height: 65%;
+        width: 50%;
+        text-align: center;
+        border: none;
+        border-radius: 20px;
+        background-color: #ffffff;
+    }
+
+    .web-preferences__button {
         display: flex;
         height: 10%;
         width: 30%;
